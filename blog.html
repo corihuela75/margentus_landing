@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="es" id="htmlRoot">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — FoodCost33 | Hoja de Ruta del Proyecto</title>
+  <meta name="description" content="La hoja de ruta de FoodCost33: concursos, aprendizajes, hitos y el camino de construir una startup gastronómica desde Mar del Plata.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="css/aos.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    :root { --teal:#0FC9C0; --teal2:#0A8580; --amber:#F59E0B; }
+    .gt { background:linear-gradient(135deg,#0FC9C0,#0a8580);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+    .bgrd { background:linear-gradient(135deg,#0FC9C0,#0a8580); }
+    .bgrd:hover { box-shadow:0 8px 24px rgba(15,201,192,.4); }
+    .boc:hover  { border-color:var(--teal);background:rgba(15,201,192,.08); }
+    .slbl { color:var(--teal); }
+    .slbl::before { background:linear-gradient(135deg,#0FC9C0,#0a8580); }
+    .gc:hover  { border-color:rgba(15,201,192,.3);box-shadow:0 16px 50px rgba(0,0,0,.25); }
+    .logo-i { background:linear-gradient(135deg,#0FC9C0,#0a8580); }
+    .aur-a { background:radial-gradient(circle,rgba(15,201,192,.18),transparent 70%); }
+    .aur-b { background:radial-gradient(circle,rgba(10,133,128,.14),transparent 70%); }
+    .hbadge { background:rgba(15,201,192,.1);border:1px solid rgba(15,201,192,.25);color:var(--teal);padding:6px 16px;border-radius:100px;font-size:.8rem;font-weight:600;display:inline-flex;align-items:center;gap:8px; }
+    .bdot { width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 8px var(--teal);animation:bpls 2s infinite; }
+    @keyframes bpls{0%,100%{opacity:1}50%{opacity:.35}}
+    .flink { color:var(--tx3);font-size:.875rem;display:block;margin-bottom:8px;transition:.2s; }
+    .flink:hover { color:var(--tx); }
+    #mbmenu { display:none;background:var(--bg);padding:16px 20px;border-bottom:1px solid var(--bd); }
+    #mbmenu.open { display:block; }
+    .afu { opacity:0;animation:fadeInUp .7s ease both; }
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+
+    /* ── BLOG SPECIFIC ── */
+    .blog-hero { padding:calc(var(--nav) + 60px) 0 60px;position:relative;overflow:hidden;border-bottom:1px solid var(--bd); }
+
+    /* Timeline sidebar */
+    .timeline-wrap { position:sticky;top:calc(var(--nav) + 24px); }
+    .tl-label { font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--tx3);margin-bottom:16px; }
+    .tl-item { display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--bd);cursor:pointer;transition:.2s;text-decoration:none; }
+    .tl-item:hover .tl-title { color:var(--teal); }
+    .tl-item:last-child { border-bottom:none; }
+    .tl-dot-wrap { display:flex;flex-direction:column;align-items:center;gap:0;padding-top:4px; }
+    .tl-dot { width:10px;height:10px;border-radius:50%;flex-shrink:0; }
+    .tl-line { width:1px;flex:1;min-height:20px;margin-top:4px; }
+    .tl-meta { flex:1; }
+    .tl-title { font-size:.82rem;font-weight:600;color:var(--tx);line-height:1.35;transition:.2s; }
+    .tl-date  { font-size:.72rem;color:var(--tx3);margin-top:3px; }
+    .tl-tag   { font-size:.68rem;padding:1px 7px;border-radius:20px;font-weight:600;display:inline-block;margin-top:4px; }
+
+    /* Post card */
+    .post-card { background:var(--sf);border:1px solid var(--bd);border-radius:16px;overflow:hidden;transition:.25s;text-decoration:none;display:block; }
+    .post-card:hover { border-color:rgba(15,201,192,.35);box-shadow:0 12px 40px rgba(0,0,0,.25);transform:translateY(-3px); }
+    .post-thumb { height:180px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;position:relative;overflow:hidden; }
+    .post-body  { padding:22px 24px; }
+    .post-tags  { display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px; }
+    .ptag { font-size:.7rem;font-weight:600;padding:2px 9px;border-radius:20px; }
+    .ptag-teal   { background:rgba(15,201,192,.12);color:var(--teal); }
+    .ptag-amber  { background:rgba(245,158,11,.12);color:var(--amber); }
+    .ptag-blue   { background:rgba(59,130,246,.12);color:#60a5fa; }
+    .ptag-purple { background:rgba(168,85,247,.12);color:#c084fc; }
+    .ptag-green  { background:rgba(34,197,94,.12);color:#34d399; }
+    .post-title  { font-size:1.05rem;font-weight:700;line-height:1.35;margin-bottom:8px;color:var(--tx); }
+    .post-excerpt { font-size:.85rem;color:var(--tx2);line-height:1.6;margin-bottom:14px; }
+    .post-footer  { display:flex;align-items:center;justify-content:space-between;font-size:.78rem;color:var(--tx3); }
+    .post-author  { display:flex;align-items:center;gap:7px; }
+    .post-av { width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#0FC9C0,#0a8580);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;color:#fff; }
+
+    /* Featured post */
+    .featured-card { background:var(--sf);border:1px solid rgba(15,201,192,.3);border-radius:20px;overflow:hidden;box-shadow:0 0 0 1px rgba(15,201,192,.12),0 20px 60px rgba(15,201,192,.08); }
+    .featured-thumb { height:260px;background:linear-gradient(135deg,rgba(15,201,192,.08),rgba(10,133,128,.15));display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden; }
+    .featured-body  { padding:28px 32px; }
+    .featured-badge { display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#0FC9C0,#0a8580);color:#fff;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:14px; }
+
+    /* Stats in hero */
+    .hero-stat { text-align:center; }
+    .hero-stat-num { font-size:1.6rem;font-weight:700;letter-spacing:-.03em; }
+    .hero-stat-lbl { font-size:.72rem;color:var(--tx3);margin-top:2px; }
+
+    /* Phase badge colors */
+    .phase-mvp    { background:rgba(34,197,94,.12);color:#34d399; }
+    .phase-f2     { background:rgba(15,201,192,.12);color:var(--teal); }
+    .phase-f3     { background:rgba(168,85,247,.12);color:#c084fc; }
+    .phase-f4     { background:rgba(245,158,11,.12);color:var(--amber); }
+
+    /* Newsletter */
+    .nl-card { background:linear-gradient(135deg,rgba(15,201,192,.06),rgba(10,133,128,.04));border:1px solid rgba(15,201,192,.2);border-radius:16px;padding:32px; }
+    .nl-input { background:var(--bg3);border:1px solid var(--bd);border-radius:10px;padding:11px 16px;color:var(--tx);font-family:inherit;font-size:.9rem;outline:none;width:100%; }
+    .nl-input:focus { border-color:var(--teal); }
+    .nl-input::placeholder { color:var(--tx3); }
+
+    /* Roadmap mini */
+    .rm-item { display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--bd); }
+    .rm-item:last-child { border-bottom:none; }
+    .rm-num { width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;flex-shrink:0;margin-top:2px; }
+    .rm-title { font-size:.88rem;font-weight:600;margin-bottom:2px; }
+    .rm-sub   { font-size:.78rem;color:var(--tx3); }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="nbar">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between w-100">
+      <a href="index.html" class="d-flex align-items-center gap-2" style="font-size:1.15rem;font-weight:700;color:var(--tx)">
+        <div class="logo-i"><i class="fa-solid fa-utensils" style="font-size:.85rem"></i></div>
+        <span>FoodCost<span style="color:var(--teal)">33</span></span>
+      </a>
+      <div class="d-none d-lg-flex align-items-center gap-1 mx-auto">
+        <a href="index.html#features" class="nav-link">Funcionalidades</a>
+        <a href="index.html#how" class="nav-link">Cómo funciona</a>
+        <a href="index.html#pricing" class="nav-link">Precios</a>
+        <a href="blog.html" class="nav-link" style="color:var(--teal)">Blog</a>
+      </div>
+      <div class="d-flex align-items-center gap-2">
+        <button class="boc d-flex align-items-center justify-content-center" id="thbtn" style="width:38px;height:38px;padding:0;border-radius:12px">
+          <i class="fa-solid fa-sun" id="suni" style="display:none"></i>
+          <i class="fa-solid fa-moon" id="mooni"></i>
+        </button>
+        <button class="bgrd btn px-3 py-2 d-none d-sm-flex">Comenzar gratis</button>
+        <button class="boc d-lg-none px-2 py-2" id="mbtog" style="border-radius:10px" onclick="toggleMenu()">
+          <i class="fa-solid fa-bars" id="barIcon"></i>
+          <i class="fa-solid fa-xmark" id="xIcon" style="display:none"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+<div id="mbmenu">
+  <a href="index.html#features" class="nav-link d-block py-3 border-bottom" style="border-color:var(--bd)!important">Funcionalidades</a>
+  <a href="index.html#pricing" class="nav-link d-block py-3 border-bottom" style="border-color:var(--bd)!important">Precios</a>
+  <a href="blog.html" class="nav-link d-block py-3" style="color:var(--teal)">Blog</a>
+  <div class="mt-3"><button class="bgrd btn w-100 py-2">Comenzar gratis</button></div>
+</div>
+
+<!-- BLOG HERO -->
+<section class="blog-hero">
+  <div class="aur aur-a" style="top:-80px;left:-120px"></div>
+  <div class="aur aur-b" style="bottom:-60px;right:-150px"></div>
+  <div class="container position-relative" style="z-index:2">
+    <div class="text-center">
+      <div class="afu" style="animation-delay:.05s">
+        <span class="hbadge"><span class="bdot"></span>Hoja de ruta pública · Actualizado julio 2026</span>
+      </div>
+      <h1 class="afu" style="font-size:clamp(2rem,5vw,3.4rem);font-weight:700;line-height:1.1;letter-spacing:-.03em;margin:20px 0 16px;animation-delay:.12s">
+        El camino de construir<br><span class="gt">FoodCost33</span>
+      </h1>
+      <p class="mx-auto afu" style="max-width:560px;font-size:1rem;color:var(--tx2);animation-delay:.2s">
+        Documentamos cada paso del proceso: concursos, aprendizajes, decisiones técnicas, validaciones y todo lo que pasa entre tener una idea y construir un producto real.
+      </p>
+    </div>
+    <div class="row g-3 justify-content-center mt-5 afu" style="animation-delay:.3s">
+      <div class="col-auto">
+        <div class="hero-stat">
+          <div class="hero-stat-num gt">1</div>
+          <div class="hero-stat-lbl">Post publicado</div>
+        </div>
+      </div>
+      <div style="width:1px;background:var(--bd);margin:0 12px"></div>
+      <div class="col-auto">
+        <div class="hero-stat">
+          <div class="hero-stat-num gt">2</div>
+          <div class="hero-stat-lbl">Concursos presentados</div>
+        </div>
+      </div>
+      <div style="width:1px;background:var(--bd);margin:0 12px"></div>
+      <div class="col-auto">
+        <div class="hero-stat">
+          <div class="hero-stat-num gt">TRL 3</div>
+          <div class="hero-stat-lbl">Madurez actual</div>
+        </div>
+      </div>
+      <div style="width:1px;background:var(--bd);margin:0 12px"></div>
+      <div class="col-auto">
+        <div class="hero-stat">
+          <div class="hero-stat-num gt">Jul 2026</div>
+          <div class="hero-stat-lbl">Inicio oficial</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG CONTENT -->
+<section style="padding:60px 0 80px">
+  <div class="container">
+    <div class="row g-5">
+
+      <!-- MAIN CONTENT -->
+      <div class="col-lg-8">
+
+        <!-- Featured post -->
+        <div class="mb-5 rv">
+          <div class="featured-badge"><i class="fa-solid fa-trophy me-1"></i> Primer hito · Julio 2026</div>
+          <a href="blog-intecmar-2026.html" class="featured-card d-block text-decoration-none">
+            <div class="featured-thumb">
+              <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,201,192,.06),rgba(10,133,128,.12))"></div>
+              <!-- Mini trophy illustration -->
+              <div style="text-align:center;position:relative;z-index:1">
+                <div style="font-size:5rem;filter:drop-shadow(0 0 30px rgba(15,201,192,.4))">🏆</div>
+                <div style="margin-top:12px">
+                  <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(15,201,192,.15);border:1px solid rgba(15,201,192,.3);border-radius:100px;padding:6px 16px">
+                    <div style="width:6px;height:6px;border-radius:50%;background:var(--teal);animation:bpls 2s infinite"></div>
+                    <span style="font-size:.78rem;font-weight:600;color:var(--teal)">Premio a la Innovación INTECMAR 2026</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="featured-body">
+              <div class="post-tags">
+                <span class="ptag ptag-teal">Concurso</span>
+                <span class="ptag ptag-amber">INTECMAR</span>
+                <span class="ptag ptag-blue">Hito</span>
+                <span class="ptag ptag-green">Etapa semilla</span>
+              </div>
+              <div class="post-title" style="font-size:1.25rem">FoodCost33 se presenta al Premio a la Innovación INTECMAR 2026</div>
+              <div class="post-excerpt">El primer paso formal de FoodCost33 como proyecto de innovación tecnológica: la inscripción al Premio INTECMAR organizado por la Cámara de Comercio e Industria de Mar del Plata. Qué es el concurso, por qué decidimos participar, qué aprendimos preparando la presentación y cuál es el próximo paso.</div>
+              <div class="post-footer">
+                <div class="post-author">
+                  <div class="post-av">CO</div>
+                  <span>Cristian Orihuela</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:14px">
+                  <span><i class="fa-regular fa-calendar me-1"></i>Julio 2026</span>
+                  <span><i class="fa-regular fa-clock me-1"></i>6 min lectura</span>
+                  <span style="color:var(--teal);font-weight:600">Leer →</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Próximos posts (placeholder) -->
+        <div class="mb-4 rv">
+          <div style="font-family:inherit;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--tx3);margin-bottom:20px">Próximos posts · En preparación</div>
+          <div class="row g-4">
+
+            <div class="col-md-6">
+              <div class="post-card" style="opacity:.55;pointer-events:none">
+                <div class="post-thumb" style="background:linear-gradient(135deg,rgba(168,85,247,.06),rgba(59,130,246,.08))">
+                  <span style="font-size:3rem">🇮🇱</span>
+                </div>
+                <div class="post-body">
+                  <div class="post-tags">
+                    <span class="ptag ptag-purple">Concurso</span>
+                    <span class="ptag ptag-blue">Israel</span>
+                  </div>
+                  <div class="post-title">Israel Innovation Awards 2026: por qué aplicamos y qué esperamos</div>
+                  <div class="post-excerpt">El segundo concurso en el que participamos y lo que el ecosistema israelí puede aportar a un proyecto de foodtech argentino.</div>
+                  <div class="post-footer">
+                    <div class="post-author"><div class="post-av">CO</div><span>Cristian Orihuela</span></div>
+                    <span style="font-size:.72rem;background:rgba(96,125,139,.12);padding:2px 9px;border-radius:20px;color:var(--tx3)">Próximamente</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="post-card" style="opacity:.55;pointer-events:none">
+                <div class="post-thumb" style="background:linear-gradient(135deg,rgba(34,197,94,.06),rgba(15,201,192,.08))">
+                  <span style="font-size:3rem">⚙️</span>
+                </div>
+                <div class="post-body">
+                  <div class="post-tags">
+                    <span class="ptag ptag-green">Técnico</span>
+                    <span class="ptag ptag-teal">MVP</span>
+                  </div>
+                  <div class="post-title">Decisiones técnicas del MVP: por qué Python, FastAPI y Supabase</div>
+                  <div class="post-excerpt">El stack que elegimos para construir el MVP de FoodCost33 y las razones detrás de cada decisión. Sin teoría, solo pragmatismo.</div>
+                  <div class="post-footer">
+                    <div class="post-author"><div class="post-av">CO</div><span>Cristian Orihuela</span></div>
+                    <span style="font-size:.72rem;background:rgba(96,125,139,.12);padding:2px 9px;border-radius:20px;color:var(--tx3)">Próximamente</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="post-card" style="opacity:.55;pointer-events:none">
+                <div class="post-thumb" style="background:linear-gradient(135deg,rgba(245,158,11,.06),rgba(239,68,68,.08))">
+                  <span style="font-size:3rem">🍽️</span>
+                </div>
+                <div class="post-body">
+                  <div class="post-tags">
+                    <span class="ptag ptag-amber">Validación</span>
+                    <span class="ptag ptag-teal">Usuarios</span>
+                  </div>
+                  <div class="post-title">Las primeras 10 entrevistas con dueños de restaurantes</div>
+                  <div class="post-excerpt">Qué aprendimos hablando con chefs, gerentes y dueños de restaurantes de Mar del Plata. Lo que confirmamos y lo que nos sorprendió.</div>
+                  <div class="post-footer">
+                    <div class="post-author"><div class="post-av">CO</div><span>Cristian Orihuela</span></div>
+                    <span style="font-size:.72rem;background:rgba(96,125,139,.12);padding:2px 9px;border-radius:20px;color:var(--tx3)">Próximamente</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="post-card" style="opacity:.55;pointer-events:none">
+                <div class="post-thumb" style="background:linear-gradient(135deg,rgba(59,130,246,.06),rgba(168,85,247,.08))">
+                  <span style="font-size:3rem">🚀</span>
+                </div>
+                <div class="post-body">
+                  <div class="post-tags">
+                    <span class="ptag ptag-blue">Lanzamiento</span>
+                    <span class="ptag ptag-purple">Piloto</span>
+                  </div>
+                  <div class="post-title">Primer establecimiento piloto: cómo fue la primera semana</div>
+                  <div class="post-excerpt">El momento en que FoodCost33 pasó de ser un formulario a ser un producto que alguien usa de verdad. Errores, aprendizajes y primeros datos reales.</div>
+                  <div class="post-footer">
+                    <div class="post-author"><div class="post-av">CO</div><span>Cristian Orihuela</span></div>
+                    <span style="font-size:.72rem;background:rgba(96,125,139,.12);padding:2px 9px;border-radius:20px;color:var(--tx3)">Próximamente</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div class="col-lg-4">
+        <div class="timeline-wrap">
+
+          <!-- Roadmap timeline -->
+          <div class="gc p-4 mb-4">
+            <div class="tl-label">Hoja de ruta del proyecto</div>
+            <div class="tl-item" onclick="window.location='blog-intecmar-2026.html'">
+              <div class="tl-dot-wrap">
+                <div class="tl-dot" style="background:var(--teal);box-shadow:0 0 8px var(--teal)"></div>
+                <div class="tl-line" style="background:var(--bd)"></div>
+              </div>
+              <div class="tl-meta">
+                <div class="tl-title">Presentación INTECMAR 2026</div>
+                <div class="tl-date"><i class="fa-regular fa-calendar me-1"></i>Julio 2026</div>
+                <span class="tl-tag" style="background:rgba(34,197,94,.12);color:#34d399">✓ Completado</span>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot-wrap">
+                <div class="tl-dot" style="background:rgba(168,85,247,.6)"></div>
+                <div class="tl-line" style="background:var(--bd)"></div>
+              </div>
+              <div class="tl-meta">
+                <div class="tl-title">Israel Innovation Awards 2026</div>
+                <div class="tl-date"><i class="fa-regular fa-calendar me-1"></i>Julio 2026</div>
+                <span class="tl-tag" style="background:rgba(245,158,11,.12);color:var(--amber)">⏳ En proceso</span>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot-wrap">
+                <div class="tl-dot" style="background:var(--bd)"></div>
+                <div class="tl-line" style="background:var(--bd)"></div>
+              </div>
+              <div class="tl-meta">
+                <div class="tl-title">Desarrollo del MVP</div>
+                <div class="tl-date"><i class="fa-regular fa-calendar me-1"></i>Jul – Sep 2026</div>
+                <span class="tl-tag" style="background:var(--bg3);color:var(--tx3)">Pendiente</span>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot-wrap">
+                <div class="tl-dot" style="background:var(--bd)"></div>
+                <div class="tl-line" style="background:var(--bd)"></div>
+              </div>
+              <div class="tl-meta">
+                <div class="tl-title">Primer piloto con establecimientos</div>
+                <div class="tl-date"><i class="fa-regular fa-calendar me-1"></i>Sep – Oct 2026</div>
+                <span class="tl-tag" style="background:var(--bg3);color:var(--tx3)">Pendiente</span>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot-wrap">
+                <div class="tl-dot" style="background:var(--bd)"></div>
+                <div class="tl-line" style="background:var(--bd)"></div>
+              </div>
+              <div class="tl-meta">
+                <div class="tl-title">Lanzamiento comercial MdP</div>
+                <div class="tl-date"><i class="fa-regular fa-calendar me-1"></i>Oct – Dic 2026</div>
+                <span class="tl-tag" style="background:var(--bg3);color:var(--tx3)">Pendiente</span>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot-wrap">
+                <div class="tl-dot" style="background:var(--bd)"></div>
+              </div>
+              <div class="tl-meta">
+                <div class="tl-title">Escala regional y nacional</div>
+                <div class="tl-date"><i class="fa-regular fa-calendar me-1"></i>2027</div>
+                <span class="tl-tag" style="background:var(--bg3);color:var(--tx3)">Futuro</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Estado actual -->
+          <div class="gc p-4 mb-4">
+            <div class="tl-label">Estado actual del proyecto</div>
+            <div class="rm-item">
+              <div class="rm-num" style="background:rgba(34,197,94,.12);color:#34d399">✓</div>
+              <div><div class="rm-title">Validación conceptual</div><div class="rm-sub">Problema identificado · TRL 3</div></div>
+            </div>
+            <div class="rm-item">
+              <div class="rm-num" style="background:rgba(34,197,94,.12);color:#34d399">✓</div>
+              <div><div class="rm-title">Documentación técnica</div><div class="rm-sub">DTF v2.0 · Plan de negocio · Canvas</div></div>
+            </div>
+            <div class="rm-item">
+              <div class="rm-num" style="background:rgba(34,197,94,.12);color:#34d399">✓</div>
+              <div><div class="rm-title">Presentación a concursos</div><div class="rm-sub">INTECMAR · Israel Innovation Awards</div></div>
+            </div>
+            <div class="rm-item">
+              <div class="rm-num" style="background:rgba(245,158,11,.12);color:var(--amber)">→</div>
+              <div><div class="rm-title">Desarrollo del MVP</div><div class="rm-sub">Inicio: julio 2026</div></div>
+            </div>
+            <div class="rm-item">
+              <div class="rm-num" style="background:var(--bg3);color:var(--tx3)">○</div>
+              <div><div class="rm-title">Establecimientos piloto</div><div class="rm-sub">Buscando candidatos en MdP</div></div>
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="nl-card">
+            <div style="font-size:1rem;font-weight:700;margin-bottom:6px">Seguí el progreso</div>
+            <p style="font-size:.85rem;color:var(--tx2);margin-bottom:16px">Te avisamos cuando publicamos un nuevo hito, decisión técnica o aprendizaje del camino.</p>
+            <input class="nl-input mb-3" type="email" placeholder="tu@email.com">
+            <button class="bgrd btn w-100 py-2">Suscribirme al blog</button>
+            <p style="font-size:.72rem;color:var(--tx3);margin-top:10px;margin-bottom:0">Sin spam. Solo hitos reales del proyecto.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:var(--bg2);border-top:1px solid var(--bd);padding:40px 0 24px">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+      <a href="index.html" class="d-flex align-items-center gap-2" style="font-size:1rem;font-weight:700;color:var(--tx)">
+        <div class="logo-i" style="width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center"><i class="fa-solid fa-utensils" style="font-size:.75rem"></i></div>
+        FoodCost<span style="color:var(--teal)">33</span>
+      </a>
+      <div style="font-size:.8rem;color:var(--tx3)">© 2026 FoodCost33 · Cristian Orihuela · Mar del Plata</div>
+      <div class="d-flex gap-3">
+        <a href="index.html" class="flink mb-0">← Volver al inicio</a>
+        <a href="mailto:ori@live.com.ar" class="flink mb-0">ori@live.com.ar</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/jquery-3.7.1.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script>
+const html = document.getElementById('htmlRoot');
+document.getElementById('thbtn').addEventListener('click', () => {
+  html.classList.toggle('lm');
+  document.getElementById('suni').style.display  = html.classList.contains('lm') ? '' : 'none';
+  document.getElementById('mooni').style.display = html.classList.contains('lm') ? 'none' : '';
+});
+window.addEventListener('scroll', () => { document.getElementById('nbar').classList.toggle('scr', window.scrollY > 20); });
+function toggleMenu() {
+  const m = document.getElementById('mbmenu');
+  m.classList.toggle('open');
+  document.getElementById('barIcon').style.display = m.classList.contains('open') ? 'none' : '';
+  document.getElementById('xIcon').style.display   = m.classList.contains('open') ? '' : 'none';
+}
+const obs = new IntersectionObserver(e => e.forEach(i => { if(i.isIntersecting) i.target.classList.add('in'); }), { threshold:.12 });
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
