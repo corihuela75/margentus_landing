@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Margentus — Inteligencia operativa para gastronomía</title>
-  <meta name="description" content="Plataforma SaaS que automatiza la gestión de costos, precios, recetas e inventarios para restaurantes y hoteles PyME.">
+  <title>Margentus — Tu analista de rentabilidad para gastronomía</title>
+  <meta name="description" content="Margentus transforma compras, recetas, precios y ventas en decisiones de rentabilidad. Prototipo en validación. Piloto en Mar del Plata.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet"/>
@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="css/all.min.css"/>
   <link rel="stylesheet" href="css/style.css"/>
   <style>
-    /* ── Margentus overrides ── */
     :root {
       --teal:  #0FC9C0;
       --teal2: #0A8580;
@@ -24,134 +23,83 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-    .bgrd {
-      background: linear-gradient(135deg, #0FC9C0, #0a8580);
-    }
-    .bgrd:hover { box-shadow: 0 8px 24px rgba(15,201,192,.4); }
+    .bgrd { background: linear-gradient(135deg, #0FC9C0, #0a8580); color:#fff; }
+    .bgrd:hover { box-shadow: 0 8px 24px rgba(15,201,192,.4); color:#fff; }
     .boc:hover  { border-color: var(--teal); background: rgba(15,201,192,.08); }
     .slbl       { color: var(--teal); }
     .slbl::before { background: linear-gradient(135deg, #0FC9C0, #0a8580); }
     .aur-a { background: radial-gradient(circle, rgba(15,201,192,.18), transparent 70%); }
     .aur-b { background: radial-gradient(circle, rgba(10,133,128,.14), transparent 70%); }
     .gc:hover  { border-color: rgba(15,201,192,.3); box-shadow: 0 16px 50px rgba(0,0,0,.25); }
-    .ftag      { background: rgba(15,201,192,.12); border-color: rgba(15,201,192,.25); color: var(--teal); }
-    .logo-i    { background: linear-gradient(135deg, #0FC9C0, #0a8580); }
-
-    /* hero badge */
+    .logo-nav { height:40px; width:auto; max-width:220px; object-fit:contain; }
     .hbadge { background: rgba(15,201,192,.1); border: 1px solid rgba(15,201,192,.25); color: var(--teal); padding: 6px 16px; border-radius: 100px; font-size: .8rem; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; }
     .bdot { width:7px; height:7px; border-radius:50%; background:var(--teal); box-shadow:0 0 8px var(--teal); animation: bpls 2s infinite; }
     @keyframes bpls { 0%,100%{opacity:1} 50%{opacity:.35} }
-
-    /* dashboard mock colors */
     .bbar { flex: 1; border-radius: 3px 3px 0 0; background: linear-gradient(to top, #0A8580, #0FC9C0); min-width: 0; }
     .stpill { background: var(--bg3); border: 1px solid var(--bd); border-radius: 12px; padding: 10px 12px; }
-
-    /* feature icon bg */
     .fic-teal { background: rgba(15,201,192,.12); border: 1px solid rgba(15,201,192,.2); }
     .fic-amber { background: rgba(245,158,11,.12); border: 1px solid rgba(245,158,11,.2); }
     .fic-blue  { background: rgba(59,130,246,.12); border: 1px solid rgba(59,130,246,.2); }
-    .fic-purple{ background: rgba(168,85,247,.12); border: 1px solid rgba(168,85,247,.2); }
     .fic-green { background: rgba(34,197,94,.12);  border: 1px solid rgba(34,197,94,.2); }
     .fic-red   { background: rgba(239,68,68,.12);  border: 1px solid rgba(239,68,68,.2); }
-
-    /* pricing override */
-    .pcard.best { border-color: var(--teal); box-shadow: 0 0 0 1px rgba(15,201,192,.3), 0 20px 60px rgba(15,201,192,.15); }
-    .pbest-badge { background: linear-gradient(135deg,#0FC9C0,#0a8580); color:#fff; font-size:.7rem; font-weight:700; padding:3px 12px; border-radius:100px; }
-
-    /* chat bubble colors */
-    .cbbl { font-size:.8rem; padding:9px 12px; border-radius:10px; max-width:90%; }
-    .cbus { background:var(--sf); border:1px solid var(--bd); color:var(--tx2); align-self:flex-start; }
-    .cbai { background:rgba(15,201,192,.1); border:1px solid rgba(15,201,192,.2); color:var(--tx); align-self:flex-end; }
-    .tdot { width:6px;height:6px;border-radius:50%;background:var(--teal);animation:bpls 1.2s infinite; }
-
-    /* hnum step */
     .hnum { width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#0FC9C0,#0a8580);color:#fff;font-weight:700;font-size:1.3rem;display:flex;align-items:center;justify-content:center;margin:0 auto 18px; }
-
-    /* scrolling logos */
-    .lscroll { overflow:hidden;margin-top:36px;mask-image:linear-gradient(to right,transparent,black 10%,black 90%,transparent); }
-    .ltrack  { display:flex;gap:20px;animation:scroll 22s linear infinite;width:max-content; }
-    @keyframes scroll { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-    .lbr { background:var(--sf);border:1px solid var(--bd);border-radius:10px;padding:8px 22px;font-size:.82rem;color:var(--tx2);font-weight:500;white-space:nowrap; }
-
-    /* stat numbers */
-    .pnum { font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;letter-spacing:-.03em; }
-    .plbl { font-size:.82rem;color:var(--tx3);margin-top:4px; }
-
-    /* testimonial */
-    .tcard { background:var(--sf);border:1px solid var(--bd);border-radius:18px;padding:28px; }
-    .tav   { width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;color:#fff; }
-    .stars { color:#f59e0b;font-size:.8rem; }
-
-    /* FAQ */
     .faq-item { background:var(--sf);border:1px solid var(--bd);border-radius:14px;margin-bottom:10px;overflow:hidden; }
     .faq-q { padding:18px 22px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:space-between; font-size:.95rem; }
     .faq-a { padding:0 22px 18px;font-size:.875rem;color:var(--tx2);line-height:1.65;display:none; }
     .faq-item.open .faq-a { display:block; }
     .faq-item.open .faq-arr { transform:rotate(180deg); }
     .faq-arr { transition:.3s;color:var(--teal); }
-
-    /* footer */
     #footer { background:var(--bg2);border-top:1px solid var(--bd);padding:60px 0 30px; }
     .flink  { color:var(--tx3);font-size:.875rem;display:block;margin-bottom:8px;transition:.2s; }
     .flink:hover { color:var(--tx); }
-
-    /* CTA section */
-    #cta { background:linear-gradient(135deg,rgba(15,201,192,.08),rgba(10,133,128,.05));border-top:1px solid rgba(15,201,192,.15);border-bottom:1px solid rgba(15,201,192,.15); }
-
-    /* mobile menu */
     #mbmenu { display:none;background:var(--bg);padding:16px 20px;border-bottom:1px solid var(--bd); }
     #mbmenu.open { display:block; }
-
-    /* dashboard mock sidebar */
     .dside { border-right:1px solid var(--bd);padding:12px 6px;display:flex;flex-direction:column;gap:2px;min-width:0; }
-    .dsi   { background:transparent;border:none;color:var(--tx3);font-size:.72rem;padding:7px 10px;border-radius:8px;text-align:left;cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;white-space:nowrap; }
+    .dsi   { background:transparent;border:none;color:var(--tx3);font-size:.72rem;padding:7px 10px;border-radius:8px;text-align:left;cursor:default;display:flex;align-items:center;gap:6px;font-family:inherit;white-space:nowrap; }
     .dsi.on{ background:rgba(15,201,192,.1);color:var(--teal); }
+    .dsi.soon{ opacity:.45; }
     .dtbar { background:var(--bg3);border-bottom:1px solid var(--bd);padding:8px 14px;display:flex;align-items:center;gap:6px;border-radius:16px 16px 0 0; }
     .dd    { width:10px;height:10px;border-radius:50%; }
-    .dgrid { display:grid;grid-template-columns:130px 1fr;min-height:200px; }
+    .dgrid { display:grid;grid-template-columns:140px 1fr;min-height:200px; }
+    @media (max-width: 640px) { .dgrid { grid-template-columns:1fr; } .dside { display:none; } }
     .dwrap { background:var(--sf);border:1px solid var(--bd);border-radius:16px;overflow:hidden; }
     .adi   { animation:fadeInUp .8s ease .4s both; }
     @keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
-
-    /* alert pill in dashboard mock */
     .apill { display:inline-flex;align-items:center;gap:4px;padding:2px 7px;border-radius:20px;font-size:.65rem;font-weight:600; }
     .apill-r{background:rgba(239,68,68,.12);color:#f87171;}
     .apill-y{background:rgba(245,158,11,.12);color:#fbbf24;}
     .apill-g{background:rgba(34,197,94,.12);color:#34d399;}
-
-    /* hero afu animation */
     .afu { opacity:0;animation:fadeInUp .7s ease both; }
+    .state { background:var(--sf);border:1px solid var(--bd);border-radius:16px;padding:22px;height:100%; }
+    .form-mg input, .form-mg select {
+      width:100%; background:var(--bg3); border:1px solid var(--bd); color:var(--tx);
+      border-radius:12px; padding:12px 14px; font-family:inherit; font-size:.95rem;
+    }
+    .form-mg input:focus, .form-mg select:focus { outline:none; border-color:var(--teal); }
+    .qnum { width:36px;height:36px;border-radius:10px;background:rgba(15,201,192,.12);color:var(--teal);font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
   </style>
 </head>
 <body>
 
-<!-- ════════════════════════════════
-     NAVBAR
-════════════════════════════════ -->
 <nav id="nbar">
   <div class="container">
     <div class="d-flex align-items-center justify-content-between w-100">
-      <a href="#" class="d-flex align-items-center gap-2" style="font-size:1.15rem;font-weight:700;color:var(--tx)">
-        <img src="img/logo.png" alt="Margentus" style="width:348px;height:51px">
+      <a href="#" class="d-flex align-items-center">
+        <img src="img/logo.png" alt="Margentus" class="logo-nav">
       </a>
       <div class="d-none d-lg-flex align-items-center gap-1 mx-auto">
-        <a href="#features" class="nav-link">Funcionalidades</a>
+        <a href="#producto" class="nav-link">Producto</a>
         <a href="#how" class="nav-link">Cómo funciona</a>
-        <a href="#pricing" class="nav-link">Precios</a>
-        <a href="#faq" class="nav-link">FAQ</a>
-        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="#estado" class="nav-link">Estado</a>
+        <a href="#piloto" class="nav-link">Piloto</a>
       </div>
       <div class="d-flex align-items-center gap-2">
         <button class="boc d-flex align-items-center justify-content-center" id="thbtn" style="width:38px;height:38px;padding:0;border-radius:12px" aria-label="Cambiar tema">
           <i class="fa-solid fa-sun" id="suni" style="display:none"></i>
           <i class="fa-solid fa-moon" id="mooni"></i>
         </button>
-        <button class="boc px-3 py-2 d-none d-sm-flex align-items-center gap-1">
-          <i class="fa-regular fa-user fa-sm"></i> Ingresar
-        </button>
-        <button class="bgrd btn px-3 py-2 d-none d-sm-flex align-items-center gap-1">
-          Comenzar gratis <i class="fa-solid fa-arrow-right fa-sm"></i>
-        </button>
+        <a href="https://margentus-demo.onrender.com/dashboard" class="boc px-3 py-2 d-none d-sm-flex align-items-center gap-1" target="_blank" rel="noopener">Ver prototipo</a>
+        <a href="#piloto" class="bgrd btn px-3 py-2 d-none d-sm-flex align-items-center gap-1">Quiero el piloto <i class="fa-solid fa-arrow-right fa-sm"></i></a>
         <button class="boc d-lg-none px-2 py-2" id="mbtog" style="border-radius:10px" onclick="toggleMenu()">
           <i class="fa-solid fa-bars" id="barIcon"></i>
           <i class="fa-solid fa-xmark" id="xIcon" style="display:none"></i>
@@ -162,55 +110,54 @@
 </nav>
 
 <div id="mbmenu">
-  <a href="#features" class="nav-link d-block py-3 border-bottom" style="border-color:var(--bd)!important">Funcionalidades</a>
+  <a href="#producto" class="nav-link d-block py-3 border-bottom" style="border-color:var(--bd)!important">Producto</a>
   <a href="#how" class="nav-link d-block py-3 border-bottom" style="border-color:var(--bd)!important">Cómo funciona</a>
-  <a href="#pricing" class="nav-link d-block py-3 border-bottom" style="border-color:var(--bd)!important">Precios</a>
-  <a href="#faq" class="nav-link d-block py-3">FAQ</a>
+  <a href="#estado" class="nav-link d-block py-3 border-bottom" style="border-color:var(--bd)!important">Estado</a>
+  <a href="#piloto" class="nav-link d-block py-3">Piloto</a>
   <div class="d-flex gap-2 mt-3">
-  <a href="blog.html" class="nav-link d-block py-3" style="color:var(--teal)">Blog</a>
-    <button class="boc flex-fill py-2 btn">Ingresar</button>
-    <button class="bgrd flex-fill py-2 btn">Comenzar gratis</button>
+    <a href="https://margentus-demo.onrender.com/dashboard" class="boc flex-fill py-2 btn text-center" target="_blank" rel="noopener">Prototipo</a>
+    <a href="#piloto" class="bgrd flex-fill py-2 btn text-center">Piloto</a>
   </div>
 </div>
 
-<!-- ════════════════════════════════
-     HERO
-════════════════════════════════ -->
 <section id="hero" style="padding-top:calc(var(--nav) + 72px);padding-bottom:80px;position:relative;overflow:hidden">
   <div class="aur aur-a" style="top:-100px;left:-150px"></div>
   <div class="aur aur-b" style="top:160px;right:-200px"></div>
-  <div class="aur aur-a" style="bottom:-80px;left:45%;transform:translateX(-50%);opacity:.35"></div>
   <div class="container position-relative" style="z-index:2">
     <div class="text-center">
       <div class="afu" style="animation-delay:.05s">
-        <span class="hbadge"><span class="bdot"></span>Plataforma SaaS · Mar del Plata · Argentina</span>
+        <span class="hbadge"><span class="bdot"></span>Inteligencia de rentabilidad · Mar del Plata</span>
       </div>
-      <h1 class="h1 afu" style="font-size:clamp(2.2rem,5.5vw,3.8rem);font-weight:700;line-height:1.1;letter-spacing:-.03em;margin:22px 0 20px;animation-delay:.12s">
-        Gestioná tu restaurant<br>con <span class="gt">inteligencia real</span>
+      <h1 class="h1 afu" style="font-size:clamp(2.1rem,5.2vw,3.6rem);font-weight:700;line-height:1.12;letter-spacing:-.03em;margin:22px auto 20px;max-width:860px;animation-delay:.12s">
+        Un restaurant puede facturar todos los días y aún así no saber <span class="gt">dónde pierde plata</span>
       </h1>
-      <p class="mx-auto afu" style="max-width:560px;font-size:clamp(.95rem,1.8vw,1.15rem);color:var(--tx2);margin-bottom:36px;animation-delay:.2s">
-        Margentus automatiza el control de costos, recetas e inventarios para pequeños y medianos establecimientos gastronómicos. Dejá de gestionar a ciegas.
+      <p class="mx-auto afu" style="max-width:620px;font-size:clamp(.95rem,1.8vw,1.12rem);color:var(--tx2);margin-bottom:28px;animation-delay:.2s">
+        Margentus es tu analista de rentabilidad para gastronomía. Transformamos las compras, recetas, precios y ventas que el negocio ya genera en decisiones: qué plato deja margen, qué insumo se comió el costo, qué conviene hacer ahora.
+      </p>
+      <p class="mx-auto afu" style="max-width:560px;font-size:.92rem;color:var(--tx3);margin-bottom:32px;animation-delay:.24s">
+        No somos un POS. No somos un ERP. No te pedimos que ordenes todo para empezar.
       </p>
       <div class="d-flex align-items-center justify-content-center gap-3 flex-wrap afu" style="animation-delay:.28s">
-        <button class="bgrd btn px-4 py-3 fs-6">Empezar gratis — Sin tarjeta de crédito</button>
-        <button class="boc btn px-4 py-3 fs-6">
-          <i class="fa-solid fa-circle-play me-2" style="color:var(--teal)"></i>Ver demo en vivo
-        </button>
+        <a href="#piloto" class="bgrd btn px-4 py-3 fs-6">Quiero ser parte del piloto</a>
+        <a href="https://margentus-demo.onrender.com/dashboard" class="boc btn px-4 py-3 fs-6" target="_blank" rel="noopener">
+          <i class="fa-solid fa-arrow-up-right-from-square me-2" style="color:var(--teal)"></i>Ver el prototipo
+        </a>
       </div>
+      <p class="mt-3 afu" style="font-size:.82rem;color:var(--tx3);animation-delay:.34s">
+        Prototipo en validación. Cupo de piloto en Mar del Plata. Sin tarjeta. Acompañamiento directo.
+      </p>
       <div class="mt-5 afu" style="animation-delay:.4s">
-        <p style="font-size:.71rem;color:var(--tx3);text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px">Diseñado para establecimientos gastronómicos como</p>
+        <p style="font-size:.71rem;color:var(--tx3);text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px">Hecho para operaciones de A&B</p>
         <div class="d-flex align-items-center justify-content-center gap-4 flex-wrap">
           <span class="tlog">Restaurantes</span>
-          <span class="tlog">Hoteles</span>
+          <span class="tlog">Parrillas</span>
           <span class="tlog">Cafeterías</span>
-          <span class="tlog">Cervecerías</span>
-          <span class="tlog">Dark Kitchens</span>
-          <span class="tlog">Catering</span>
+          <span class="tlog">Bares</span>
+          <span class="tlog">Hoteles con A&B</span>
         </div>
       </div>
     </div>
 
-    <!-- Dashboard mock -->
     <div class="row justify-content-center mt-5">
       <div class="col-lg-11 adi">
         <div class="dwrap">
@@ -218,71 +165,41 @@
             <span class="dd" style="background:#ff5f57"></span>
             <span class="dd" style="background:#ffbd2e"></span>
             <span class="dd" style="background:#28c840"></span>
-            <span class="ms-auto me-auto" style="font-size:.72rem;color:var(--tx3)">Margentus — Dashboard Operativo · Restaurante El Aleph</span>
+            <span class="ms-auto me-auto" style="font-size:.72rem;color:var(--tx3)">Prototipo · Hotel República · solo lectura</span>
           </div>
           <div class="dgrid">
             <div class="dside">
-              <div style="font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;color:var(--tx3);padding:0 10px 8px;font-weight:700">Menú</div>
-              <button class="dsi on"><i class="fa-solid fa-gauge-high"></i> Dashboard</button>
-              <button class="dsi"><i class="fa-solid fa-utensils"></i> Recetas</button>
-              <button class="dsi"><i class="fa-solid fa-boxes-stacked"></i> Inventario</button>
-              <button class="dsi"><i class="fa-solid fa-chart-pie"></i> Menú</button>
-              <button class="dsi"><i class="fa-solid fa-comments"></i> Asistente IA</button>
+              <div style="font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;color:var(--tx3);padding:0 10px 8px;font-weight:700">Hoy</div>
+              <div class="dsi on"><i class="fa-solid fa-gauge-high"></i> Decisiones</div>
+              <div class="dsi"><i class="fa-solid fa-utensils"></i> Recetas</div>
+              <div class="dsi"><i class="fa-solid fa-carrot"></i> Insumos</div>
+              <div style="font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;color:var(--tx3);padding:10px 10px 6px;font-weight:700">Después</div>
+              <div class="dsi soon"><i class="fa-solid fa-boxes-stacked"></i> Inventario</div>
+              <div class="dsi soon"><i class="fa-solid fa-chart-pie"></i> Menú</div>
             </div>
             <div class="p-3">
               <div class="row g-2 mb-3">
-                <div class="col-6 col-sm-3">
-                  <div class="stpill">
-                    <div style="font-size:1.3rem;font-weight:700;color:var(--teal)">28.4%</div>
-                    <div style="font-size:.65rem;color:var(--tx3)">Food Cost</div>
-                    <div style="font-size:.65rem;color:#34d399;font-weight:600"><i class="fa-solid fa-caret-down me-1"></i>Objetivo: 30%</div>
-                  </div>
-                </div>
-                <div class="col-6 col-sm-3">
-                  <div class="stpill">
-                    <div style="font-size:1.3rem;font-weight:700">71.6%</div>
-                    <div style="font-size:.65rem;color:var(--tx3)">Margen Bruto</div>
-                    <div style="font-size:.65rem;color:#34d399;font-weight:600"><i class="fa-solid fa-caret-up me-1"></i>+0.8%</div>
-                  </div>
-                </div>
-                <div class="col-6 col-sm-3">
-                  <div class="stpill">
-                    <div style="font-size:1.3rem;font-weight:700">$84.2K</div>
-                    <div style="font-size:.65rem;color:var(--tx3)">Costo Semanal</div>
-                    <div style="font-size:.65rem;color:#34d399;font-weight:600"><i class="fa-solid fa-caret-down me-1"></i>−3.4%</div>
-                  </div>
-                </div>
-                <div class="col-6 col-sm-3">
-                  <div class="stpill">
-                    <div style="font-size:1.3rem;font-weight:700;color:var(--teal)">77</div>
-                    <div style="font-size:.65rem;color:var(--tx3)">Índice FC33</div>
-                    <div style="font-size:.65rem;color:#34d399;font-weight:600">+4 pts esta semana</div>
-                  </div>
-                </div>
+                <div class="col-6 col-sm-3"><div class="stpill"><div style="font-size:1.3rem;font-weight:700;color:var(--teal)">31.2%</div><div style="font-size:.65rem;color:var(--tx3)">Food cost</div><div style="font-size:.65rem;color:var(--tx3)">Sobre recetas costeadas</div></div></div>
+                <div class="col-6 col-sm-3"><div class="stpill"><div style="font-size:1.3rem;font-weight:700">68.8%</div><div style="font-size:.65rem;color:var(--tx3)">Margen bruto</div><div style="font-size:.65rem;color:#fbbf24;font-weight:600">Mozzarella subió</div></div></div>
+                <div class="col-6 col-sm-3"><div class="stpill"><div style="font-size:1.3rem;font-weight:700">5</div><div style="font-size:.65rem;color:var(--tx3)">Recetas costeadas</div><div style="font-size:.65rem;color:var(--tx3)">Dato relevado</div></div></div>
+                <div class="col-6 col-sm-3"><div class="stpill"><div style="font-size:1.3rem;font-weight:700;color:var(--teal)">3</div><div style="font-size:.65rem;color:var(--tx3)">Platos afectados</div><div style="font-size:.65rem;color:#f87171;font-weight:600">Muzza · napolitana · burger</div></div></div>
               </div>
               <div class="row g-2">
                 <div class="col-sm-7">
                   <div style="background:var(--bg3);border:1px solid var(--bd);border-radius:12px;padding:12px">
-                    <div style="font-size:.7rem;color:var(--tx3);margin-bottom:8px;font-weight:600"><i class="fa-solid fa-chart-bar me-1"></i>Food Cost — últimas 8 semanas</div>
+                    <div style="font-size:.7rem;color:var(--tx3);margin-bottom:8px;font-weight:600"><i class="fa-solid fa-chart-bar me-1"></i>Costo de receta — pizza muzza vs objetivo</div>
                     <div style="display:flex;align-items:flex-end;gap:5px;height:70px">
-                      <div class="bbar" style="height:82%"></div>
-                      <div class="bbar" style="height:76%"></div>
-                      <div class="bbar" style="height:93%"></div>
-                      <div class="bbar" style="height:86%"></div>
-                      <div class="bbar" style="height:71%"></div>
-                      <div class="bbar" style="height:88%"></div>
-                      <div class="bbar" style="height:94%"></div>
-                      <div class="bbar" style="height:79%"></div>
+                      <div class="bbar" style="height:62%"></div><div class="bbar" style="height:64%"></div><div class="bbar" style="height:63%"></div><div class="bbar" style="height:71%"></div><div class="bbar" style="height:78%"></div><div class="bbar" style="height:86%"></div><div class="bbar" style="height:92%"></div><div class="bbar" style="height:96%"></div>
                     </div>
-                    <div class="d-flex justify-content-between mt-1" style="font-size:.6rem;color:var(--tx3)"><span>S1</span><span>S2</span><span>S3</span><span>S4</span><span>S5</span><span>S6</span><span>S7</span><span>S8</span></div>
+                    <div class="d-flex justify-content-between mt-1" style="font-size:.6rem;color:var(--tx3)"><span>S1</span><span>S2</span><span>S3</span><span>S4</span><span>S5</span><span>S6</span><span>S7</span><span>hoy</span></div>
                   </div>
                 </div>
                 <div class="col-sm-5">
                   <div style="background:var(--bg3);border:1px solid var(--bd);border-radius:12px;padding:10px;height:100%;display:flex;flex-direction:column;gap:6px">
-                    <div style="font-size:.68rem;color:var(--tx3);font-weight:600"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--teal);box-shadow:0 0 6px var(--teal);margin-right:5px;animation:bpls 2s infinite"></span>Alertas activas</div>
-                    <div style="font-size:.7rem;display:flex;align-items:center;gap:5px;padding:5px 8px;background:rgba(239,68,68,.06);border-radius:7px;border:1px solid rgba(239,68,68,.15)"><span class="apill-r apill">●</span>Salmón subió 18%</div>
-                    <div style="font-size:.7rem;display:flex;align-items:center;gap:5px;padding:5px 8px;background:rgba(245,158,11,.06);border-radius:7px;border:1px solid rgba(245,158,11,.15)"><span class="apill-y apill">●</span>Harina: stock crítico</div>
-                    <div style="font-size:.7rem;display:flex;align-items:center;gap:5px;padding:5px 8px;background:rgba(34,197,94,.06);border-radius:7px;border:1px solid rgba(34,197,94,.15)"><span class="apill-g apill">●</span>Margen dentro objetivo</div>
+                    <div style="font-size:.68rem;color:var(--tx3);font-weight:600">Qué mirar ahora</div>
+                    <div style="font-size:.7rem;display:flex;align-items:center;gap:5px;padding:5px 8px;background:rgba(239,68,68,.06);border-radius:7px;border:1px solid rgba(239,68,68,.15)"><span class="apill-r apill">●</span>Mozzarella +22% esta semana</div>
+                    <div style="font-size:.7rem;display:flex;align-items:center;gap:5px;padding:5px 8px;background:rgba(245,158,11,.06);border-radius:7px;border:1px solid rgba(245,158,11,.15)"><span class="apill-y apill">●</span>Muzza debajo del margen objetivo</div>
+                    <div style="font-size:.7rem;display:flex;align-items:center;gap:5px;padding:5px 8px;background:rgba(34,197,94,.06);border-radius:7px;border:1px solid rgba(34,197,94,.15)"><span class="apill-g apill">●</span>Milanesa dentro de objetivo</div>
                   </div>
                 </div>
               </div>
@@ -294,390 +211,65 @@
   </div>
 </section>
 
-<!-- ════════════════════════════════
-     SOCIAL PROOF
-════════════════════════════════ -->
-<section id="proof" style="padding:50px 0;border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)">
-  <div class="container">
-    <div class="row g-3 align-items-center text-center">
-      <div class="col-6 col-sm-3">
-        <div class="pnum gt">+3.000</div>
-        <div class="plbl">Establecimientos en MdP</div>
-      </div>
-      <div class="col-6 col-sm-3">
-        <div class="pnum gt">60%</div>
-        <div class="plbl">Sin control formal de costos</div>
-      </div>
-      <div class="col-6 col-sm-3">
-        <div class="pnum gt">15+</div>
-        <div class="plbl">Módulos funcionales</div>
-      </div>
-      <div class="col-6 col-sm-3">
-        <div class="pnum gt">TRL 3</div>
-        <div class="plbl">Madurez tecnológica</div>
-      </div>
-    </div>
-    <div class="lscroll mt-5">
-      <div class="ltrack">
-        <span class="lbr">🍽️ Restaurantes</span><span class="lbr">☕ Cafeterías</span><span class="lbr">🍺 Cervecerías</span><span class="lbr">🏨 Hoteles</span><span class="lbr">🚚 Dark Kitchens</span><span class="lbr">🎉 Catering</span><span class="lbr">🍷 Bares</span><span class="lbr">🥐 Panaderías</span>
-        <span class="lbr">🍽️ Restaurantes</span><span class="lbr">☕ Cafeterías</span><span class="lbr">🍺 Cervecerías</span><span class="lbr">🏨 Hoteles</span><span class="lbr">🚚 Dark Kitchens</span><span class="lbr">🎉 Catering</span><span class="lbr">🍷 Bares</span><span class="lbr">🥐 Panaderías</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════
-     PROBLEMA
-════════════════════════════════ -->
 <section class="sp position-relative">
-  <div class="aur aur-b" style="top:50%;right:-200px;transform:translateY(-50%)"></div>
   <div class="container position-relative" style="z-index:1">
     <div class="text-center mb-5 rv">
-      <span class="slbl">El Problema</span>
-      <h2 class="stitle">Tu restaurant gestiona<br>los costos <span class="gt">a ciegas</span></h2>
-      <p class="ssub mx-auto">La mayoría de los restaurantes y hoteles PyME desconocen su food cost real, pierden margen sin darse cuenta y toman decisiones basadas en intuición.</p>
+      <span class="slbl">El problema</span>
+      <h2 class="stitle">No es falta de datos.<br>Es no poder <span class="gt">decidir con ellos</span></h2>
+      <p class="ssub mx-auto">Las cadenas tienen Control de Gestión. La PyME tiene al dueño a las 23:00 con una planilla.</p>
     </div>
     <div class="row g-4">
-      <div class="col-md-4 rv">
-        <div class="gc p-4 h-100">
-          <div style="width:52px;height:52px;border-radius:14px;margin-bottom:18px" class="fic-red d-flex align-items-center justify-content-center">
-            <i class="fa-regular fa-clock fa-lg" style="color:#f87171"></i>
-          </div>
-          <h3 class="fw-semibold fs-5 mb-2">Procesos 100% manuales</h3>
-          <p style="font-size:.875rem;color:var(--tx2)">Carga de facturas, actualización de precios y control de inventario consumen horas semanales sin agregar valor. El tiempo que perdés en planillas es tiempo que no le dedicás a tu negocio.</p>
-        </div>
-      </div>
-      <div class="col-md-4 rv" style="transition-delay:.1s">
-        <div class="gc p-4 h-100">
-          <div style="width:52px;height:52px;border-radius:14px;margin-bottom:18px" class="fic-amber d-flex align-items-center justify-content-center">
-            <i class="fa-solid fa-chart-line-down fa-lg" style="color:#fbbf24"></i>
-          </div>
-          <h3 class="fw-semibold fs-5 mb-2">Margen que se erosiona</h3>
-          <p style="font-size:.875rem;color:var(--tx2)">Los precios de los insumos cambian constantemente y los costos se desactualizan. Sin datos en tiempo real, tu food cost puede dispararse semanas antes de que lo notes.</p>
-        </div>
-      </div>
-      <div class="col-md-4 rv" style="transition-delay:.2s">
-        <div class="gc p-4 h-100">
-          <div style="width:52px;height:52px;border-radius:14px;margin-bottom:18px" class="fic-blue d-flex align-items-center justify-content-center">
-            <i class="fa-solid fa-brain fa-lg" style="color:#60a5fa"></i>
-          </div>
-          <h3 class="fw-semibold fs-5 mb-2">Decisiones por intuición</h3>
-          <p style="font-size:.875rem;color:var(--tx2)">Sin KPIs ni indicadores reales, los precios de la carta se fijan por "lo que parece razonable". ¿Sabés exactamente cuánto ganás con cada plato? La mayoría no lo sabe.</p>
-        </div>
-      </div>
+      <div class="col-md-4 rv"><div class="gc p-4 h-100"><div style="width:52px;height:52px;border-radius:14px;margin-bottom:18px" class="fic-amber d-flex align-items-center justify-content-center"><i class="fa-solid fa-tags fa-lg" style="color:#fbbf24"></i></div><h3 class="fw-semibold fs-5 mb-2">Costos que se desactualizan</h3><p style="font-size:.875rem;color:var(--tx2);margin:0">El precio del insumo cambió el martes. La carta, no. El margen se come en silencio.</p></div></div>
+      <div class="col-md-4 rv"><div class="gc p-4 h-100"><div style="width:52px;height:52px;border-radius:14px;margin-bottom:18px" class="fic-red d-flex align-items-center justify-content-center"><i class="fa-solid fa-book-open fa-lg" style="color:#f87171"></i></div><h3 class="fw-semibold fs-5 mb-2">Recetas que no existen en papel</h3><p style="font-size:.875rem;color:var(--tx2);margin:0">El food cost vive en la cabeza del cocinero. Sin ficha, no hay costo real ni decisión.</p></div></div>
+      <div class="col-md-4 rv"><div class="gc p-4 h-100"><div style="width:52px;height:52px;border-radius:14px;margin-bottom:18px" class="fic-blue d-flex align-items-center justify-content-center"><i class="fa-solid fa-compass fa-lg" style="color:#60a5fa"></i></div><h3 class="fw-semibold fs-5 mb-2">Decisiones por intuición</h3><p style="font-size:.875rem;color:var(--tx2);margin:0">Sin un analista de costos, el dueño adivina el margen. Los datos no mejoran un negocio. Las decisiones sí.</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- ════════════════════════════════
-     FEATURES
-════════════════════════════════ -->
-<section id="features" class="sp position-relative" style="background:var(--bg2)">
-  <div class="aur aur-a" style="top:50%;left:-200px;transform:translateY(-50%)"></div>
+<section id="producto" class="sp position-relative" style="background:var(--bg2)">
   <div class="container position-relative" style="z-index:1">
     <div class="text-center mb-5 rv">
-      <span class="slbl">Funcionalidades</span>
-      <h2 class="stitle">Todo lo que necesitás<br>en <span class="gt">una sola plataforma</span></h2>
-      <p class="ssub mx-auto">Desde la digitalización de facturas hasta el asistente IA conversacional. Margentus cubre todo el ciclo operativo de tu negocio gastronómico.</p>
+      <span class="slbl">Producto</span>
+      <h2 class="stitle">Tres preguntas.<br>El resto es <span class="gt">ruido</span></h2>
+      <p class="ssub mx-auto">Cada pantalla tiene que responder: ¿qué debería hacer ahora?</p>
     </div>
     <div class="row g-4">
-      <div class="col-md-6 col-lg-4 rv">
-        <div class="gc p-4 h-100">
-          <div style="width:52px;height:52px;border-radius:14px;margin-bottom:18px" class="fic-teal d-flex align-items-center justify-content-center">
-            <i class="fa-solid fa-file-invoice fa-lg" style="color:var(--teal)"></i>
-          </div>
-          <h3 class="fw-semibold fs-5 mb-2">OCR de Facturas</h3>
-          <p style="font-size:.875rem;color:var(--tx2)">Fotografiá la factura del proveedor y el sistema extrae automáticamente productos, cantidades y precios. Sin carga manual, sin errores.</p>
-          <div class="mt-3"><span style="font-size:.75rem;background:rgba(15,201,192,.1);color:var(--teal);padding:3px 10px;border-radius:20px;font-weight:600">Fase 2</span></div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 rv" style="transition-delay:.08s">
-        <div class="gc p-4 h-100">
-          <div style="width:52px;height:52px;border-radius:14px;margin-bottom:18px" class="fic-amber d-flex align-items-center justify-content-center">
-            <i class="fa-solid fa-utensils fa-lg" style="color:var(--amber)"></i>
-          </div>
-          <h3 class="fw-semibold fs-5 mb-2">Recetas y Food Cost</h3>
-          <p style="font-size:.875rem;color:var(--tx2)">Cargá tus recetas una vez y el sistema calcula el food cost en tiempo real. Si sube un insumo, todos los platos se actualizan solos.</p>
-          <div class="mt-3"><span style="font-size:.75rem;background:rgba(34,197,94,.12);color:#34d399;padding:3px 10px;border-radius:20px;font-weight:600">✓ MVP</span></div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 rv" style="transition-delay:.16s">
-        <div class="gc p-4 h-100">
-          <div style="width:52px;height:52px;border-radius:14px;margin-bottom:18px" class="fic-blue d-flex align-items-center justify-content-center">
-            <i class="fa-solid fa-gauge-high fa-lg" style="color:#60a5fa"></i>
-          </div>
-          <h3 class="fw-semibold fs-5 mb-2">Dashboard de KPIs</h3>
-          <p style="font-size:.875rem;color:var(--tx2)">Food cost %, margen bruto, rentabilidad por plato e Índice FC33. Todo en un panel central actualizado en tiempo real, sin planillas.</p>
-          <div class="mt-3"><span style="font-size:.75rem;background:rgba(34,197,94,.12);color:#34d399;padding:3px 10px;border-radius:20px;font-weight:600">✓ MVP</span></div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 rv" style="transition-delay:.24s">
-        <div class="gc p-4 h-100">
-          <div style="width:52px;height:52px;border-radius:14px;margin-bottom:18px" class="fic-green d-flex align-items-center justify-content-center">
-            <i class="fa-solid fa-boxes-stacked fa-lg" style="color:#34d399"></i>
-          </div>
-          <h3 class="fw-semibold fs-5 mb-2">Inventario Inteligente</h3>
-          <p style="font-size:.875rem;color:var(--tx2)">Detecta desperdicios invisibles, predice cuándo vas a quedarte sin stock y te sugiere qué comprar y cuándo, basándose en tu historial.</p>
-          <div class="mt-3"><span style="font-size:.75rem;background:rgba(15,201,192,.1);color:var(--teal);padding:3px 10px;border-radius:20px;font-weight:600">Fase 2</span></div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 rv" style="transition-delay:.32s">
-        <div class="gc p-4 h-100">
-          <div style="width:52px;height:52px;border-radius:14px;margin-bottom:18px" class="fic-purple d-flex align-items-center justify-content-center">
-            <i class="fa-solid fa-comments fa-lg" style="color:#c084fc"></i>
-          </div>
-          <h3 class="fw-semibold fs-5 mb-2">Asistente IA</h3>
-          <p style="font-size:.875rem;color:var(--tx2)">Preguntá en lenguaje natural: "¿Por qué bajó mi margen esta semana?" El sistema responde con causas reales y acciones concretas.</p>
-          <div class="mt-3"><span style="font-size:.75rem;background:rgba(168,85,247,.12);color:#c084fc;padding:3px 10px;border-radius:20px;font-weight:600">Fase 3</span></div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 rv" style="transition-delay:.4s">
-        <div class="gc p-4 h-100">
-          <div style="width:52px;height:52px;border-radius:14px;margin-bottom:18px" class="fic-teal d-flex align-items-center justify-content-center">
-            <i class="fa-solid fa-chart-bar fa-lg" style="color:var(--teal)"></i>
-          </div>
-          <h3 class="fw-semibold fs-5 mb-2">Benchmarking Sectorial</h3>
-          <p style="font-size:.875rem;color:var(--tx2)">Comparate con negocios similares de tu zona. "Tu food cost está 2.8 pts mejor que el promedio." Datos anónimos y agregados del ecosistema local.</p>
-          <div class="mt-3"><span style="font-size:.75rem;background:rgba(15,201,192,.1);color:var(--teal);padding:3px 10px;border-radius:20px;font-weight:600">Fase 3</span></div>
-        </div>
-      </div>
+      <div class="col-md-4 rv"><div class="gc p-4 h-100"><div class="d-flex align-items-center gap-3 mb-3"><div class="qnum">1</div><h3 class="fw-semibold fs-5 mb-0">¿Cómo está tu rentabilidad?</h3></div><p style="font-size:.875rem;color:var(--tx2);margin:0">Food cost y margen de lo que ya podés costear. No un tablero de 40 KPIs.</p></div></div>
+      <div class="col-md-4 rv"><div class="gc p-4 h-100"><div class="d-flex align-items-center gap-3 mb-3"><div class="qnum">2</div><h3 class="fw-semibold fs-5 mb-0">¿Qué está pasando?</h3></div><p style="font-size:.875rem;color:var(--tx2);margin:0">Un insumo subió. Un plato quedó debajo del objetivo. La causa, no el síntoma.</p></div></div>
+      <div class="col-md-4 rv"><div class="gc p-4 h-100"><div class="d-flex align-items-center gap-3 mb-3"><div class="qnum">3</div><h3 class="fw-semibold fs-5 mb-0">¿Qué mirás primero?</h3></div><p style="font-size:.875rem;color:var(--tx2);margin:0">La evidencia: precio, receta o proveedor. Vos decidís. No escondemos un dato inferido como si fuera un hecho.</p></div></div>
     </div>
+    <p class="text-center mt-4 rv" style="font-size:.85rem;color:var(--tx3);max-width:640px;margin-left:auto;margin-right:auto">Inventario, ventas, ingeniería de menú e inferencia avanzada entran después del piloto. Hoy validamos comprensión de rentabilidad.</p>
   </div>
 </section>
 
-<!-- ════════════════════════════════
-     CÓMO FUNCIONA
-════════════════════════════════ -->
 <section id="how" class="sp position-relative">
-  <div class="aur aur-a" style="top:50%;right:-180px;transform:translateY(-50%)"></div>
   <div class="container position-relative" style="z-index:1">
-    <div class="text-center mb-5 rv">
-      <span class="slbl">Cómo funciona</span>
-      <h2 class="stitle">Empezá a controlar tus costos<br>en <span class="gt">menos de una hora</span></h2>
-      <p class="ssub mx-auto">Sin instalaciones, sin capacitación técnica, sin estructura administrativa. Solo cargás tus datos y el sistema empieza a trabajar.</p>
-    </div>
+    <div class="text-center mb-5 rv"><span class="slbl">Cómo funciona</span><h2 class="stitle">Empezamos con lo que <span class="gt">ya tenés</span></h2></div>
     <div class="row g-4">
-      <div class="col-md-4 rv">
-        <div class="gc p-4 h-100 text-center">
-          <div class="hnum">1</div>
-          <h3 class="fs-5 fw-semibold mb-2">Cargá tus insumos</h3>
-          <p style="font-size:.875rem;color:var(--tx2)">Importá tu lista de insumos desde Excel o cargalos manualmente. Precio, unidad, proveedor. Una vez cargados, el sistema los mantiene actualizados.</p>
-        </div>
-      </div>
-      <div class="col-md-4 rv" style="transition-delay:.1s">
-        <div class="gc p-4 h-100 text-center">
-          <div class="hnum">2</div>
-          <h3 class="fs-5 fw-semibold mb-2">Armá tus recetas</h3>
-          <p style="font-size:.875rem;color:var(--tx2)">Creá las fichas técnicas de tu carta. El sistema calcula el food cost de cada plato automáticamente y te dice cuánto debería costar para mantener tu margen objetivo.</p>
-        </div>
-      </div>
-      <div class="col-md-4 rv" style="transition-delay:.2s">
-        <div class="gc p-4 h-100 text-center">
-          <div class="hnum">3</div>
-          <h3 class="fs-5 fw-semibold mb-2">Tomá decisiones con datos</h3>
-          <p style="font-size:.875rem;color:var(--tx2)">Tu dashboard se actualiza en tiempo real. Alertas automáticas, KPIs, análisis de rentabilidad por plato. Todo lo que necesitás para gestionar con información concreta.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Asistente IA mini demo -->
-    <div class="row justify-content-center mt-5 rv">
-      <div class="col-lg-8">
-        <div class="gc p-4">
-          <div style="font-size:.75rem;color:var(--tx3);font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:6px">
-            <span style="width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 7px var(--teal);animation:bpls 2s infinite;display:inline-block"></span>
-            Asistente IA · Margentus
-          </div>
-          <div style="display:flex;flex-direction:column;gap:10px">
-            <div class="cbbl cbus">¿Por qué bajó mi margen esta semana?</div>
-            <div class="cbbl cbai">Detecté 3 causas: <strong>1)</strong> El salmón subió 18% con tu proveedor (FC pasó de 31% a 38.4%). <strong>2)</strong> Consumo de aceite 32% sobre el teórico — posible desperdicio. <strong>3)</strong> Harina comprada $200/kg arriba del promedio del sector.</div>
-            <div class="cbbl cbus">¿Qué hago con el salmón?</div>
-            <div class="cbbl cbai">Tenés 3 opciones: subir el precio a $14.800 (FC vuelve a 31%), cambiar a Frigorífico del Mar ($2.700/kg menos), o retirarlo — es un plato "Perro" con baja popularidad. <strong>Recomiendo</strong> cambiar proveedor primero.</div>
-            <div style="display:flex;gap:4px;padding:6px 12px">
-              <div class="tdot"></div>
-              <div class="tdot" style="animation-delay:.15s"></div>
-              <div class="tdot" style="animation-delay:.3s"></div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="col-md-6 col-lg-3 rv"><div class="gc p-4 h-100 text-center"><div class="hnum">1</div><h3 class="fs-5 fw-semibold mb-2">Entra lo que hay</h3><p style="font-size:.875rem;color:var(--tx2);margin:0">Excel, recetas, compras, lo que exista. No exigimos un ERP ordenado para arrancar.</p></div></div>
+      <div class="col-md-6 col-lg-3 rv"><div class="gc p-4 h-100 text-center"><div class="hnum">2</div><h3 class="fs-5 fw-semibold mb-2">Se arma el modelo</h3><p style="font-size:.875rem;color:var(--tx2);margin:0">Insumos → recetas → costo → margen. Lo que falta se marca. No se inventa.</p></div></div>
+      <div class="col-md-6 col-lg-3 rv"><div class="gc p-4 h-100 text-center"><div class="hnum">3</div><h3 class="fs-5 fw-semibold mb-2">Se ve la situación</h3><p style="font-size:.875rem;color:var(--tx2);margin:0">Qué plato y qué insumo mueven el número esta semana.</p></div></div>
+      <div class="col-md-6 col-lg-3 rv"><div class="gc p-4 h-100 text-center"><div class="hnum">4</div><h3 class="fs-5 fw-semibold mb-2">Se decide</h3><p style="font-size:.875rem;color:var(--tx2);margin:0">Precio, receta o proveedor. La persona decide. El sistema explica.</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- ════════════════════════════════
-     INGENIERÍA DE MENÚ
-════════════════════════════════ -->
-<section class="sp position-relative" style="background:var(--bg2)">
-  <div class="container position-relative" style="z-index:1">
-    <div class="row align-items-center g-5">
-      <div class="col-lg-5 rv">
-        <span class="slbl">Ingeniería de Menú</span>
-        <h2 class="stitle">Sabé exactamente cuáles platos<br><span class="gt">ganan y cuáles pierden</span></h2>
-        <p style="color:var(--tx2);margin-bottom:24px">Margentus clasifica automáticamente cada plato de tu carta según rentabilidad y popularidad, y te dice qué hacer con cada uno.</p>
-        <div style="display:flex;flex-direction:column;gap:12px">
-          <div style="display:flex;align-items:center;gap:12px">
-            <div style="width:36px;height:36px;border-radius:10px;background:rgba(15,201,192,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px">⭐</div>
-            <div><strong>Estrella</strong> — <span style="color:var(--tx2);font-size:.9rem">Alta rentabilidad + Alta popularidad. Destacar y mantener.</span></div>
-          </div>
-          <div style="display:flex;align-items:center;gap:12px">
-            <div style="width:36px;height:36px;border-radius:10px;background:rgba(245,158,11,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px">🐄</div>
-            <div><strong>Vaca</strong> — <span style="color:var(--tx2);font-size:.9rem">Alta popularidad, bajo margen. Subir precio o reducir costo.</span></div>
-          </div>
-          <div style="display:flex;align-items:center;gap:12px">
-            <div style="width:36px;height:36px;border-radius:10px;background:rgba(59,130,246,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px">🧩</div>
-            <div><strong>Puzzle</strong> — <span style="color:var(--tx2);font-size:.9rem">Alta rentabilidad, baja popularidad. Mejorar visibilidad.</span></div>
-          </div>
-          <div style="display:flex;align-items:center;gap:12px">
-            <div style="width:36px;height:36px;border-radius:10px;background:rgba(239,68,68,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px">🐕</div>
-            <div><strong>Perro</strong> — <span style="color:var(--tx2);font-size:.9rem">Baja rentabilidad y popularidad. Reformular o eliminar.</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-7 rv" style="transition-delay:.15s">
-        <div class="gc p-4">
-          <div style="font-size:.8rem;font-weight:600;margin-bottom:14px;color:var(--tx2)">Análisis de carta — Restaurante El Aleph — Esta semana</div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
-            <div style="background:rgba(59,130,246,.05);border:1px solid rgba(59,130,246,.15);border-radius:12px;padding:14px">
-              <div style="font-size:.75rem;font-weight:700;color:#60a5fa;margin-bottom:8px">🧩 PUZZLE</div>
-              <div style="font-size:.8rem;padding:3px 8px;background:rgba(59,130,246,.08);border-radius:5px;margin-bottom:4px;display:inline-block">Ensalada Niçoise</div><br>
-              <div style="font-size:.8rem;padding:3px 8px;background:rgba(59,130,246,.08);border-radius:5px;margin-bottom:4px;display:inline-block">Crème brûlée</div>
-              <div style="font-size:.7rem;color:var(--tx3);margin-top:8px">💡 Mejorar visibilidad</div>
-            </div>
-            <div style="background:rgba(15,201,192,.05);border:1px solid rgba(15,201,192,.2);border-radius:12px;padding:14px">
-              <div style="font-size:.75rem;font-weight:700;color:var(--teal);margin-bottom:8px">⭐ ESTRELLA</div>
-              <div style="font-size:.8rem;padding:3px 8px;background:rgba(15,201,192,.08);border-radius:5px;margin-bottom:4px;display:inline-block">Milanesa napolitana</div><br>
-              <div style="font-size:.8rem;padding:3px 8px;background:rgba(15,201,192,.08);border-radius:5px;margin-bottom:4px;display:inline-block">Pasta fresca</div><br>
-              <div style="font-size:.8rem;padding:3px 8px;background:rgba(15,201,192,.08);border-radius:5px;display:inline-block">Ensalada César</div>
-              <div style="font-size:.7rem;color:var(--tx3);margin-top:8px">✅ Mantener y destacar</div>
-            </div>
-            <div style="background:rgba(239,68,68,.05);border:1px solid rgba(239,68,68,.15);border-radius:12px;padding:14px">
-              <div style="font-size:.75rem;font-weight:700;color:#f87171;margin-bottom:8px">🐕 PERRO</div>
-              <div style="font-size:.8rem;padding:3px 8px;background:rgba(239,68,68,.08);border-radius:5px;margin-bottom:4px;display:inline-block">Salmón grillado</div><br>
-              <div style="font-size:.8rem;padding:3px 8px;background:rgba(239,68,68,.08);border-radius:5px;display:inline-block">Cazuela mariscos</div>
-              <div style="font-size:.7rem;color:var(--tx3);margin-top:8px">⚠ Reformular o eliminar</div>
-            </div>
-            <div style="background:rgba(245,158,11,.05);border:1px solid rgba(245,158,11,.15);border-radius:12px;padding:14px">
-              <div style="font-size:.75rem;font-weight:700;color:#fbbf24;margin-bottom:8px">🐄 VACA</div>
-              <div style="font-size:.8rem;padding:3px 8px;background:rgba(245,158,11,.08);border-radius:5px;margin-bottom:4px;display:inline-block">Bife de chorizo</div><br>
-              <div style="font-size:.8rem;padding:3px 8px;background:rgba(245,158,11,.08);border-radius:5px;display:inline-block">Hamburguesa completa</div>
-              <div style="font-size:.7rem;color:var(--tx3);margin-top:8px">💡 Subir precio</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════
-     PRICING
-════════════════════════════════ -->
-<section id="pricing" class="sp position-relative">
-  <div class="aur aur-a" style="top:50%;left:50%;transform:translate(-50%,-50%)"></div>
-  <div class="container position-relative" style="z-index:1">
-    <div class="text-center mb-5 rv">
-      <span class="slbl">Precios</span>
-      <h2 class="stitle">Simple, transparente,<br><span class="gt">accesible para PyMEs</span></h2>
-      <p class="ssub mx-auto">Empezá con el plan que necesitás y escalá cuando estés listo. Sin costos ocultos.</p>
-    </div>
-    <div class="row g-4 align-items-stretch rv">
-      <div class="col-md-4">
-        <div class="pcard h-100">
-          <div style="font-size:.82rem;font-weight:600;color:var(--tx3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px">Básico</div>
-          <div style="font-size:2.5rem;font-weight:700;margin-bottom:4px">A definir</div>
-          <div style="font-size:.85rem;color:var(--tx3);margin-bottom:24px">por establecimiento / mes</div>
-          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px">
-            <div class="pfi"><i class="fa-solid fa-check" style="color:var(--teal)"></i> Catálogo de insumos y precios</div>
-            <div class="pfi"><i class="fa-solid fa-check" style="color:var(--teal)"></i> Recetas y food cost automático</div>
-            <div class="pfi"><i class="fa-solid fa-check" style="color:var(--teal)"></i> Dashboard de KPIs</div>
-            <div class="pfi"><i class="fa-solid fa-check" style="color:var(--teal)"></i> Índice Margentus</div>
-            <div class="pfi"><i class="fa-solid fa-check" style="color:var(--teal)"></i> Importación desde Excel</div>
-            <div class="pfi" style="color:var(--tx3)"><i class="fa-solid fa-xmark"></i> OCR de facturas</div>
-            <div class="pfi" style="color:var(--tx3)"><i class="fa-solid fa-xmark"></i> Asistente IA</div>
-          </div>
-          <button class="boc btn w-100 py-2">Comenzar</button>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="pcard best h-100" style="position:relative">
-          <div style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);white-space:nowrap">
-            <span class="pbest-badge">Más popular</span>
-          </div>
-          <div style="font-size:.82rem;font-weight:600;color:var(--teal);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px">Pro</div>
-          <div style="font-size:2.5rem;font-weight:700;margin-bottom:4px">A definir</div>
-          <div style="font-size:.85rem;color:var(--tx3);margin-bottom:24px">por establecimiento / mes</div>
-          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px">
-            <div class="pfi"><i class="fa-solid fa-check" style="color:var(--teal)"></i> Todo el plan Básico</div>
-            <div class="pfi"><i class="fa-solid fa-check" style="color:var(--teal)"></i> OCR de facturas</div>
-            <div class="pfi"><i class="fa-solid fa-check" style="color:var(--teal)"></i> Inventario inteligente</div>
-            <div class="pfi"><i class="fa-solid fa-check" style="color:var(--teal)"></i> Ingeniería de menú automática</div>
-            <div class="pfi"><i class="fa-solid fa-check" style="color:var(--teal)"></i> Alertas inteligentes</div>
-            <div class="pfi"><i class="fa-solid fa-check" style="color:var(--teal)"></i> Simulador de escenarios</div>
-            <div class="pfi" style="color:var(--tx3)"><i class="fa-solid fa-xmark"></i> Asistente IA conversacional</div>
-          </div>
-          <button class="bgrd btn w-100 py-2">Comenzar con Pro</button>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="pcard h-100">
-          <div style="font-size:.82rem;font-weight:600;color:var(--tx3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px">Premium</div>
-          <div style="font-size:2.5rem;font-weight:700;margin-bottom:4px">A definir</div>
-          <div style="font-size:.85rem;color:var(--tx3);margin-bottom:24px">por establecimiento / mes</div>
-          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px">
-            <div class="pfi"><i class="fa-solid fa-check" style="color:var(--teal)"></i> Todo el plan Pro</div>
-            <div class="pfi"><i class="fa-solid fa-check" style="color:var(--teal)"></i> Asistente IA conversacional</div>
-            <div class="pfi"><i class="fa-solid fa-check" style="color:var(--teal)"></i> Proyección financiera automática</div>
-            <div class="pfi"><i class="fa-solid fa-check" style="color:var(--teal)"></i> Benchmarking sectorial</div>
-            <div class="pfi"><i class="fa-solid fa-check" style="color:var(--teal)"></i> Módulo hotelero A&B</div>
-            <div class="pfi"><i class="fa-solid fa-check" style="color:var(--teal)"></i> Multi-sucursal</div>
-            <div class="pfi"><i class="fa-solid fa-check" style="color:var(--teal)"></i> Soporte prioritario</div>
-          </div>
-          <button class="boc btn w-100 py-2">Comenzar con Premium</button>
-        </div>
-      </div>
-    </div>
-    <p class="text-center mt-4" style="font-size:.82rem;color:var(--tx3)">* Precios a definir durante la validación del MVP. Contactate para ser parte del programa piloto con precio bonificado.</p>
-  </div>
-</section>
-
-<!-- ════════════════════════════════
-     TESTIMONIOS
-════════════════════════════════ -->
 <section class="sp position-relative" style="background:var(--bg2)">
   <div class="container">
-    <div class="text-center mb-5 rv">
-      <span class="slbl">Quiénes lo necesitan</span>
-      <h2 class="stitle">Problemas reales del<br><span class="gt">sector gastronómico</span></h2>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-4 rv">
-        <div class="tcard h-100">
-          <div class="stars mb-3">★★★★★</div>
-          <p style="font-size:.9rem;color:var(--tx2);margin-bottom:20px;line-height:1.65">"Siempre supe que perdía plata con algunos platos pero nunca supe cuáles exactamente. Necesito una herramienta que me diga, sin rodeos, dónde está el problema."</p>
-          <div class="d-flex align-items-center gap-3">
-            <div class="tav" style="background:linear-gradient(135deg,#0FC9C0,#0a8580)">M</div>
-            <div><div style="font-weight:600;font-size:.9rem">Marcela R.</div><div style="font-size:.78rem;color:var(--tx3)">Dueña · Restaurante · Mar del Plata</div></div>
-          </div>
-        </div>
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6 rv">
+        <span class="slbl">Un ejemplo</span>
+        <h2 class="stitle">La mozzarella subió.<br><span class="gt">¿Y ahora?</span></h2>
+        <p style="color:var(--tx2);margin-bottom:20px">Afecta la muzza, la napolitana y la hamburguesa. El sistema muestra el nuevo costo, el margen nuevo y la pregunta: ¿subís precio, cambiás receta o cambiás proveedor?</p>
+        <p style="color:var(--tx2);margin:0">Eso es el producto. No un chat. No otro reporte.</p>
       </div>
-      <div class="col-md-4 rv" style="transition-delay:.1s">
-        <div class="tcard h-100">
-          <div class="stars mb-3">★★★★★</div>
-          <p style="font-size:.9rem;color:var(--tx2);margin-bottom:20px;line-height:1.65">"Actualizo los precios de insumos una vez por semana, en el mejor caso. Para cuando me doy cuenta que el food cost se fue, ya pasaron dos semanas. Necesito algo que me avise al instante."</p>
-          <div class="d-flex align-items-center gap-3">
-            <div class="tav" style="background:linear-gradient(135deg,#F59E0B,#d97706)">J</div>
-            <div><div style="font-weight:600;font-size:.9rem">Jorge T.</div><div style="font-size:.78rem;color:var(--tx3)">Gerente A&B · Hotel · Mar del Plata</div></div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 rv" style="transition-delay:.2s">
-        <div class="tcard h-100">
-          <div class="stars mb-3">★★★★★</div>
-          <p style="font-size:.9rem;color:var(--tx2);margin-bottom:20px;line-height:1.65">"Manejo todo en Excel. Sé que no escala, sé que cometo errores, pero no encontré nada simple y específico para gastronomía. Los sistemas que existen son demasiado complicados o caros."</p>
-          <div class="d-flex align-items-center gap-3">
-            <div class="tav" style="background:linear-gradient(135deg,#3b82f6,#2563eb)">L</div>
-            <div><div style="font-weight:600;font-size:.9rem">Lucía P.</div><div style="font-size:.78rem;color:var(--tx3)">Responsable · Cervecería artesanal</div></div>
+      <div class="col-lg-6 rv">
+        <div class="gc p-4">
+          <div style="font-size:.75rem;color:var(--tx3);font-weight:600;margin-bottom:14px">Situación · Hotel República</div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="padding:12px 14px;border-radius:12px;background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.15)"><div style="font-size:.72rem;color:#f87171;font-weight:700;margin-bottom:4px">INSUMO</div><div style="font-size:.95rem">Mozzarella +22% esta semana</div></div>
+            <div style="padding:12px 14px;border-radius:12px;background:var(--bg3);border:1px solid var(--bd)"><div style="font-size:.72rem;color:var(--tx3);font-weight:700;margin-bottom:4px">IMPACTO</div><div style="font-size:.95rem">3 recetas debajo del margen objetivo</div></div>
+            <div style="padding:12px 14px;border-radius:12px;background:rgba(15,201,192,.08);border:1px solid rgba(15,201,192,.2)"><div style="font-size:.72rem;color:var(--teal);font-weight:700;margin-bottom:4px">DECISIÓN</div><div style="font-size:.95rem">Precio · receta · proveedor. Vos elegís.</div></div>
           </div>
         </div>
       </div>
@@ -685,204 +277,73 @@
   </div>
 </section>
 
-<!-- ════════════════════════════════
-     FAQ
-════════════════════════════════ -->
+<section id="estado" class="sp">
+  <div class="container">
+    <div class="text-center mb-5 rv"><span class="slbl">Quién y en qué etapa</span><h2 class="stitle">Transparente para un dueño<br>y para un <span class="gt">jurado</span></h2></div>
+    <div class="row g-4">
+      <div class="col-lg-4 rv"><div class="state"><div style="font-size:.75rem;font-weight:700;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px">Fundador</div><h3 class="fs-4 fw-semibold mb-2">Cristian Orihuela</h3><p style="font-size:.9rem;color:var(--tx2);margin:0">Más de 20 años en administración, gestión hotelera y control de costos. El problema no se estudió: se laburó.</p></div></div>
+      <div class="col-lg-4 rv"><div class="state"><div style="font-size:.75rem;font-weight:700;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px">Hoy</div><h3 class="fs-4 fw-semibold mb-2">Prototipo en validación</h3><p style="font-size:.9rem;color:var(--tx2);margin:0">Demo navegable + documentación de producto. Falta el piloto con carta real. No hay ARR ni N clientes.</p></div></div>
+      <div class="col-lg-4 rv"><div class="state"><div style="font-size:.75rem;font-weight:700;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px">Dónde</div><h3 class="fs-4 fw-semibold mb-2">Mar del Plata</h3><p style="font-size:.9rem;color:var(--tx2);margin:0">Programa StartUP+IT (Universidad de Palermo / Polo IT Buenos Aires). Bitácora en el blog, no en el hero.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="piloto" class="sp" style="background:var(--bg2)">
+  <div class="container">
+    <div class="row g-5 align-items-start">
+      <div class="col-lg-5 rv">
+        <span class="slbl">Piloto</span>
+        <h2 class="stitle">8 establecimientos.<br>Acompañamiento <span class="gt">directo</span></h2>
+        <p style="color:var(--tx2)">Restaurantes, parrillas, cafeterías, bares y hoteles con A&B en Mar del Plata, que hoy resuelven costos en Excel o de memoria.</p>
+        <p style="color:var(--tx2)">No reemplazamos tu caja. Nos apoyamos en ella cuando exista. Respuesta en menos de 24 h.</p>
+        <a href="https://wa.me/5492235903633?text=Hola%20Cristian%2C%20quiero%20sumarme%20al%20piloto%20de%20Margentus" class="bgrd btn px-4 py-3 mt-2" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp me-2"></i>Escribir por WhatsApp</a>
+      </div>
+      <div class="col-lg-7 rv">
+        <form class="gc p-4 form-mg" onsubmit="return sendPiloto(event)">
+          <div class="row g-3">
+            <div class="col-md-6"><label class="mb-1" style="font-size:.8rem;color:var(--tx3)">Tu nombre</label><input id="fNombre" required placeholder="Nombre y apellido"></div>
+            <div class="col-md-6"><label class="mb-1" style="font-size:.8rem;color:var(--tx3)">WhatsApp</label><input id="fTel" required placeholder="223..."></div>
+            <div class="col-md-6"><label class="mb-1" style="font-size:.8rem;color:var(--tx3)">Local</label><input id="fLocal" required placeholder="Nombre del establecimiento"></div>
+            <div class="col-md-6"><label class="mb-1" style="font-size:.8rem;color:var(--tx3)">Tipo</label><select id="fTipo"><option>Restaurante</option><option>Parrilla</option><option>Cafetería</option><option>Bar</option><option>Hotel con A&B</option><option>Otro</option></select></div>
+            <div class="col-12"><button type="submit" class="bgrd btn w-100 py-3">Enviar por WhatsApp</button></div>
+            <div class="col-12"><p class="mb-0 text-center" style="font-size:.78rem;color:var(--tx3)">O escribinos a <a href="mailto:ori@live.com.ar" style="color:var(--teal)">ori@live.com.ar</a></p></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="faq" class="sp">
   <div class="container">
-    <div class="text-center mb-5 rv">
-      <span class="slbl">Preguntas frecuentes</span>
-      <h2 class="stitle">Todo lo que querés<br><span class="gt">saber antes de empezar</span></h2>
-    </div>
-    <div class="row justify-content-center rv">
-      <div class="col-lg-8">
-        <div class="faq-item open">
-          <div class="faq-q" onclick="toggleFaq(this)">¿Necesito saber de tecnología para usar Margentus? <i class="fa-solid fa-chevron-down faq-arr"></i></div>
-          <div class="faq-a">No. Margentus está diseñado específicamente para responsables de negocios gastronómicos sin formación técnica. Si sabés usar WhatsApp, podés usar Margentus. El onboarding está guiado y podés tener tu primer food cost calculado en menos de una hora.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">¿Qué pasa si no tengo mis recetas documentadas? <i class="fa-solid fa-chevron-down faq-arr"></i></div>
-          <div class="faq-a">No es un problema. Podés cargar recetas desde cero en la plataforma, y en planes superiores el sistema puede inferir recetas estimadas a partir de tus datos de compra usando inteligencia artificial. Muchos negocios empiezan sin recetas formales y las van construyendo dentro de Margentus.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">¿Mis datos son seguros y privados? <i class="fa-solid fa-chevron-down faq-arr"></i></div>
-          <div class="faq-a">Sí. Cada establecimiento opera en un espacio de datos completamente aislado. Ningún usuario puede ver información de otro negocio. Los datos del benchmarking sectorial son siempre anónimos y agregados, aplicando k-anonimato (mínimo 5 negocios por celda estadística). Podés desactivar la participación en cualquier momento.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">¿Se integra con mi sistema de caja o POS? <i class="fa-solid fa-chevron-down faq-arr"></i></div>
-          <div class="faq-a">En la etapa inicial, Margentus ofrece formularios web simples y plantillas Excel para cargar ventas, sin depender de integraciones externas. La integración directa con sistemas POS (Restó, iZettle, Mercado Pago) está proyectada para la Fase 4, una vez validado el modelo con usuarios reales.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">¿Cuándo va a estar disponible? <i class="fa-solid fa-chevron-down faq-arr"></i></div>
-          <div class="faq-a">El MVP está en desarrollo con lanzamiento previsto para el segundo semestre de 2026 en Mar del Plata. Si querés ser parte del programa piloto con precio bonificado y participar en el proceso de validación, dejá tu contacto y te avisamos primero.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">¿Funciona para hoteles, no solo restaurantes? <i class="fa-solid fa-chevron-down faq-arr"></i></div>
-          <div class="faq-a">Sí. Margentus incluye un módulo específico para hotelería con indicadores de A&B como costo de desayuno por huésped, rentabilidad por servicio y consumo vs ocupación. Es especialmente útil para establecimientos con múltiples centros de costo operativos.</div>
-        </div>
-      </div>
-    </div>
+    <div class="text-center mb-5 rv"><span class="slbl">Preguntas</span><h2 class="stitle">Corto y <span class="gt">honesto</span></h2></div>
+    <div class="row justify-content-center rv"><div class="col-lg-8">
+      <div class="faq-item open"><div class="faq-q" onclick="toggleFaq(this)">¿Necesito recetas escritas? <i class="fa-solid fa-chevron-down faq-arr"></i></div><div class="faq-a">No. Se pueden cargar desde cero. Lo que falte, se marca. No convertimos una estimación en un hecho.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">¿Reemplaza a Fudo / Maxirest / mi POS? <i class="fa-solid fa-chevron-down faq-arr"></i></div><div class="faq-a">No. Ellos operan el salón. Nosotros explicamos la rentabilidad. No somos un ERP ni una calculadora de food cost suelta.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">¿Cuándo está el producto? <i class="fa-solid fa-chevron-down faq-arr"></i></div><div class="faq-a">El prototipo se puede ver ahora. El MVP se construye con lo que el piloto enseñe. No hay fecha de lanzamiento SaaS masivo en esta página.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">¿Mis datos? <i class="fa-solid fa-chevron-down faq-arr"></i></div><div class="faq-a">En el piloto: un establecimiento, acceso acotado, sin benchmarking público.</div></div>
+    </div></div>
   </div>
 </section>
 
-<!-- ════════════════════════════════
-     CTA
-════════════════════════════════ -->
-<section id="cta" class="sp">
-  <div class="container">
-    <div class="text-center rv">
-      <span class="slbl">Programa piloto</span>
-      <h2 class="stitle" style="max-width:620px;margin:0 auto 16px">Sé parte de los primeros<br>establecimientos en <span class="gt">usar Margentus</span></h2>
-      <p style="color:var(--tx2);max-width:520px;margin:0 auto 36px;font-size:1rem">Estamos buscando restaurantes, hoteles y cafeterías de Mar del Plata para el programa piloto. Precio bonificado, acompañamiento directo y acceso prioritario a todas las funcionalidades.</p>
-      <div class="d-flex align-items-center justify-content-center gap-3 flex-wrap">
-        <button class="bgrd btn px-4 py-3 fs-6">Quiero ser parte del piloto</button>
-        <a href="mailto:ori@live.com.ar" class="boc btn px-4 py-3 fs-6">Contactar directamente</a>
-      </div>
-      <p class="mt-4" style="font-size:.82rem;color:var(--tx3)">
-        <i class="fa-solid fa-lock me-2" style="color:var(--teal)"></i>
-        Cristian Orihuela · ori@live.com.ar · 223-590-3633 · Mar del Plata, Buenos Aires
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════
-     BLOG PREVIEW
-════════════════════════════════ -->
-<section class="sp" style="background:var(--bg2);border-top:1px solid var(--bd)">
-  <div class="container">
-    <div class="row align-items-end mb-5 rv">
-      <div class="col-lg-7">
-        <span class="slbl">Blog · Hoja de Ruta</span>
-        <h2 class="stitle">El camino de construir<br><span class="gt">Margentus</span></h2>
-        <p style="color:var(--tx2);margin-bottom:0">Documentamos cada paso: concursos, decisiones técnicas, aprendizajes y todo lo que pasa entre tener una idea y construir un producto real.</p>
-      </div>
-      <div class="col-lg-5 text-lg-end mt-3 mt-lg-0">
-        <a href="blog.html" class="boc btn px-4 py-2">Ver todos los posts <i class="fa-solid fa-arrow-right ms-2" style="color:var(--teal)"></i></a>
-      </div>
-    </div>
-    <div class="row g-4">
-      <!-- Post destacado -->
-      <div class="col-lg-7 rv">
-        <a href="blog-intecmar-2026.html" class="d-block text-decoration-none h-100" style="background:var(--sf);border:1px solid rgba(15,201,192,.3);border-radius:18px;overflow:hidden;transition:.25s;box-shadow:0 0 0 1px rgba(15,201,192,.1)" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 16px 40px rgba(15,201,192,.12)'" onmouseout="this.style.transform='';this.style.boxShadow='0 0 0 1px rgba(15,201,192,.1)'">
-          <div style="height:200px;background:linear-gradient(135deg,rgba(15,201,192,.07),rgba(10,133,128,.14));display:flex;align-items:center;justify-content:center;position:relative">
-            <div style="text-align:center">
-              <div style="font-size:4rem;filter:drop-shadow(0 0 24px rgba(15,201,192,.5))">🏆</div>
-              <div style="margin-top:10px;display:inline-flex;align-items:center;gap:6px;background:rgba(15,201,192,.15);border:1px solid rgba(15,201,192,.3);border-radius:100px;padding:5px 14px">
-                <div style="width:5px;height:5px;border-radius:50%;background:var(--teal);animation:bpls 2s infinite"></div>
-                <span style="font-size:.72rem;font-weight:600;color:var(--teal)">Primer hito · Julio 2026</span>
-              </div>
-            </div>
-          </div>
-          <div style="padding:24px 26px">
-            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px">
-              <span style="font-size:.7rem;font-weight:600;padding:2px 9px;border-radius:20px;background:rgba(15,201,192,.12);color:var(--teal)">Concurso</span>
-              <span style="font-size:.7rem;font-weight:600;padding:2px 9px;border-radius:20px;background:rgba(245,158,11,.12);color:var(--amber)">INTECMAR</span>
-              <span style="font-size:.7rem;font-weight:600;padding:2px 9px;border-radius:20px;background:rgba(34,197,94,.12);color:#34d399">Etapa semilla</span>
-            </div>
-            <div style="font-size:1.15rem;font-weight:700;color:var(--tx);line-height:1.3;margin-bottom:10px">Margentus se presenta al Premio a la Innovación INTECMAR 2026</div>
-            <div style="font-size:.875rem;color:var(--tx2);line-height:1.6;margin-bottom:18px">El primer paso formal del proyecto: la inscripción al concurso más importante de innovación de Mar del Plata. Qué preparamos, qué aprendimos y cuáles son los próximos pasos.</div>
-            <div style="display:flex;align-items:center;justify-content:space-between;font-size:.78rem;color:var(--tx3)">
-              <div style="display:flex;align-items:center;gap:7px">
-                <div style="width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#0FC9C0,#0a8580);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;color:#fff">CO</div>
-                Cristian Orihuela
-              </div>
-              <div style="display:flex;align-items:center;gap:12px">
-                <span><i class="fa-regular fa-calendar me-1"></i>Julio 2026</span>
-                <span><i class="fa-regular fa-clock me-1"></i>6 min</span>
-                <span style="color:var(--teal);font-weight:600">Leer →</span>
-              </div>
-            </div>
-          </div>
-        </a>
-      </div>
-      <!-- Posts próximos -->
-      <div class="col-lg-5 rv" style="transition-delay:.1s">
-        <div style="display:flex;flex-direction:column;gap:14px;height:100%">
-          <div style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--tx3);margin-bottom:4px">Próximamente</div>
-          <div style="background:var(--sf);border:1px solid var(--bd);border-radius:14px;padding:20px;opacity:.6">
-            <div style="font-size:1.6rem;margin-bottom:10px">🇮🇱</div>
-            <div style="font-size:.7rem;font-weight:600;padding:2px 9px;border-radius:20px;background:rgba(168,85,247,.12);color:#c084fc;display:inline-block;margin-bottom:10px">Concurso · Israel</div>
-            <div style="font-size:.95rem;font-weight:700;color:var(--tx);margin-bottom:6px">Israel Innovation Awards 2026: por qué aplicamos</div>
-            <div style="font-size:.82rem;color:var(--tx2)">Lo que el ecosistema israelí de IA y foodtech puede aportar a un proyecto gastronómico argentino.</div>
-          </div>
-          <div style="background:var(--sf);border:1px solid var(--bd);border-radius:14px;padding:20px;opacity:.6">
-            <div style="font-size:1.6rem;margin-bottom:10px">⚙️</div>
-            <div style="font-size:.7rem;font-weight:600;padding:2px 9px;border-radius:20px;background:rgba(34,197,94,.12);color:#34d399;display:inline-block;margin-bottom:10px">Técnico · MVP</div>
-            <div style="font-size:.95rem;font-weight:700;color:var(--tx);margin-bottom:6px">Decisiones técnicas del MVP: stack y arquitectura</div>
-            <div style="font-size:.82rem;color:var(--tx2)">Por qué Python, FastAPI y Supabase. Sin teoría, solo pragmatismo y criterios concretos.</div>
-          </div>
-          <div style="background:var(--sf);border:1px solid var(--bd);border-radius:14px;padding:20px;opacity:.6">
-            <div style="font-size:1.6rem;margin-bottom:10px">🍽️</div>
-            <div style="font-size:.7rem;font-weight:600;padding:2px 9px;border-radius:20px;background:rgba(245,158,11,.12);color:var(--amber);display:inline-block;margin-bottom:10px">Validación · Usuarios</div>
-            <div style="font-size:.95rem;font-weight:700;color:var(--tx);margin-bottom:6px">Las primeras 10 entrevistas con dueños de restaurantes</div>
-            <div style="font-size:.82rem;color:var(--tx2)">Qué confirmamos y qué nos sorprendió hablando con el sector.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════
-     FOOTER
-════════════════════════════════ -->
 <footer id="footer">
   <div class="container">
     <div class="row g-4 mb-5">
-      <div class="col-lg-4">
-        <div class="d-flex align-items-center gap-2 mb-3">
-          <img src="img/logo.png" alt="Margentus" style="width:348px;height:51px">
-        </div>
-        <p style="font-size:.875rem;color:var(--tx3);line-height:1.65;max-width:280px">Plataforma SaaS de inteligencia operativa para pequeños y medianos establecimientos gastronómicos y hoteleros.</p>
-        <div class="d-flex gap-3 mt-3">
-          <a href="#" style="color:var(--tx3);transition:.2s" onmouseover="this.style.color='var(--teal)'" onmouseout="this.style.color='var(--tx3)'"><i class="fa-brands fa-instagram fa-lg"></i></a>
-          <a href="#" style="color:var(--tx3);transition:.2s" onmouseover="this.style.color='var(--teal)'" onmouseout="this.style.color='var(--tx3)'"><i class="fa-brands fa-linkedin fa-lg"></i></a>
-          <a href="mailto:ori@live.com.ar" style="color:var(--tx3);transition:.2s" onmouseover="this.style.color='var(--teal)'" onmouseout="this.style.color='var(--tx3)'"><i class="fa-solid fa-envelope fa-lg"></i></a>
-        </div>
-      </div>
-      <div class="col-6 col-lg-2">
-        <div style="font-size:.8rem;font-weight:600;color:var(--tx2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px">Producto</div>
-        <a href="#features" class="flink">Funcionalidades</a>
-        <a href="#how" class="flink">Cómo funciona</a>
-        <a href="#pricing" class="flink">Precios</a>
-        <a href="#" class="flink">Demo en vivo</a>
-      </div>
-      <div class="col-6 col-lg-2">
-        <div style="font-size:.8rem;font-weight:600;color:var(--tx2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px">Segmentos</div>
-        <a href="#" class="flink">Restaurantes</a>
-        <a href="#" class="flink">Hoteles</a>
-        <a href="#" class="flink">Cervecerías</a>
-        <a href="#" class="flink">Cafeterías</a>
-        <a href="#" class="flink">Dark Kitchens</a>
-      </div>
-      <div class="col-6 col-lg-2">
-        <div style="font-size:.8rem;font-weight:600;color:var(--tx2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px">Proyecto</div>
-        <a href="#" class="flink">Roadmap</a>
-        <a href="#faq" class="flink">FAQ</a>
-        <a href="#cta" class="flink">Programa piloto</a>
-        <a href="mailto:ori@live.com.ar" class="flink">Contacto</a>
-      </div>
-      <div class="col-6 col-lg-2">
-        <div style="font-size:.8rem;font-weight:600;color:var(--tx2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px">Reconocimientos</div>
-        <a href="#" class="flink">INTECMAR 2026</a>
-        <a href="#" class="flink">Israel Innovation Awards</a>
-      </div>
+      <div class="col-lg-5"><img src="img/logo.png" alt="Margentus" class="logo-nav mb-3"><p style="font-size:.875rem;color:var(--tx3);line-height:1.65;max-width:320px">Tu analista de rentabilidad para gastronomía. Transformamos datos en decisiones.</p></div>
+      <div class="col-6 col-lg-2"><div style="font-size:.8rem;font-weight:600;color:var(--tx2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px">Producto</div><a href="#producto" class="flink">Qué hace</a><a href="#how" class="flink">Cómo funciona</a><a href="https://margentus-demo.onrender.com/dashboard" class="flink" target="_blank" rel="noopener">Prototipo</a><a href="#piloto" class="flink">Piloto</a></div>
+      <div class="col-6 col-lg-2"><div style="font-size:.8rem;font-weight:600;color:var(--tx2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px">Proyecto</div><a href="blog.html" class="flink">Bitácora</a><a href="blog-intecmar-2026.html" class="flink">INTECMAR 2026</a><a href="#estado" class="flink">Estado</a></div>
+      <div class="col-6 col-lg-3"><div style="font-size:.8rem;font-weight:600;color:var(--tx2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px">Contacto</div><a href="https://wa.me/5492235903633" class="flink" target="_blank" rel="noopener">WhatsApp</a><a href="mailto:ori@live.com.ar" class="flink">ori@live.com.ar</a><span class="flink" style="cursor:default">Mar del Plata</span></div>
     </div>
     <div style="border-top:1px solid var(--bd);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
-      <div style="font-size:.8rem;color:var(--tx3)">© 2026 Margentus · Cristian Orihuela · Mar del Plata, Argentina</div>
-      <div style="font-size:.8rem;color:var(--tx3)">TRL 3 · Etapa Semilla · MVP en desarrollo</div>
+      <div style="font-size:.8rem;color:var(--tx3)">© 2026 Margentus · Cristian Orihuela · Mar del Plata</div>
+      <div style="font-size:.8rem;color:var(--tx3)">Prototipo en validación · StartUP+IT</div>
     </div>
   </div>
 </footer>
 
-<!-- ════════════════════════════════
-     SCRIPTS
-════════════════════════════════ -->
 <script src="js/jquery-3.7.1.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
 <script>
-// Theme toggle
 const html = document.getElementById('htmlRoot');
 const suni = document.getElementById('suni');
 const mooni = document.getElementById('mooni');
@@ -893,13 +354,9 @@ document.getElementById('thbtn').addEventListener('click', () => {
   suni.style.display  = dark ? 'none' : '';
   mooni.style.display = dark ? '' : 'none';
 });
-
-// Navbar scroll
 window.addEventListener('scroll', () => {
   document.getElementById('nbar').classList.toggle('scr', window.scrollY > 20);
 });
-
-// Mobile menu
 function toggleMenu() {
   const m = document.getElementById('mbmenu');
   const b = document.getElementById('barIcon');
@@ -913,19 +370,25 @@ document.querySelectorAll('#mbmenu a').forEach(a => a.addEventListener('click', 
   document.getElementById('barIcon').style.display = '';
   document.getElementById('xIcon').style.display = 'none';
 }));
-
-// Scroll reveal
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
 }, { threshold: 0.12 });
 document.querySelectorAll('.rv').forEach(el => obs.observe(el));
-
-// FAQ
 function toggleFaq(el) {
   const item = el.parentElement;
   const isOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open');
   if (!isOpen) item.classList.add('open');
+}
+function sendPiloto(e) {
+  e.preventDefault();
+  const n = document.getElementById('fNombre').value.trim();
+  const t = document.getElementById('fTel').value.trim();
+  const l = document.getElementById('fLocal').value.trim();
+  const tipo = document.getElementById('fTipo').value;
+  const msg = 'Hola Cristian, quiero sumarme al piloto de Margentus.%0ANombre: ' + encodeURIComponent(n) + '%0AWhatsApp: ' + encodeURIComponent(t) + '%0ALocal: ' + encodeURIComponent(l) + '%0ATipo: ' + encodeURIComponent(tipo);
+  window.open('https://wa.me/5492235903633?text=' + msg, '_blank');
+  return false;
 }
 </script>
 </body>
