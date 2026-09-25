@@ -3,6 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () {
+      var t = 'light';
+      try { t = localStorage.getItem('margentus-theme') === 'dark' ? 'dark' : 'light'; } catch (e) {}
+      document.documentElement.dataset.theme = t;
+    })();
+  </script>
   <title>Margentus | Inteligencia de rentabilidad para gastronomía</title>
   <meta name="description" content="Tu analista de rentabilidad para gastronomía. Margentus transforma compras, recetas, precios y ventas en decisiones para cuidar el margen.">
   <meta name="theme-color" content="#F7F7F2">
@@ -27,7 +34,8 @@
 <nav class="nbar" id="nbar" aria-label="Navegación principal">
   <div class="container nav-inner">
     <a class="brand" href="#top" aria-label="Margentus, volver al inicio">
-      <img src="img/logo.png" alt="Margentus">
+      <img class="lgo lgo-light" src="img/margentus_logo_light_nav.svg" alt="Margentus">
+      <img class="lgo lgo-dark" src="img/margentus_logo_dark_nav.svg" alt="Margentus">
     </a>
 
     <div class="nav-links">
@@ -39,6 +47,10 @@
     </div>
 
     <div class="nav-actions">
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="Cambiar a modo oscuro" aria-pressed="false">
+        <svg class="t-ico t-ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        <svg class="t-ico t-ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+      </button>
       <div class="nav-cta">
         <a href="https://margentus-demo.onrender.com/dashboard" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">Ver prototipo
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg>
@@ -63,7 +75,7 @@
     <a href="#piloto" class="btn btn-primary btn-lg" style="width:100%">Quiero ser parte del piloto</a>
   </div>
   <p class="small" style="margin:12px 6px 4px;text-align:center;color:var(--ink-3)">
-    <a href="https://margentus-demo.onrender.com/dashboard" target="_blank" rel="noopener" style="color:var(--em);font-weight:600">Ver el prototipo</a>
+    <a href="https://margentus-demo.onrender.com/dashboard" target="_blank" rel="noopener" style="color:var(--accent-strong);font-weight:600">Ver el prototipo</a>
   </p>
 </div>
 
@@ -551,8 +563,9 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <img src="img/logo.png" alt="Margentus">
-        <p class="footer-tag">Tu analista de rentabilidad para gastronomía. Transformamos datos en decisiones.</p>
+        <img class="lgo lgo-light" src="img/margentus_logo_light_full.svg" alt="Margentus">
+        <img class="lgo lgo-dark" src="img/margentus_logo_dark_full.svg" alt="Margentus">
+        <p class="footer-tag">Transformamos datos en decisiones.</p>
       </div>
 
       <div class="fcol">
@@ -660,6 +673,26 @@
     window.open(url, '_blank', 'noopener');
     return false;
   }
+</script>
+
+<script>
+  (function () {
+    var btn = document.getElementById('themeBtn');
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (!btn) return;
+    function apply(t) {
+      document.documentElement.dataset.theme = t;
+      try { localStorage.setItem('margentus-theme', t); } catch (e) {}
+      var dark = t === 'dark';
+      btn.setAttribute('aria-label', dark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
+      btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
+      if (meta) meta.setAttribute('content', dark ? '#0D1A15' : '#F7F7F2');
+    }
+    btn.addEventListener('click', function () {
+      var dark = document.documentElement.dataset.theme === 'dark';
+      apply(dark ? 'light' : 'dark');
+    });
+  })();
 </script>
 </body>
 </html>
