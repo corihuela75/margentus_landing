@@ -1,395 +1,665 @@
 <!DOCTYPE html>
-<html lang="es" id="htmlRoot">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Margentus — Tu analista de rentabilidad para gastronomía</title>
-  <meta name="description" content="Margentus transforma compras, recetas, precios y ventas en decisiones de rentabilidad. Prototipo en validación. Piloto en Mar del Plata.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="css/bootstrap.min.css" rel="stylesheet"/>
-  <link href="css/aos.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="css/all.min.css"/>
-  <link rel="stylesheet" href="css/style.css"/>
-  <style>
-    :root {
-      --teal:  #0FC9C0;
-      --teal2: #0A8580;
-      --amber: #F59E0B;
-    }
-    .gt {
-      background: linear-gradient(135deg, #0FC9C0, #0a8580);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .bgrd { background: linear-gradient(135deg, #0FC9C0, #0a8580); color:#fff; }
-    .bgrd:hover { box-shadow: 0 8px 24px rgba(15,201,192,.4); color:#fff; }
-    .boc:hover  { border-color: var(--teal); background: rgba(15,201,192,.08); }
-    .slbl       { color: var(--teal); }
-    .slbl::before { background: linear-gradient(135deg, #0FC9C0, #0a8580); }
-    .aur-a { background: radial-gradient(circle, rgba(15,201,192,.18), transparent 70%); }
-    .aur-b { background: radial-gradient(circle, rgba(10,133,128,.14), transparent 70%); }
-    .gc:hover  { border-color: rgba(15,201,192,.3); box-shadow: 0 16px 50px rgba(0,0,0,.25); }
-    .logo-nav { height:40px; width:auto; max-width:220px; object-fit:contain; }
-    .hbadge { background: rgba(15,201,192,.1); border: 1px solid rgba(15,201,192,.25); color: var(--teal); padding: 6px 16px; border-radius: 100px; font-size: .8rem; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; }
-    .bdot { width:7px; height:7px; border-radius:50%; background:var(--teal); box-shadow:0 0 8px var(--teal); animation: bpls 2s infinite; }
-    @keyframes bpls { 0%,100%{opacity:1} 50%{opacity:.35} }
-    .bbar { flex: 1; border-radius: 3px 3px 0 0; background: linear-gradient(to top, #0A8580, #0FC9C0); min-width: 0; }
-    .stpill { background: var(--bg3); border: 1px solid var(--bd); border-radius: 12px; padding: 10px 12px; }
-    .fic-teal { background: rgba(15,201,192,.12); border: 1px solid rgba(15,201,192,.2); }
-    .fic-amber { background: rgba(245,158,11,.12); border: 1px solid rgba(245,158,11,.2); }
-    .fic-blue  { background: rgba(59,130,246,.12); border: 1px solid rgba(59,130,246,.2); }
-    .fic-green { background: rgba(34,197,94,.12);  border: 1px solid rgba(34,197,94,.2); }
-    .fic-red   { background: rgba(239,68,68,.12);  border: 1px solid rgba(239,68,68,.2); }
-    .hnum { width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#0FC9C0,#0a8580);color:#fff;font-weight:700;font-size:1.3rem;display:flex;align-items:center;justify-content:center;margin:0 auto 18px; }
-    .faq-item { background:var(--sf);border:1px solid var(--bd);border-radius:14px;margin-bottom:10px;overflow:hidden; }
-    .faq-q { padding:18px 22px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:space-between; font-size:.95rem; }
-    .faq-a { padding:0 22px 18px;font-size:.875rem;color:var(--tx2);line-height:1.65;display:none; }
-    .faq-item.open .faq-a { display:block; }
-    .faq-item.open .faq-arr { transform:rotate(180deg); }
-    .faq-arr { transition:.3s;color:var(--teal); }
-    #footer { background:var(--bg2);border-top:1px solid var(--bd);padding:60px 0 30px; }
-    .flink  { color:var(--tx3);font-size:.875rem;display:block;margin-bottom:8px;transition:.2s; }
-    .flink:hover { color:var(--tx); }
-    #mbmenu { display:none;background:var(--bg);padding:16px 20px;border-bottom:1px solid var(--bd); }
-    #mbmenu.open { display:block; }
-    .dside { border-right:1px solid var(--bd);padding:12px 6px;display:flex;flex-direction:column;gap:2px;min-width:0; }
-    .dsi   { background:transparent;border:none;color:var(--tx3);font-size:.72rem;padding:7px 10px;border-radius:8px;text-align:left;cursor:default;display:flex;align-items:center;gap:6px;font-family:inherit;white-space:nowrap; }
-    .dsi.on{ background:rgba(15,201,192,.1);color:var(--teal); }
-    .dsi.soon{ opacity:.45; }
-    .dtbar { background:var(--bg3);border-bottom:1px solid var(--bd);padding:8px 14px;display:flex;align-items:center;gap:6px;border-radius:16px 16px 0 0; }
-    .dd    { width:10px;height:10px;border-radius:50%; }
-    .dgrid { display:grid;grid-template-columns:140px 1fr;min-height:200px; }
-    @media (max-width: 640px) { .dgrid { grid-template-columns:1fr; } .dside { display:none; } }
-    .dwrap { background:var(--sf);border:1px solid var(--bd);border-radius:16px;overflow:hidden; }
-    .adi   { animation:fadeInUp .8s ease .4s both; }
-    @keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
-    .apill { display:inline-flex;align-items:center;gap:4px;padding:2px 7px;border-radius:20px;font-size:.65rem;font-weight:600; }
-    .apill-r{background:rgba(239,68,68,.12);color:#f87171;}
-    .apill-y{background:rgba(245,158,11,.12);color:#fbbf24;}
-    .apill-g{background:rgba(34,197,94,.12);color:#34d399;}
-    .afu { opacity:0;animation:fadeInUp .7s ease both; }
-    .state { background:var(--sf);border:1px solid var(--bd);border-radius:16px;padding:22px;height:100%; }
-    .form-mg input, .form-mg select {
-      width:100%; background:var(--bg3); border:1px solid var(--bd); color:var(--tx);
-      border-radius:12px; padding:12px 14px; font-family:inherit; font-size:.95rem;
-    }
-    .form-mg input:focus, .form-mg select:focus { outline:none; border-color:var(--teal); }
-    .qnum { width:36px;height:36px;border-radius:10px;background:rgba(15,201,192,.12);color:var(--teal);font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
-  </style>
-</head>
-<body>
+  <title>Margentus | Inteligencia de rentabilidad para gastronomía</title>
+  <meta name="description" content="Tu analista de rentabilidad para gastronomía. Margentus transforma compras, recetas, precios y ventas en decisiones para cuidar el margen.">
+  <meta name="theme-color" content="#F7F7F2">
 
-<nav id="nbar">
-  <div class="container">
-    <div class="d-flex align-items-center justify-content-between w-100">
-      <a href="#" class="d-flex align-items-center">
-        <img src="img/logo.png" alt="Margentus" class="logo-nav">
-      </a>
-      <div class="d-none d-lg-flex align-items-center gap-1 mx-auto">
-        <a href="#producto" class="nav-link">Producto</a>
-        <a href="#how" class="nav-link">Cómo funciona</a>
-        <a href="#estado" class="nav-link">Estado</a>
-        <a href="#piloto" class="nav-link">Piloto</a>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Margentus">
+  <meta property="og:title" content="Margentus | Inteligencia de rentabilidad para gastronomía">
+  <meta property="og:description" content="Tu analista de rentabilidad para gastronomía. Margentus transforma compras, recetas, precios y ventas en decisiones para cuidar el margen.">
+  <meta property="og:locale" content="es_AR">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/landing.css">
+  <noscript><style>.rv{opacity:1 !important;transform:none !important}</style></noscript>
+</head>
+<body id="top">
+
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="nbar" id="nbar" aria-label="Navegación principal">
+  <div class="container nav-inner">
+    <a class="brand" href="#top" aria-label="Margentus, volver al inicio">
+      <img src="img/logo.png" alt="Margentus">
+    </a>
+
+    <div class="nav-links">
+      <a href="#producto">Producto</a>
+      <a href="#how">Cómo funciona</a>
+      <a href="#demo">Demo</a>
+      <a href="#piloto">Piloto</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+
+    <div class="nav-actions">
+      <div class="nav-cta">
+        <a href="https://margentus-demo.onrender.com/dashboard" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">Ver prototipo
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg>
+        </a>
+        <a href="#piloto" class="btn btn-primary btn-sm">Quiero el piloto</a>
       </div>
-      <div class="d-flex align-items-center gap-2">
-        <button class="boc d-flex align-items-center justify-content-center" id="thbtn" style="width:38px;height:38px;padding:0;border-radius:12px" aria-label="Cambiar tema">
-          <i class="fa-solid fa-sun" id="suni" style="display:none"></i>
-          <i class="fa-solid fa-moon" id="mooni"></i>
-        </button>
-        <a href="https://margentus-demo.onrender.com/dashboard" class="boc px-3 py-2 d-none d-sm-flex align-items-center gap-1" target="_blank" rel="noopener">Ver prototipo</a>
-        <a href="#piloto" class="bgrd btn px-3 py-2 d-none d-sm-flex align-items-center gap-1">Quiero el piloto <i class="fa-solid fa-arrow-right fa-sm"></i></a>
-        <button class="boc d-lg-none px-2 py-2" id="mbtog" style="border-radius:10px" onclick="toggleMenu()">
-          <i class="fa-solid fa-bars" id="barIcon"></i>
-          <i class="fa-solid fa-xmark" id="xIcon" style="display:none"></i>
-        </button>
-      </div>
+      <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mmenu">
+        <svg id="icoOpen" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
+        <svg id="icoClose" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="display:none"><path d="M6 6l12 12"/><path d="M18 6 6 18"/></svg>
+      </button>
     </div>
   </div>
 </nav>
 
-<div id="mbmenu">
-  <a href="#producto" class="nav-link d-block py-3 border-bottom" style="border-color:var(--bd)!important">Producto</a>
-  <a href="#how" class="nav-link d-block py-3 border-bottom" style="border-color:var(--bd)!important">Cómo funciona</a>
-  <a href="#estado" class="nav-link d-block py-3 border-bottom" style="border-color:var(--bd)!important">Estado</a>
-  <a href="#piloto" class="nav-link d-block py-3">Piloto</a>
-  <div class="d-flex gap-2 mt-3">
-    <a href="https://margentus-demo.onrender.com/dashboard" class="boc flex-fill py-2 btn text-center" target="_blank" rel="noopener">Prototipo</a>
-    <a href="#piloto" class="bgrd flex-fill py-2 btn text-center">Piloto</a>
+<div class="mmenu" id="mmenu">
+  <a href="#producto">Producto</a>
+  <a href="#how">Cómo funciona</a>
+  <a href="#demo">Demo</a>
+  <a href="#piloto">Piloto</a>
+  <a href="#contacto">Contacto</a>
+  <div class="mcta">
+    <a href="#piloto" class="btn btn-primary btn-lg" style="width:100%">Quiero ser parte del piloto</a>
   </div>
+  <p class="small" style="margin:12px 6px 4px;text-align:center;color:var(--ink-3)">
+    <a href="https://margentus-demo.onrender.com/dashboard" target="_blank" rel="noopener" style="color:var(--em);font-weight:600">Ver el prototipo</a>
+  </p>
 </div>
 
-<section id="hero" style="padding-top:calc(var(--nav) + 72px);padding-bottom:80px;position:relative;overflow:hidden">
-  <div class="aur aur-a" style="top:-100px;left:-150px"></div>
-  <div class="aur aur-b" style="top:160px;right:-200px"></div>
-  <div class="container position-relative" style="z-index:2">
-    <div class="text-center">
-      <div class="afu" style="animation-delay:.05s">
-        <span class="hbadge"><span class="bdot"></span>Inteligencia de rentabilidad · Mar del Plata</span>
+<main id="main">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="rv">
+          <span class="badge"><span class="dot" aria-hidden="true"></span>Plataforma de inteligencia de rentabilidad · Mar del Plata</span>
+        </div>
+
+        <h1 class="h1 rv" id="hero-title" style="max-width:860px;margin-left:auto;margin-right:auto">
+          Un restaurant puede facturar todos los días y aún así no saber <span class="hi">dónde pierde plata</span>.
+        </h1>
+
+        <p class="lead rv">
+          Margentus es tu analista de rentabilidad para gastronomía. Transformamos los datos que el negocio ya genera —compras, recetas, precios, ventas— en decisiones: qué plato deja margen, qué insumo se comió el costo, qué conviene hacer ahora.
+        </p>
+
+        <p class="clarify rv">No somos un POS. No somos un ERP. No te pedimos que ordenes todo para empezar.</p>
+
+        <div class="hero-ctas rv">
+          <a href="#piloto" class="btn btn-primary btn-lg">Quiero ser parte del piloto
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+          </a>
+          <a href="https://margentus-demo.onrender.com/dashboard" class="btn btn-ghost btn-lg" target="_blank" rel="noopener">Ver el prototipo
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg>
+          </a>
+        </div>
+
+        <p class="hero-note rv">Prototipo en validación. Cupo de piloto en Mar del Plata. Sin tarjeta. Acompañamiento directo.</p>
+
+        <div class="hero-strip rv">
+          <p class="strip-label">Hecho para operaciones de A&amp;B</p>
+          <div class="strip-chips">
+            <span class="chip">Restaurantes</span>
+            <span class="chip">Parrillas</span>
+            <span class="chip">Cafeterías</span>
+            <span class="chip">Bares</span>
+            <span class="chip">Hoteles con A&amp;B</span>
+          </div>
+        </div>
       </div>
-      <h1 class="h1 afu" style="font-size:clamp(2.1rem,5.2vw,3.6rem);font-weight:700;line-height:1.12;letter-spacing:-.03em;margin:22px auto 20px;max-width:860px;animation-delay:.12s">
-        Un restaurant puede facturar todos los días y aún así no saber <span class="gt">dónde pierde plata</span>
-      </h1>
-      <p class="mx-auto afu" style="max-width:620px;font-size:clamp(.95rem,1.8vw,1.12rem);color:var(--tx2);margin-bottom:28px;animation-delay:.2s">
-        Margentus es tu analista de rentabilidad para gastronomía. Transformamos las compras, recetas, precios y ventas que el negocio ya genera en decisiones: qué plato deja margen, qué insumo se comió el costo, qué conviene hacer ahora.
-      </p>
-      <p class="mx-auto afu" style="max-width:560px;font-size:.92rem;color:var(--tx3);margin-bottom:32px;animation-delay:.24s">
-        No somos un POS. No somos un ERP. No te pedimos que ordenes todo para empezar.
-      </p>
-      <div class="d-flex align-items-center justify-content-center gap-3 flex-wrap afu" style="animation-delay:.28s">
-        <a href="#piloto" class="bgrd btn px-4 py-3 fs-6">Quiero ser parte del piloto</a>
-        <a href="https://margentus-demo.onrender.com/dashboard" class="boc btn px-4 py-3 fs-6" target="_blank" rel="noopener">
-          <i class="fa-solid fa-arrow-up-right-from-square me-2" style="color:var(--teal)"></i>Ver el prototipo
+    </div>
+  </section>
+
+  <!-- ================= PROBLEMA ================= -->
+  <section class="sp problema" aria-labelledby="problema-title">
+    <div class="container">
+      <div class="sec-head rv">
+        <p class="kicker">El problema</p>
+        <h2 class="title" id="problema-title">El problema no es falta de datos.<br>Es no poder <span class="hi">decidir con ellos</span>.</h2>
+      </div>
+
+      <div class="prow">
+        <div class="card rv">
+          <div class="fico" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41 13.42 20.59a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82Z"/><circle cx="7" cy="7" r="1"/></svg>
+          </div>
+          <h3>Costos que se desactualizan.</h3>
+          <p>El precio del insumo cambió el martes; la carta, no.</p>
+        </div>
+
+        <div class="card rv">
+          <div class="fico" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <h3>Recetas que no existen en papel.</h3>
+          <p>El food cost vive en la cabeza del cocinero.</p>
+        </div>
+
+        <div class="card rv">
+          <div class="fico" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v4"/><path d="M12 17v4"/><path d="M3 12h4"/><path d="M17 12h4"/></svg>
+          </div>
+          <h3>Decisiones por intuición.</h3>
+          <p>Sin un analista de costos, el dueño adivina el margen.</p>
+        </div>
+      </div>
+
+      <p class="problema-close rv">Las cadenas tienen <strong>Control de Gestión</strong>. La PyME tiene al dueño a las 23:00 con una planilla.</p>
+    </div>
+  </section>
+
+  <!-- ================= QUÉ HACE MARGENTUS ================= -->
+  <section class="sp producto" id="producto" aria-labelledby="producto-title">
+    <div class="container">
+      <div class="sec-head rv">
+        <p class="kicker">Qué hace Margentus</p>
+        <h2 class="title" id="producto-title">Tres preguntas.<br>El resto es <span class="hi">ruido</span>.</h2>
+      </div>
+
+      <div class="qrow">
+        <div class="card rv">
+          <div class="qnum" aria-hidden="true">1</div>
+          <h3>¿Cómo está tu rentabilidad?</h3>
+          <p>Food cost y margen de lo que ya podés costear.</p>
+        </div>
+
+        <div class="card rv">
+          <div class="qnum" aria-hidden="true">2</div>
+          <h3>¿Qué está pasando?</h3>
+          <p>Un insumo subió. Un plato quedó abajo del objetivo.</p>
+        </div>
+
+        <div class="card rv">
+          <div class="qnum" aria-hidden="true">3</div>
+          <h3>¿Qué mirás primero?</h3>
+          <p>La evidencia, no otro reporte.</p>
+        </div>
+      </div>
+
+      <div class="producto-honesty rv">
+        <div class="mint-line" aria-hidden="true"></div>
+        <p>Cuando un dato falta, Margentus puede inferirlo — y lo marca como <strong>inferido</strong>, no como hecho.</p>
+        <p style="margin-top:6px">Nunca ocultamos la diferencia entre un dato confirmado y una estimación.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CÓMO FUNCIONA ================= -->
+  <section class="sp how" id="how" aria-labelledby="how-title">
+    <div class="container">
+      <div class="sec-head rv">
+        <p class="kicker">Cómo funciona</p>
+        <h2 class="title" id="how-title">Empezamos con lo que <span class="hi">ya tenés</span>.</h2>
+      </div>
+
+      <div class="hrow">
+        <div class="hstep card rv">
+          <span class="stage">01</span>
+          <h3>Entra lo que hay</h3>
+          <p>Excel, recetas, compras, lo que exista.</p>
+        </div>
+        <div class="hstep card rv">
+          <span class="stage">02</span>
+          <h3>Se arma el modelo</h3>
+          <p>insumos → recetas → costo → margen</p>
+        </div>
+        <div class="hstep card rv">
+          <span class="stage">03</span>
+          <h3>Se ve la situación</h3>
+          <p>Qué plato y qué insumo mueven el número.</p>
+        </div>
+        <div class="hstep card rv">
+          <span class="stage">04</span>
+          <h3>Se decide</h3>
+          <p>Precio, receta, proveedor. Vos decidís.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DEMO / PRODUCTO ================= -->
+  <section class="sp demo" id="demo" aria-labelledby="demo-title">
+    <div class="container">
+      <div class="sec-head rv">
+        <p class="kicker">El prototipo</p>
+        <h2 class="title" id="demo-title">Así se ve la rentabilidad <span class="hi">hoy</span>.</h2>
+        <p class="sub">La pantalla que abre el prototipo: el centro de decisiones. Es la misma que vas a encontrar en la demo.</p>
+      </div>
+
+      <div class="rv">
+        <div class="mock">
+          <div class="mock-bar">
+            <span class="dots" aria-hidden="true">
+              <i style="background:#FF5F57"></i>
+              <i style="background:#FFBD2E"></i>
+              <i style="background:#28C840"></i>
+            </span>
+            <span class="caption">Prototipo · Hotel República · solo lectura</span>
+          </div>
+          <div class="mock-body">
+            <aside class="mside" aria-hidden="true">
+              <div class="msec">Hoy</div>
+              <div class="mnav on">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15l3.5-3.5"/><circle cx="12" cy="12" r="9"/></svg>
+                Decisiones
+              </div>
+              <div class="mnav">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+                Recetas
+              </div>
+              <div class="mnav">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="M3.3 7 12 12l8.7-5"/><path d="M12 22V12"/></svg>
+                Insumos
+              </div>
+              <div class="msec alt">Después</div>
+              <div class="mnav soon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 8 5-8 5-8-5Z"/><path d="m4 12 8 5 8-5"/><path d="m4 17 8 5 8-5"/></svg>
+                Inventario
+              </div>
+              <div class="mnav soon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
+                Menú
+              </div>
+            </aside>
+
+            <div class="mcontent">
+              <div class="stat-grid">
+                <div class="stat">
+                  <div class="v em">31,2%</div>
+                  <div class="l">Food cost · sobre recetas costeadas</div>
+                </div>
+                <div class="stat">
+                  <div class="v">68,8%</div>
+                  <div class="l">Margen bruto</div>
+                  <div class="warn">Mozzarella subió</div>
+                </div>
+                <div class="stat">
+                  <div class="v">5</div>
+                  <div class="l">Recetas costeadas · dato relevado</div>
+                </div>
+                <div class="stat">
+                  <div class="v em">3</div>
+                  <div class="l">Platos afectados</div>
+                  <div class="bad">Muzza · napolitana · burger</div>
+                </div>
+              </div>
+
+              <div class="mrow">
+                <div class="panel">
+                  <div class="pttl">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+                    Costo de receta — pizza muzza vs. objetivo
+                  </div>
+                  <div class="bars" aria-hidden="true">
+                    <i class="bar" style="height:62%"></i>
+                    <i class="bar" style="height:64%"></i>
+                    <i class="bar" style="height:63%"></i>
+                    <i class="bar" style="height:71%"></i>
+                    <i class="bar" style="height:78%"></i>
+                    <i class="bar" style="height:86%"></i>
+                    <i class="bar" style="height:92%"></i>
+                    <i class="bar" style="height:96%"></i>
+                  </div>
+                  <div class="bar-lb"><span>S1</span><span>S2</span><span>S3</span><span>S4</span><span>S5</span><span>S6</span><span>S7</span><span>hoy</span></div>
+                </div>
+
+                <div class="panel">
+                  <div class="pttl">Qué mirar ahora</div>
+                  <div class="alert a-red"><span class="pill" aria-hidden="true"></span>Mozzarella +22% esta semana</div>
+                  <div class="alert a-amber"><span class="pill" aria-hidden="true"></span>Muzza debajo del margen objetivo</div>
+                  <div class="alert a-green"><span class="pill" aria-hidden="true"></span>Milanesa dentro de objetivo</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="demo-caption rv">Inventario, ventas, ingeniería de menú e inferencia avanzada entran después del piloto. Hoy validamos comprensión de rentabilidad.</p>
+
+      <div class="demo-cta rv">
+        <a href="https://margentus-demo.onrender.com/dashboard" class="btn btn-primary" target="_blank" rel="noopener">Abrir el prototipo
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg>
         </a>
       </div>
-      <p class="mt-3 afu" style="font-size:.82rem;color:var(--tx3);animation-delay:.34s">
-        Prototipo en validación. Cupo de piloto en Mar del Plata. Sin tarjeta. Acompañamiento directo.
-      </p>
-      <div class="mt-5 afu" style="animation-delay:.4s">
-        <p style="font-size:.71rem;color:var(--tx3);text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px">Hecho para operaciones de A&B</p>
-        <div class="d-flex align-items-center justify-content-center gap-4 flex-wrap">
-          <span class="tlog">Restaurantes</span>
-          <span class="tlog">Parrillas</span>
-          <span class="tlog">Cafeterías</span>
-          <span class="tlog">Bares</span>
-          <span class="tlog">Hoteles con A&B</span>
+    </div>
+  </section>
+
+  <!-- ================= CASO DE USO ================= -->
+  <section class="sp caso" id="caso" aria-labelledby="caso-title">
+    <div class="container">
+      <div class="caso-grid">
+        <div class="caso-copy rv">
+          <p class="kicker">Un ejemplo</p>
+          <h2 class="title" id="caso-title">Un ejemplo de la conversación que queremos tener</h2>
+          <p>La mozzarella subió. Afecta la muzza y la hamburguesa. El sistema muestra el nuevo costo, el margen nuevo y la pregunta: ¿subís precio, cambiás receta o cambiás proveedor?</p>
+          <p class="caso-closer">Eso es el producto. No un chat.</p>
+        </div>
+
+        <div class="flow rv" aria-hidden="true">
+          <div class="flow-item in">
+            <div class="tag">Insumo</div>
+            <div class="txt">La mozzarella subió esta semana.</div>
+          </div>
+          <div class="flow-item">
+            <div class="tag">Impacto</div>
+            <div class="txt">Nuevo costo y nuevo margen en las recetas que la usan.</div>
+          </div>
+          <div class="flow-item dec">
+            <div class="tag">Decisión</div>
+            <div class="txt">Precio, receta o proveedor. Vos elegís.</div>
+          </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="row justify-content-center mt-5">
-      <div class="col-lg-11 adi">
-        <div class="dwrap">
-          <div class="dtbar">
-            <span class="dd" style="background:#ff5f57"></span>
-            <span class="dd" style="background:#ffbd2e"></span>
-            <span class="dd" style="background:#28c840"></span>
-            <span class="ms-auto me-auto" style="font-size:.72rem;color:var(--tx3)">Prototipo · Hotel República · solo lectura</span>
+  <!-- ================= PARA QUIÉN ================= -->
+  <section class="sp para-quien" id="para-quien" aria-labelledby="pq-title">
+    <div class="container">
+      <div class="pq-grid">
+        <div class="rv">
+          <p class="kicker">Para quién</p>
+          <h2 class="title" id="pq-title">Pensado para quienes tienen que cuidar el margen todos los días.</h2>
+          <p class="sub" style="margin-top:12px">Restaurantes, parrillas, cafeterías, bares y hoteles con operación de A&amp;B en Mar del Plata, que hoy resuelven costos en Excel o de memoria.</p>
+          <p class="pq-note">No reemplazamos tu caja. Nos apoyamos en ella cuando exista.</p>
+        </div>
+
+        <div class="rv">
+          <div class="pq-list">
+            <span class="pq-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+              Restaurantes
+            </span>
+            <span class="pq-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+              Parrillas
+            </span>
+            <span class="pq-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+              Cafeterías
+            </span>
+            <span class="pq-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+              Bares
+            </span>
+            <span class="pq-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+              Hoteles con A&amp;B
+            </span>
           </div>
-          <div class="dgrid">
-            <div class="dside">
-              <div style="font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;color:var(--tx3);padding:0 10px 8px;font-weight:700">Hoy</div>
-              <div class="dsi on"><i class="fa-solid fa-gauge-high"></i> Decisiones</div>
-              <div class="dsi"><i class="fa-solid fa-utensils"></i> Recetas</div>
-              <div class="dsi"><i class="fa-solid fa-carrot"></i> Insumos</div>
-              <div style="font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;color:var(--tx3);padding:10px 10px 6px;font-weight:700">Después</div>
-              <div class="dsi soon"><i class="fa-solid fa-boxes-stacked"></i> Inventario</div>
-              <div class="dsi soon"><i class="fa-solid fa-chart-pie"></i> Menú</div>
-            </div>
-            <div class="p-3">
-              <div class="row g-2 mb-3">
-                <div class="col-6 col-sm-3"><div class="stpill"><div style="font-size:1.3rem;font-weight:700;color:var(--teal)">31.2%</div><div style="font-size:.65rem;color:var(--tx3)">Food cost</div><div style="font-size:.65rem;color:var(--tx3)">Sobre recetas costeadas</div></div></div>
-                <div class="col-6 col-sm-3"><div class="stpill"><div style="font-size:1.3rem;font-weight:700">68.8%</div><div style="font-size:.65rem;color:var(--tx3)">Margen bruto</div><div style="font-size:.65rem;color:#fbbf24;font-weight:600">Mozzarella subió</div></div></div>
-                <div class="col-6 col-sm-3"><div class="stpill"><div style="font-size:1.3rem;font-weight:700">5</div><div style="font-size:.65rem;color:var(--tx3)">Recetas costeadas</div><div style="font-size:.65rem;color:var(--tx3)">Dato relevado</div></div></div>
-                <div class="col-6 col-sm-3"><div class="stpill"><div style="font-size:1.3rem;font-weight:700;color:var(--teal)">3</div><div style="font-size:.65rem;color:var(--tx3)">Platos afectados</div><div style="font-size:.65rem;color:#f87171;font-weight:600">Muzza · napolitana · burger</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FUNDADOR ================= -->
+  <section class="sp fundador" id="fundador" aria-labelledby="fundador-title">
+    <div class="container">
+      <div class="fundador-box rv">
+        <p class="kicker" style="justify-content:center">Detrás del producto</p>
+        <p class="fundador-quote">"El problema no se estudió: se laburó."</p>
+        <p class="fundador-name" id="fundador-title">Cristian Orihuela</p>
+        <p class="fundador-role">Más de 20 años en administración, gestión hotelera y control de costos.</p>
+        <p class="fundador-extra">Conozco desde adentro el problema que estamos convirtiendo en producto.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ESTADO DEL PROYECTO ================= -->
+  <section class="sp estado" id="estado" aria-labelledby="estado-title">
+    <div class="container">
+      <div class="sec-head rv">
+        <p class="kicker">Estado del proyecto</p>
+        <h2 class="title" id="estado-title">¿Dónde estamos hoy?</h2>
+      </div>
+
+      <div class="estado-grid">
+        <div class="estado-card rv">
+          <div class="lbl">Etapa</div>
+          <p>Prototipo visual en validación.</p>
+        </div>
+        <div class="estado-card rv">
+          <div class="lbl">Qué hay</div>
+          <p>Demo navegable + documentación de producto.</p>
+        </div>
+        <div class="estado-card rv">
+          <div class="lbl">Qué falta</div>
+          <p>Piloto con carta real + primeras métricas de uso.</p>
+        </div>
+        <div class="estado-card rv">
+          <div class="lbl">Dónde</div>
+          <p>Mar del Plata.</p>
+        </div>
+        <div class="estado-card rv">
+          <div class="lbl">Programa</div>
+          <p>StartUP+IT · Universidad de Palermo / Polo IT Buenos Aires.</p>
+        </div>
+      </div>
+
+      <p class="estado-honesty rv">Sin métricas inventadas: no hay ARR, clientes ni facturación que mostrar todavía.</p>
+    </div>
+  </section>
+
+  <!-- ================= PILOTO ================= -->
+  <section class="sp piloto" id="piloto" aria-labelledby="piloto-title">
+    <div class="container">
+      <div class="piloto-grid">
+        <div class="piloto-left rv">
+          <p class="kicker">Piloto</p>
+          <h2 class="title" id="piloto-title">8 establecimientos.<br>Precio de piloto. <span class="hi">Acompañamiento directo.</span></h2>
+          <p>Un cupo acotado en Mar del Plata. Empezamos con lo que ya tenés y validamos la carta real.</p>
+          <p class="resp">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            Respondemos en menos de 24&nbsp;h.
+          </p>
+          <a href="https://wa.me/5492235903633?text=Hola%20Cristian%2C%20quiero%20sumarme%20al%20piloto%20de%20Margentus" class="btn btn-ghost" target="_blank" rel="noopener">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.3 8.3 0 0 1-3.9-1L3 21l2.1-5.6A8.3 8.3 0 0 1 3.5 11.5 8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4Z"/></svg>
+            Escribir por WhatsApp
+          </a>
+        </div>
+
+        <div class="rv">
+          <form class="pform" onsubmit="return sendPiloto(event)">
+            <div class="frow">
+              <div class="fcol">
+                <label for="fNombre">Nombre</label>
+                <input id="fNombre" name="nombre" type="text" required autocomplete="name" placeholder="Nombre y apellido">
               </div>
-              <div class="row g-2">
-                <div class="col-sm-7">
-                  <div style="background:var(--bg3);border:1px solid var(--bd);border-radius:12px;padding:12px">
-                    <div style="font-size:.7rem;color:var(--tx3);margin-bottom:8px;font-weight:600"><i class="fa-solid fa-chart-bar me-1"></i>Costo de receta — pizza muzza vs objetivo</div>
-                    <div style="display:flex;align-items:flex-end;gap:5px;height:70px">
-                      <div class="bbar" style="height:62%"></div><div class="bbar" style="height:64%"></div><div class="bbar" style="height:63%"></div><div class="bbar" style="height:71%"></div><div class="bbar" style="height:78%"></div><div class="bbar" style="height:86%"></div><div class="bbar" style="height:92%"></div><div class="bbar" style="height:96%"></div>
-                    </div>
-                    <div class="d-flex justify-content-between mt-1" style="font-size:.6rem;color:var(--tx3)"><span>S1</span><span>S2</span><span>S3</span><span>S4</span><span>S5</span><span>S6</span><span>S7</span><span>hoy</span></div>
-                  </div>
-                </div>
-                <div class="col-sm-5">
-                  <div style="background:var(--bg3);border:1px solid var(--bd);border-radius:12px;padding:10px;height:100%;display:flex;flex-direction:column;gap:6px">
-                    <div style="font-size:.68rem;color:var(--tx3);font-weight:600">Qué mirar ahora</div>
-                    <div style="font-size:.7rem;display:flex;align-items:center;gap:5px;padding:5px 8px;background:rgba(239,68,68,.06);border-radius:7px;border:1px solid rgba(239,68,68,.15)"><span class="apill-r apill">●</span>Mozzarella +22% esta semana</div>
-                    <div style="font-size:.7rem;display:flex;align-items:center;gap:5px;padding:5px 8px;background:rgba(245,158,11,.06);border-radius:7px;border:1px solid rgba(245,158,11,.15)"><span class="apill-y apill">●</span>Muzza debajo del margen objetivo</div>
-                    <div style="font-size:.7rem;display:flex;align-items:center;gap:5px;padding:5px 8px;background:rgba(34,197,94,.06);border-radius:7px;border:1px solid rgba(34,197,94,.15)"><span class="apill-g apill">●</span>Milanesa dentro de objetivo</div>
-                  </div>
-                </div>
+              <div class="fcol">
+                <label for="fLocal">Local / establecimiento</label>
+                <input id="fLocal" name="local" type="text" required autocomplete="organization" placeholder="Nombre del local">
+              </div>
+              <div class="fcol">
+                <label for="fTipo">Tipo de negocio</label>
+                <select id="fTipo" name="tipo">
+                  <option value="Restaurante">Restaurante</option>
+                  <option value="Parrilla">Parrilla</option>
+                  <option value="Cafetería">Cafetería</option>
+                  <option value="Bar">Bar</option>
+                  <option value="Hotel con A&B">Hotel con A&amp;B</option>
+                  <option value="Otro">Otro</option>
+                </select>
+              </div>
+              <div class="fcol">
+                <label for="fTel">WhatsApp</label>
+                <input id="fTel" name="tel" type="tel" required autocomplete="tel" placeholder="223..." inputmode="tel">
+              </div>
+              <div class="fcol full">
+                <button type="submit" class="btn btn-primary btn-lg">Quiero participar del piloto
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                </button>
               </div>
             </div>
-          </div>
+            <p class="pform-sub">¿Preferís escribirnos? <a href="mailto:hola@margentus.com">hola@margentus.com</a></p>
+          </form>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="sp position-relative">
-  <div class="container position-relative" style="z-index:1">
-    <div class="text-center mb-5 rv">
-      <span class="slbl">El problema</span>
-      <h2 class="stitle">No es falta de datos.<br>Es no poder <span class="gt">decidir con ellos</span></h2>
-      <p class="ssub mx-auto">Las cadenas tienen Control de Gestión. La PyME tiene al dueño a las 23:00 con una planilla.</p>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-4 rv"><div class="gc p-4 h-100"><div style="width:52px;height:52px;border-radius:14px;margin-bottom:18px" class="fic-amber d-flex align-items-center justify-content-center"><i class="fa-solid fa-tags fa-lg" style="color:#fbbf24"></i></div><h3 class="fw-semibold fs-5 mb-2">Costos que se desactualizan</h3><p style="font-size:.875rem;color:var(--tx2);margin:0">El precio del insumo cambió el martes. La carta, no. El margen se come en silencio.</p></div></div>
-      <div class="col-md-4 rv"><div class="gc p-4 h-100"><div style="width:52px;height:52px;border-radius:14px;margin-bottom:18px" class="fic-red d-flex align-items-center justify-content-center"><i class="fa-solid fa-book-open fa-lg" style="color:#f87171"></i></div><h3 class="fw-semibold fs-5 mb-2">Recetas que no existen en papel</h3><p style="font-size:.875rem;color:var(--tx2);margin:0">El food cost vive en la cabeza del cocinero. Sin ficha, no hay costo real ni decisión.</p></div></div>
-      <div class="col-md-4 rv"><div class="gc p-4 h-100"><div style="width:52px;height:52px;border-radius:14px;margin-bottom:18px" class="fic-blue d-flex align-items-center justify-content-center"><i class="fa-solid fa-compass fa-lg" style="color:#60a5fa"></i></div><h3 class="fw-semibold fs-5 mb-2">Decisiones por intuición</h3><p style="font-size:.875rem;color:var(--tx2);margin:0">Sin un analista de costos, el dueño adivina el margen. Los datos no mejoran un negocio. Las decisiones sí.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<section id="producto" class="sp position-relative" style="background:var(--bg2)">
-  <div class="container position-relative" style="z-index:1">
-    <div class="text-center mb-5 rv">
-      <span class="slbl">Producto</span>
-      <h2 class="stitle">Tres preguntas.<br>El resto es <span class="gt">ruido</span></h2>
-      <p class="ssub mx-auto">Cada pantalla tiene que responder: ¿qué debería hacer ahora?</p>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-4 rv"><div class="gc p-4 h-100"><div class="d-flex align-items-center gap-3 mb-3"><div class="qnum">1</div><h3 class="fw-semibold fs-5 mb-0">¿Cómo está tu rentabilidad?</h3></div><p style="font-size:.875rem;color:var(--tx2);margin:0">Food cost y margen de lo que ya podés costear. No un tablero de 40 KPIs.</p></div></div>
-      <div class="col-md-4 rv"><div class="gc p-4 h-100"><div class="d-flex align-items-center gap-3 mb-3"><div class="qnum">2</div><h3 class="fw-semibold fs-5 mb-0">¿Qué está pasando?</h3></div><p style="font-size:.875rem;color:var(--tx2);margin:0">Un insumo subió. Un plato quedó debajo del objetivo. La causa, no el síntoma.</p></div></div>
-      <div class="col-md-4 rv"><div class="gc p-4 h-100"><div class="d-flex align-items-center gap-3 mb-3"><div class="qnum">3</div><h3 class="fw-semibold fs-5 mb-0">¿Qué mirás primero?</h3></div><p style="font-size:.875rem;color:var(--tx2);margin:0">La evidencia: precio, receta o proveedor. Vos decidís. No escondemos un dato inferido como si fuera un hecho.</p></div></div>
-    </div>
-    <p class="text-center mt-4 rv" style="font-size:.85rem;color:var(--tx3);max-width:640px;margin-left:auto;margin-right:auto">Inventario, ventas, ingeniería de menú e inferencia avanzada entran después del piloto. Hoy validamos comprensión de rentabilidad.</p>
-  </div>
-</section>
-
-<section id="how" class="sp position-relative">
-  <div class="container position-relative" style="z-index:1">
-    <div class="text-center mb-5 rv"><span class="slbl">Cómo funciona</span><h2 class="stitle">Empezamos con lo que <span class="gt">ya tenés</span></h2></div>
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-3 rv"><div class="gc p-4 h-100 text-center"><div class="hnum">1</div><h3 class="fs-5 fw-semibold mb-2">Entra lo que hay</h3><p style="font-size:.875rem;color:var(--tx2);margin:0">Excel, recetas, compras, lo que exista. No exigimos un ERP ordenado para arrancar.</p></div></div>
-      <div class="col-md-6 col-lg-3 rv"><div class="gc p-4 h-100 text-center"><div class="hnum">2</div><h3 class="fs-5 fw-semibold mb-2">Se arma el modelo</h3><p style="font-size:.875rem;color:var(--tx2);margin:0">Insumos → recetas → costo → margen. Lo que falta se marca. No se inventa.</p></div></div>
-      <div class="col-md-6 col-lg-3 rv"><div class="gc p-4 h-100 text-center"><div class="hnum">3</div><h3 class="fs-5 fw-semibold mb-2">Se ve la situación</h3><p style="font-size:.875rem;color:var(--tx2);margin:0">Qué plato y qué insumo mueven el número esta semana.</p></div></div>
-      <div class="col-md-6 col-lg-3 rv"><div class="gc p-4 h-100 text-center"><div class="hnum">4</div><h3 class="fs-5 fw-semibold mb-2">Se decide</h3><p style="font-size:.875rem;color:var(--tx2);margin:0">Precio, receta o proveedor. La persona decide. El sistema explica.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<section class="sp position-relative" style="background:var(--bg2)">
-  <div class="container">
-    <div class="row align-items-center g-5">
-      <div class="col-lg-6 rv">
-        <span class="slbl">Un ejemplo</span>
-        <h2 class="stitle">La mozzarella subió.<br><span class="gt">¿Y ahora?</span></h2>
-        <p style="color:var(--tx2);margin-bottom:20px">Afecta la muzza, la napolitana y la hamburguesa. El sistema muestra el nuevo costo, el margen nuevo y la pregunta: ¿subís precio, cambiás receta o cambiás proveedor?</p>
-        <p style="color:var(--tx2);margin:0">Eso es el producto. No un chat. No otro reporte.</p>
+  <!-- ================= FAQ ================= -->
+  <section class="sp faq" id="faq" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="sec-head rv">
+        <p class="kicker">Preguntas</p>
+        <h2 class="title" id="faq-title">Corto y honesto.</h2>
       </div>
-      <div class="col-lg-6 rv">
-        <div class="gc p-4">
-          <div style="font-size:.75rem;color:var(--tx3);font-weight:600;margin-bottom:14px">Situación · Hotel República</div>
-          <div style="display:flex;flex-direction:column;gap:10px">
-            <div style="padding:12px 14px;border-radius:12px;background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.15)"><div style="font-size:.72rem;color:#f87171;font-weight:700;margin-bottom:4px">INSUMO</div><div style="font-size:.95rem">Mozzarella +22% esta semana</div></div>
-            <div style="padding:12px 14px;border-radius:12px;background:var(--bg3);border:1px solid var(--bd)"><div style="font-size:.72rem;color:var(--tx3);font-weight:700;margin-bottom:4px">IMPACTO</div><div style="font-size:.95rem">3 recetas debajo del margen objetivo</div></div>
-            <div style="padding:12px 14px;border-radius:12px;background:rgba(15,201,192,.08);border:1px solid rgba(15,201,192,.2)"><div style="font-size:.72rem;color:var(--teal);font-weight:700;margin-bottom:4px">DECISIÓN</div><div style="font-size:.95rem">Precio · receta · proveedor. Vos elegís.</div></div>
-          </div>
+
+      <div class="faq-wrap rv">
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            ¿Necesito recetas escritas?
+            <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="faq-a">No. Se pueden cargar desde cero. Lo que falte, se marca.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            ¿Reemplaza a Fudo / Maxirest?
+            <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="faq-a">No. Ellos operan el salón. Nosotros explicamos la rentabilidad.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            ¿Cuándo está el producto?
+            <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="faq-a">El prototipo se puede ver ahora. El MVP se construye con lo que el piloto enseñe.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            ¿Mis datos?
+            <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="faq-a">En el piloto: un establecimiento, acceso acotado, sin benchmarking público.</div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="estado" class="sp">
-  <div class="container">
-    <div class="text-center mb-5 rv"><span class="slbl">Quién y en qué etapa</span><h2 class="stitle">Transparente para un dueño<br>y para un <span class="gt">jurado</span></h2></div>
-    <div class="row g-4">
-      <div class="col-lg-4 rv"><div class="state"><div style="font-size:.75rem;font-weight:700;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px">Fundador</div><h3 class="fs-4 fw-semibold mb-2">Cristian Orihuela</h3><p style="font-size:.9rem;color:var(--tx2);margin:0">Más de 20 años en administración, gestión hotelera y control de costos. El problema no se estudió: se laburó.</p></div></div>
-      <div class="col-lg-4 rv"><div class="state"><div style="font-size:.75rem;font-weight:700;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px">Hoy</div><h3 class="fs-4 fw-semibold mb-2">Prototipo en validación</h3><p style="font-size:.9rem;color:var(--tx2);margin:0">Demo navegable + documentación de producto. Falta el piloto con carta real. No hay ARR ni N clientes.</p></div></div>
-      <div class="col-lg-4 rv"><div class="state"><div style="font-size:.75rem;font-weight:700;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px">Dónde</div><h3 class="fs-4 fw-semibold mb-2">Mar del Plata</h3><p style="font-size:.9rem;color:var(--tx2);margin:0">Programa StartUP+IT (Universidad de Palermo / Polo IT Buenos Aires). Bitácora en el blog, no en el hero.</p></div></div>
-    </div>
-  </div>
-</section>
+</main>
 
-<section id="piloto" class="sp" style="background:var(--bg2)">
+<!-- ================= FOOTER ================= -->
+<footer class="footer" id="contacto">
   <div class="container">
-    <div class="row g-5 align-items-start">
-      <div class="col-lg-5 rv">
-        <span class="slbl">Piloto</span>
-        <h2 class="stitle">8 establecimientos.<br>Acompañamiento <span class="gt">directo</span></h2>
-        <p style="color:var(--tx2)">Restaurantes, parrillas, cafeterías, bares y hoteles con A&B en Mar del Plata, que hoy resuelven costos en Excel o de memoria.</p>
-        <p style="color:var(--tx2)">No reemplazamos tu caja. Nos apoyamos en ella cuando exista. Respuesta en menos de 24 h.</p>
-        <a href="https://wa.me/5492235903633?text=Hola%20Cristian%2C%20quiero%20sumarme%20al%20piloto%20de%20Margentus" class="bgrd btn px-4 py-3 mt-2" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp me-2"></i>Escribir por WhatsApp</a>
+    <div class="footer-grid">
+      <div>
+        <img src="img/logo.png" alt="Margentus">
+        <p class="footer-tag">Tu analista de rentabilidad para gastronomía. Transformamos datos en decisiones.</p>
       </div>
-      <div class="col-lg-7 rv">
-        <form class="gc p-4 form-mg" onsubmit="return sendPiloto(event)">
-          <div class="row g-3">
-            <div class="col-md-6"><label class="mb-1" style="font-size:.8rem;color:var(--tx3)">Tu nombre</label><input id="fNombre" required placeholder="Nombre y apellido"></div>
-            <div class="col-md-6"><label class="mb-1" style="font-size:.8rem;color:var(--tx3)">WhatsApp</label><input id="fTel" required placeholder="223..."></div>
-            <div class="col-md-6"><label class="mb-1" style="font-size:.8rem;color:var(--tx3)">Local</label><input id="fLocal" required placeholder="Nombre del establecimiento"></div>
-            <div class="col-md-6"><label class="mb-1" style="font-size:.8rem;color:var(--tx3)">Tipo</label><select id="fTipo"><option>Restaurante</option><option>Parrilla</option><option>Cafetería</option><option>Bar</option><option>Hotel con A&B</option><option>Otro</option></select></div>
-            <div class="col-12"><button type="submit" class="bgrd btn w-100 py-3">Enviar por WhatsApp</button></div>
-            <div class="col-12"><p class="mb-0 text-center" style="font-size:.78rem;color:var(--tx3)">O escribinos a <a href="mailto:ori@live.com.ar" style="color:var(--teal)">ori@live.com.ar</a></p></div>
-          </div>
-        </form>
+
+      <div class="fcol">
+        <h4>Producto</h4>
+        <a href="#producto">Qué hace</a>
+        <a href="#how">Cómo funciona</a>
+        <a href="#demo">Demo</a>
+        <a href="#piloto">Piloto</a>
+      </div>
+
+      <div class="fcol">
+        <h4>Proyecto</h4>
+        <a href="#estado">Estado</a>
+        <a href="blog.html">Proyecto</a>
+        <span>StartUP+IT</span>
+        <span>Mar del Plata</span>
+      </div>
+
+      <div class="fcol">
+        <h4>Contacto</h4>
+        <a href="mailto:hola@margentus.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+          hola@margentus.com
+        </a>
+        <a href="https://wa.me/5492235903633" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.3 8.3 0 0 1-3.9-1L3 21l2.1-5.6A8.3 8.3 0 0 1 3.5 11.5 8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4Z"/></svg>
+          WhatsApp
+        </a>
+        <a href="#top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          Mar del Plata
+        </a>
       </div>
     </div>
-  </div>
-</section>
 
-<section id="faq" class="sp">
-  <div class="container">
-    <div class="text-center mb-5 rv"><span class="slbl">Preguntas</span><h2 class="stitle">Corto y <span class="gt">honesto</span></h2></div>
-    <div class="row justify-content-center rv"><div class="col-lg-8">
-      <div class="faq-item open"><div class="faq-q" onclick="toggleFaq(this)">¿Necesito recetas escritas? <i class="fa-solid fa-chevron-down faq-arr"></i></div><div class="faq-a">No. Se pueden cargar desde cero. Lo que falte, se marca. No convertimos una estimación en un hecho.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">¿Reemplaza a Fudo / Maxirest / mi POS? <i class="fa-solid fa-chevron-down faq-arr"></i></div><div class="faq-a">No. Ellos operan el salón. Nosotros explicamos la rentabilidad. No somos un ERP ni una calculadora de food cost suelta.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">¿Cuándo está el producto? <i class="fa-solid fa-chevron-down faq-arr"></i></div><div class="faq-a">El prototipo se puede ver ahora. El MVP se construye con lo que el piloto enseñe. No hay fecha de lanzamiento SaaS masivo en esta página.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">¿Mis datos? <i class="fa-solid fa-chevron-down faq-arr"></i></div><div class="faq-a">En el piloto: un establecimiento, acceso acotado, sin benchmarking público.</div></div>
-    </div></div>
-  </div>
-</section>
-
-<footer id="footer">
-  <div class="container">
-    <div class="row g-4 mb-5">
-      <div class="col-lg-5"><img src="img/logo.png" alt="Margentus" class="logo-nav mb-3"><p style="font-size:.875rem;color:var(--tx3);line-height:1.65;max-width:320px">Tu analista de rentabilidad para gastronomía. Transformamos datos en decisiones.</p></div>
-      <div class="col-6 col-lg-2"><div style="font-size:.8rem;font-weight:600;color:var(--tx2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px">Producto</div><a href="#producto" class="flink">Qué hace</a><a href="#how" class="flink">Cómo funciona</a><a href="https://margentus-demo.onrender.com/dashboard" class="flink" target="_blank" rel="noopener">Prototipo</a><a href="#piloto" class="flink">Piloto</a></div>
-      <div class="col-6 col-lg-2"><div style="font-size:.8rem;font-weight:600;color:var(--tx2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px">Proyecto</div><a href="blog.html" class="flink">Bitácora</a><a href="blog-intecmar-2026.html" class="flink">INTECMAR 2026</a><a href="#estado" class="flink">Estado</a></div>
-      <div class="col-6 col-lg-3"><div style="font-size:.8rem;font-weight:600;color:var(--tx2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px">Contacto</div><a href="https://wa.me/5492235903633" class="flink" target="_blank" rel="noopener">WhatsApp</a><a href="mailto:ori@live.com.ar" class="flink">ori@live.com.ar</a><span class="flink" style="cursor:default">Mar del Plata</span></div>
-    </div>
-    <div style="border-top:1px solid var(--bd);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
-      <div style="font-size:.8rem;color:var(--tx3)">© 2026 Margentus · Cristian Orihuela · Mar del Plata</div>
-      <div style="font-size:.8rem;color:var(--tx3)">Prototipo en validación · StartUP+IT</div>
+    <div class="footer-bottom">
+      <span>© 2026 Margentus · Cristian Orihuela · Mar del Plata</span>
+      <span>Prototipo en validación · StartUP+IT</span>
     </div>
   </div>
 </footer>
 
-<script src="js/jquery-3.7.1.min.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
 <script>
-const html = document.getElementById('htmlRoot');
-const suni = document.getElementById('suni');
-const mooni = document.getElementById('mooni');
-let dark = true;
-document.getElementById('thbtn').addEventListener('click', () => {
-  dark = !dark;
-  html.classList.toggle('lm', !dark);
-  suni.style.display  = dark ? 'none' : '';
-  mooni.style.display = dark ? '' : 'none';
-});
-window.addEventListener('scroll', () => {
-  document.getElementById('nbar').classList.toggle('scr', window.scrollY > 20);
-});
-function toggleMenu() {
-  const m = document.getElementById('mbmenu');
-  const b = document.getElementById('barIcon');
-  const x = document.getElementById('xIcon');
-  m.classList.toggle('open');
-  b.style.display = m.classList.contains('open') ? 'none' : '';
-  x.style.display = m.classList.contains('open') ? '' : 'none';
-}
-document.querySelectorAll('#mbmenu a').forEach(a => a.addEventListener('click', () => {
-  document.getElementById('mbmenu').classList.remove('open');
-  document.getElementById('barIcon').style.display = '';
-  document.getElementById('xIcon').style.display = 'none';
-}));
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
-}, { threshold: 0.12 });
-document.querySelectorAll('.rv').forEach(el => obs.observe(el));
-function toggleFaq(el) {
-  const item = el.parentElement;
-  const isOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open');
-  if (!isOpen) item.classList.add('open');
-}
-function sendPiloto(e) {
-  e.preventDefault();
-  const n = document.getElementById('fNombre').value.trim();
-  const t = document.getElementById('fTel').value.trim();
-  const l = document.getElementById('fLocal').value.trim();
-  const tipo = document.getElementById('fTipo').value;
-  const msg = 'Hola Cristian, quiero sumarme al piloto de Margentus.%0ANombre: ' + encodeURIComponent(n) + '%0AWhatsApp: ' + encodeURIComponent(t) + '%0ALocal: ' + encodeURIComponent(l) + '%0ATipo: ' + encodeURIComponent(tipo);
-  window.open('https://wa.me/5492235903633?text=' + msg, '_blank');
-  return false;
-}
+  // Navbar
+  const nbar = document.getElementById('nbar');
+  window.addEventListener('scroll', () => {
+    nbar.classList.toggle('scr', window.scrollY > 12);
+  }, { passive: true });
+
+  // Menú mobile
+  const burger = document.getElementById('burger');
+  const mmenu = document.getElementById('mmenu');
+  const icoOpen = document.getElementById('icoOpen');
+  const icoClose = document.getElementById('icoClose');
+  function setMenu(open) {
+    mmenu.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    icoOpen.style.display = open ? 'none' : '';
+    icoClose.style.display = open ? '' : 'none';
+  }
+  burger.addEventListener('click', () => setMenu(!mmenu.classList.contains('open')));
+  mmenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+
+  // Reveal on scroll
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+
+  // FAQ
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        q.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // Formulario piloto → WhatsApp
+  function sendPiloto(e) {
+    e.preventDefault();
+    const n = document.getElementById('fNombre').value.trim();
+    const local = document.getElementById('fLocal').value.trim();
+    const tipo = document.getElementById('fTipo').value;
+    const t = document.getElementById('fTel').value.trim();
+    const base = 'Hola Cristian, quiero sumarme al piloto de Margentus.';
+    const lines = [
+      base,
+      'Nombre: ' + n,
+      'Local / establecimiento: ' + local,
+      'Tipo de negocio: ' + tipo,
+      'WhatsApp: ' + t
+    ];
+    const url = 'https://wa.me/5492235903633?text=' + lines.map(encodeURIComponent).join('%0A');
+    window.open(url, '_blank', 'noopener');
+    return false;
+  }
 </script>
 </body>
 </html>
