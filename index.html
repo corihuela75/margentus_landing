@@ -12,7 +12,7 @@
   </script>
   <title>Margentus | Inteligencia de rentabilidad para gastronomía</title>
   <meta name="description" content="Tu analista de rentabilidad para gastronomía. Margentus transforma compras, recetas, precios y ventas en decisiones para cuidar el margen.">
-  <meta name="theme-color" content="#F7F7F2">
+  <meta name="theme-color" content="#F8FAFC">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Margentus">
@@ -20,44 +20,49 @@
   <meta property="og:description" content="Tu analista de rentabilidad para gastronomía. Margentus transforma compras, recetas, precios y ventas en decisiones para cuidar el margen.">
   <meta property="og:locale" content="es_AR">
 
+  <link rel="icon" href="img/logos/margentus-icon-light.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/landing.css">
-  <noscript><style>.rv{opacity:1 !important;transform:none !important}</style></noscript>
+  <link rel="stylesheet" href="css/margentus.css">
+  <link rel="stylesheet" href="css/margentus-components.css">
+  <link rel="stylesheet" href="css/margentus-responsive.css">
+  <noscript><style>.mg-rv{opacity:1 !important;transform:none !important}</style></noscript>
 </head>
 <body id="top">
 
-<a class="skip" href="#main">Saltar al contenido</a>
+<a class="mg-skip" href="#main">Saltar al contenido</a>
 
 <!-- ================= NAVBAR ================= -->
-<nav class="nbar" id="nbar" aria-label="Navegación principal">
-  <div class="container nav-inner">
-    <a class="brand" href="#top" aria-label="Margentus, volver al inicio">
-      <img class="lgo lgo-light" src="img/margentus_logo_light_nav.svg" alt="Margentus">
-      <img class="lgo lgo-dark" src="img/margentus_logo_dark_nav.svg" alt="Margentus">
+<nav class="mg-nav" id="nbar" aria-label="Navegación principal">
+  <div class="mg-container mg-nav-inner">
+    <a class="mg-brand" href="#top" aria-label="Margentus, volver al inicio">
+      <img class="mg-logo mg-logo--light" src="img/logos/margentus-icon-light.svg" alt="" width="32" height="32">
+      <img class="mg-logo mg-logo--dark" src="img/logos/margentus-icon-dark.svg" alt="" width="32" height="32">
+      <span class="mg-wordmark">Margentus</span>
     </a>
 
-    <div class="nav-links">
+    <nav class="mg-nav-links" aria-label="Secciones">
       <a href="#producto">Producto</a>
       <a href="#how">Cómo funciona</a>
-      <a href="#demo">Demo</a>
+      <a href="#demo">Prototipo</a>
+      <a href="proyecto.html">Proyecto</a>
+      <a href="#para-quien">Para quién</a>
       <a href="#piloto">Piloto</a>
-      <a href="#contacto">Contacto</a>
-    </div>
+    </nav>
 
-    <div class="nav-actions">
-      <button class="theme-btn" id="themeBtn" type="button" aria-label="Cambiar a modo oscuro" aria-pressed="false">
-        <svg class="t-ico t-ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-        <svg class="t-ico t-ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+    <div class="mg-nav-actions">
+      <button class="mg-theme-btn" id="themeBtn" type="button" aria-label="Cambiar a modo oscuro" aria-pressed="false">
+        <svg class="mg-theme-ico mg-theme-ico--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        <svg class="mg-theme-ico mg-theme-ico--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
       </button>
-      <div class="nav-cta">
-        <a href="https://margentus-demo.onrender.com/dashboard" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">Ver prototipo
+      <div class="mg-nav-cta">
+        <a href="https://margentus-demo.onrender.com/dashboard" class="mg-btn mg-btn-ghost mg-btn-sm" target="_blank" rel="noopener">Ver prototipo
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg>
         </a>
-        <a href="#piloto" class="btn btn-primary btn-sm">Quiero el piloto</a>
+        <a href="#piloto" class="mg-btn mg-btn-primary mg-btn-sm">Quiero el piloto</a>
       </div>
-      <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mmenu">
+      <button class="mg-burger" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mmenu">
         <svg id="icoOpen" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
         <svg id="icoClose" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="display:none"><path d="M6 6l12 12"/><path d="M18 6 6 18"/></svg>
       </button>
@@ -65,59 +70,54 @@
   </div>
 </nav>
 
-<div class="mmenu" id="mmenu">
+<div class="mg-mmenu" id="mmenu">
   <a href="#producto">Producto</a>
   <a href="#how">Cómo funciona</a>
-  <a href="#demo">Demo</a>
+  <a href="#demo">Prototipo</a>
+  <a href="proyecto.html">Proyecto</a>
+  <a href="#para-quien">Para quién</a>
   <a href="#piloto">Piloto</a>
-  <a href="#contacto">Contacto</a>
-  <div class="mcta">
-    <a href="#piloto" class="btn btn-primary btn-lg" style="width:100%">Quiero ser parte del piloto</a>
+  <div class="mg-mmenu-cta">
+    <a href="#piloto" class="mg-btn mg-btn-primary mg-btn-lg">Quiero ser parte del piloto</a>
   </div>
-  <p class="small" style="margin:12px 6px 4px;text-align:center;color:var(--ink-3)">
-    <a href="https://margentus-demo.onrender.com/dashboard" target="_blank" rel="noopener" style="color:var(--accent-strong);font-weight:600">Ver el prototipo</a>
-  </p>
+  <p class="mg-mmenu-note"><a href="https://margentus-demo.onrender.com/dashboard" target="_blank" rel="noopener">Ver el prototipo</a></p>
 </div>
 
 <main id="main">
 
   <!-- ================= HERO ================= -->
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="container">
-      <div class="hero-inner">
-        <div class="rv">
-          <span class="badge"><span class="dot" aria-hidden="true"></span>Plataforma de inteligencia de rentabilidad · Mar del Plata</span>
+  <section class="mg-hero" aria-labelledby="hero-title">
+    <div class="mg-container">
+      <div class="mg-hero-inner">
+        <div class="mg-rv">
+          <span class="mg-badge"><span class="mg-badge-dot" aria-hidden="true"></span>Plataforma de inteligencia de rentabilidad · Mar del Plata</span>
         </div>
 
-        <h1 class="h1 rv" id="hero-title" style="max-width:860px;margin-left:auto;margin-right:auto">
-          Un restaurant puede facturar todos los días y aún así no saber <span class="hi">dónde pierde plata</span>.
-        </h1>
+        <h1 class="mg-h1 mg-rv" id="hero-title">Un restaurant puede facturar todos los días y aún así no saber <span class="mg-hi">dónde pierde plata</span>.</h1>
 
-        <p class="lead rv">
-          Margentus es tu analista de rentabilidad para gastronomía. Transformamos los datos que el negocio ya genera —compras, recetas, precios, ventas— en decisiones: qué plato deja margen, qué insumo se comió el costo, qué conviene hacer ahora.
-        </p>
+        <p class="mg-lead mg-rv">Margentus es tu analista de rentabilidad para gastronomía. Transformamos los datos que el negocio ya genera —compras, recetas, precios, ventas— en decisiones: qué plato deja margen, qué insumo se comió el costo, qué conviene hacer ahora.</p>
 
-        <p class="clarify rv">No somos un POS. No somos un ERP. No te pedimos que ordenes todo para empezar.</p>
+        <p class="mg-hero-clarify mg-rv">No somos un POS. No somos un ERP. No te pedimos que ordenes todo para empezar.</p>
 
-        <div class="hero-ctas rv">
-          <a href="#piloto" class="btn btn-primary btn-lg">Quiero ser parte del piloto
+        <div class="mg-hero-ctas mg-rv">
+          <a href="#piloto" class="mg-btn mg-btn-primary mg-btn-lg">Quiero ser parte del piloto
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
           </a>
-          <a href="https://margentus-demo.onrender.com/dashboard" class="btn btn-ghost btn-lg" target="_blank" rel="noopener">Ver el prototipo
+          <a href="https://margentus-demo.onrender.com/dashboard" class="mg-btn mg-btn-ghost mg-btn-lg" target="_blank" rel="noopener">Ver el prototipo
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg>
           </a>
         </div>
 
-        <p class="hero-note rv">Prototipo en validación. Cupo de piloto en Mar del Plata. Sin tarjeta. Acompañamiento directo.</p>
+        <p class="mg-hero-note mg-rv">Prototipo en validación. Cupo de piloto en Mar del Plata. Sin tarjeta. Acompañamiento directo.</p>
 
-        <div class="hero-strip rv">
-          <p class="strip-label">Hecho para operaciones de A&amp;B</p>
-          <div class="strip-chips">
-            <span class="chip">Restaurantes</span>
-            <span class="chip">Parrillas</span>
-            <span class="chip">Cafeterías</span>
-            <span class="chip">Bares</span>
-            <span class="chip">Hoteles con A&amp;B</span>
+        <div class="mg-hero-strip mg-rv">
+          <p class="mg-strip-label">Hecho para operaciones de A&amp;B</p>
+          <div class="mg-strip-chips">
+            <span class="mg-chip">Restaurantes</span>
+            <span class="mg-chip">Parrillas</span>
+            <span class="mg-chip">Cafeterías</span>
+            <span class="mg-chip">Bares</span>
+            <span class="mg-chip">Hoteles con A&amp;B</span>
           </div>
         </div>
       </div>
@@ -125,280 +125,74 @@
   </section>
 
   <!-- ================= PROBLEMA ================= -->
-  <section class="sp problema" aria-labelledby="problema-title">
-    <div class="container">
-      <div class="sec-head rv">
-        <p class="kicker">El problema</p>
-        <h2 class="title" id="problema-title">El problema no es falta de datos.<br>Es no poder <span class="hi">decidir con ellos</span>.</h2>
+  <section class="mg-section mg-problem" id="problema" aria-labelledby="problema-title">
+    <div class="mg-container">
+      <div class="mg-sec-head mg-rv">
+        <p class="mg-kicker">El problema</p>
+        <h2 class="mg-title" id="problema-title">El problema no es falta de datos.<br>Es no poder <span class="mg-hi">decidir con ellos</span>.</h2>
       </div>
 
-      <div class="prow">
-        <div class="card rv">
-          <div class="fico" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41 13.42 20.59a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82Z"/><circle cx="7" cy="7" r="1"/></svg>
+      <div class="mg-problem-grid">
+        <div class="mg-card mg-rv">
+          <div class="mg-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41 13.42 20.59a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82Z"/><circle cx="7" cy="7" r="1"/></svg>
           </div>
           <h3>Costos que se desactualizan.</h3>
           <p>El precio del insumo cambió el martes; la carta, no.</p>
         </div>
 
-        <div class="card rv">
-          <div class="fico" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        <div class="mg-card mg-rv">
+          <div class="mg-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
           </div>
           <h3>Recetas que no existen en papel.</h3>
           <p>El food cost vive en la cabeza del cocinero.</p>
         </div>
 
-        <div class="card rv">
-          <div class="fico" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v4"/><path d="M12 17v4"/><path d="M3 12h4"/><path d="M17 12h4"/></svg>
+        <div class="mg-card mg-rv">
+          <div class="mg-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v4"/><path d="M12 17v4"/><path d="M3 12h4"/><path d="M17 12h4"/></svg>
           </div>
           <h3>Decisiones por intuición.</h3>
           <p>Sin un analista de costos, el dueño adivina el margen.</p>
         </div>
       </div>
 
-      <p class="problema-close rv">Las cadenas tienen <strong>Control de Gestión</strong>. La PyME tiene al dueño a las 23:00 con una planilla.</p>
-    </div>
-  </section>
-
-  <!-- ================= QUÉ HACE MARGENTUS ================= -->
-  <section class="sp producto" id="producto" aria-labelledby="producto-title">
-    <div class="container">
-      <div class="sec-head rv">
-        <p class="kicker">Qué hace Margentus</p>
-        <h2 class="title" id="producto-title">Tres preguntas.<br>El resto es <span class="hi">ruido</span>.</h2>
-      </div>
-
-      <div class="qrow">
-        <div class="card rv">
-          <div class="qnum" aria-hidden="true">1</div>
-          <h3>¿Cómo está tu rentabilidad?</h3>
-          <p>Food cost y margen de lo que ya podés costear.</p>
-        </div>
-
-        <div class="card rv">
-          <div class="qnum" aria-hidden="true">2</div>
-          <h3>¿Qué está pasando?</h3>
-          <p>Un insumo subió. Un plato quedó abajo del objetivo.</p>
-        </div>
-
-        <div class="card rv">
-          <div class="qnum" aria-hidden="true">3</div>
-          <h3>¿Qué mirás primero?</h3>
-          <p>La evidencia, no otro reporte.</p>
-        </div>
-      </div>
-
-      <div class="producto-honesty rv">
-        <div class="mint-line" aria-hidden="true"></div>
-        <p>Cuando un dato falta, Margentus puede inferirlo — y lo marca como <strong>inferido</strong>, no como hecho.</p>
-        <p style="margin-top:6px">Nunca ocultamos la diferencia entre un dato confirmado y una estimación.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= CÓMO FUNCIONA ================= -->
-  <section class="sp how" id="how" aria-labelledby="how-title">
-    <div class="container">
-      <div class="sec-head rv">
-        <p class="kicker">Cómo funciona</p>
-        <h2 class="title" id="how-title">Empezamos con lo que <span class="hi">ya tenés</span>.</h2>
-      </div>
-
-      <div class="hrow">
-        <div class="hstep card rv">
-          <span class="stage">01</span>
-          <h3>Entra lo que hay</h3>
-          <p>Excel, recetas, compras, lo que exista.</p>
-        </div>
-        <div class="hstep card rv">
-          <span class="stage">02</span>
-          <h3>Se arma el modelo</h3>
-          <p>insumos → recetas → costo → margen</p>
-        </div>
-        <div class="hstep card rv">
-          <span class="stage">03</span>
-          <h3>Se ve la situación</h3>
-          <p>Qué plato y qué insumo mueven el número.</p>
-        </div>
-        <div class="hstep card rv">
-          <span class="stage">04</span>
-          <h3>Se decide</h3>
-          <p>Precio, receta, proveedor. Vos decidís.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= DEMO / PRODUCTO ================= -->
-  <section class="sp demo" id="demo" aria-labelledby="demo-title">
-    <div class="container">
-      <div class="sec-head rv">
-        <p class="kicker">El prototipo</p>
-        <h2 class="title" id="demo-title">Así se ve la rentabilidad <span class="hi">hoy</span>.</h2>
-        <p class="sub">La pantalla que abre el prototipo: el centro de decisiones. Es la misma que vas a encontrar en la demo.</p>
-      </div>
-
-      <div class="rv">
-        <div class="mock">
-          <div class="mock-bar">
-            <span class="dots" aria-hidden="true">
-              <i style="background:#FF5F57"></i>
-              <i style="background:#FFBD2E"></i>
-              <i style="background:#28C840"></i>
-            </span>
-            <span class="caption">Prototipo · Hotel República · solo lectura</span>
-          </div>
-          <div class="mock-body">
-            <aside class="mside" aria-hidden="true">
-              <div class="msec">Hoy</div>
-              <div class="mnav on">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15l3.5-3.5"/><circle cx="12" cy="12" r="9"/></svg>
-                Decisiones
-              </div>
-              <div class="mnav">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
-                Recetas
-              </div>
-              <div class="mnav">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="M3.3 7 12 12l8.7-5"/><path d="M12 22V12"/></svg>
-                Insumos
-              </div>
-              <div class="msec alt">Después</div>
-              <div class="mnav soon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 8 5-8 5-8-5Z"/><path d="m4 12 8 5 8-5"/><path d="m4 17 8 5 8-5"/></svg>
-                Inventario
-              </div>
-              <div class="mnav soon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
-                Menú
-              </div>
-            </aside>
-
-            <div class="mcontent">
-              <div class="stat-grid">
-                <div class="stat">
-                  <div class="v em">31,2%</div>
-                  <div class="l">Food cost · sobre recetas costeadas</div>
-                </div>
-                <div class="stat">
-                  <div class="v">68,8%</div>
-                  <div class="l">Margen bruto</div>
-                  <div class="warn">Mozzarella subió</div>
-                </div>
-                <div class="stat">
-                  <div class="v">5</div>
-                  <div class="l">Recetas costeadas · dato relevado</div>
-                </div>
-                <div class="stat">
-                  <div class="v em">3</div>
-                  <div class="l">Platos afectados</div>
-                  <div class="bad">Muzza · napolitana · burger</div>
-                </div>
-              </div>
-
-              <div class="mrow">
-                <div class="panel">
-                  <div class="pttl">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
-                    Costo de receta — pizza muzza vs. objetivo
-                  </div>
-                  <div class="bars" aria-hidden="true">
-                    <i class="bar" style="height:62%"></i>
-                    <i class="bar" style="height:64%"></i>
-                    <i class="bar" style="height:63%"></i>
-                    <i class="bar" style="height:71%"></i>
-                    <i class="bar" style="height:78%"></i>
-                    <i class="bar" style="height:86%"></i>
-                    <i class="bar" style="height:92%"></i>
-                    <i class="bar" style="height:96%"></i>
-                  </div>
-                  <div class="bar-lb"><span>S1</span><span>S2</span><span>S3</span><span>S4</span><span>S5</span><span>S6</span><span>S7</span><span>hoy</span></div>
-                </div>
-
-                <div class="panel">
-                  <div class="pttl">Qué mirar ahora</div>
-                  <div class="alert a-red"><span class="pill" aria-hidden="true"></span>Mozzarella +22% esta semana</div>
-                  <div class="alert a-amber"><span class="pill" aria-hidden="true"></span>Muzza debajo del margen objetivo</div>
-                  <div class="alert a-green"><span class="pill" aria-hidden="true"></span>Milanesa dentro de objetivo</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <p class="demo-caption rv">Inventario, ventas, ingeniería de menú e inferencia avanzada entran después del piloto. Hoy validamos comprensión de rentabilidad.</p>
-
-      <div class="demo-cta rv">
-        <a href="https://margentus-demo.onrender.com/dashboard" class="btn btn-primary" target="_blank" rel="noopener">Abrir el prototipo
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= CASO DE USO ================= -->
-  <section class="sp caso" id="caso" aria-labelledby="caso-title">
-    <div class="container">
-      <div class="caso-grid">
-        <div class="caso-copy rv">
-          <p class="kicker">Un ejemplo</p>
-          <h2 class="title" id="caso-title">Un ejemplo de la conversación que queremos tener</h2>
-          <p>La mozzarella subió. Afecta la muzza y la hamburguesa. El sistema muestra el nuevo costo, el margen nuevo y la pregunta: ¿subís precio, cambiás receta o cambiás proveedor?</p>
-          <p class="caso-closer">Eso es el producto. No un chat.</p>
-        </div>
-
-        <div class="flow rv" aria-hidden="true">
-          <div class="flow-item in">
-            <div class="tag">Insumo</div>
-            <div class="txt">La mozzarella subió esta semana.</div>
-          </div>
-          <div class="flow-item">
-            <div class="tag">Impacto</div>
-            <div class="txt">Nuevo costo y nuevo margen en las recetas que la usan.</div>
-          </div>
-          <div class="flow-item dec">
-            <div class="tag">Decisión</div>
-            <div class="txt">Precio, receta o proveedor. Vos elegís.</div>
-          </div>
-        </div>
-      </div>
+      <p class="mg-problem-close mg-rv">Las cadenas tienen <strong>Control de Gestión</strong>. La PyME tiene al dueño a las 23:00 con una planilla.</p>
     </div>
   </section>
 
   <!-- ================= PARA QUIÉN ================= -->
-  <section class="sp para-quien" id="para-quien" aria-labelledby="pq-title">
-    <div class="container">
-      <div class="pq-grid">
-        <div class="rv">
-          <p class="kicker">Para quién</p>
-          <h2 class="title" id="pq-title">Pensado para quienes tienen que cuidar el margen todos los días.</h2>
-          <p class="sub" style="margin-top:12px">Restaurantes, parrillas, cafeterías, bares y hoteles con operación de A&amp;B en Mar del Plata, que hoy resuelven costos en Excel o de memoria.</p>
-          <p class="pq-note">No reemplazamos tu caja. Nos apoyamos en ella cuando exista.</p>
+  <section class="mg-section mg-audience" id="para-quien" aria-labelledby="pq-title">
+    <div class="mg-container">
+      <div class="mg-audience-grid">
+        <div class="mg-audience-copy mg-rv">
+          <p class="mg-kicker">Para quién</p>
+          <h2 class="mg-title" id="pq-title">Pensado para quienes tienen que cuidar el margen todos los días.</h2>
+          <p class="mg-sub">Restaurantes, parrillas, cafeterías, bares y hoteles con operación de A&amp;B en Mar del Plata, que hoy resuelven costos en Excel o de memoria.</p>
+          <p class="mg-audience-note">No reemplazamos tu caja. Nos apoyamos en ella cuando exista.</p>
         </div>
 
-        <div class="rv">
-          <div class="pq-list">
-            <span class="pq-chip">
+        <div class="mg-rv">
+          <div class="mg-audience-list">
+            <span class="mg-audience-chip">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
               Restaurantes
             </span>
-            <span class="pq-chip">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+            <span class="mg-audience-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2c1 3 4 4.5 4 8a4 4 0 0 1-8 0c0-1 .3-1.8.8-2.5"/><path d="M4 14c2 0 3 1.5 3 3.5S6 21 4 21s-2-1.8-2-3.5S2 14 4 14Z"/><path d="M20 14c2 0 3 1.5 3 3.5S22 21 20 21s-2-1.8-2-3.5S18 14 20 14Z"/></svg>
               Parrillas
             </span>
-            <span class="pq-chip">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+            <span class="mg-audience-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><path d="M6 2v2"/><path d="M10 2v2"/><path d="M14 2v2"/></svg>
               Cafeterías
             </span>
-            <span class="pq-chip">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+            <span class="mg-audience-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 22h8"/><path d="M12 15v7"/><path d="M18 2c0 6-2 9-6 9s-6-3-6-9h12Z"/></svg>
               Bares
             </span>
-            <span class="pq-chip">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+            <span class="mg-audience-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h14a4 4 0 0 1 4 4v8"/><path d="M2 17h20"/><path d="M6 8v9"/></svg>
               Hoteles con A&amp;B
             </span>
           </div>
@@ -407,84 +201,300 @@
     </div>
   </section>
 
-  <!-- ================= FUNDADOR ================= -->
-  <section class="sp fundador" id="fundador" aria-labelledby="fundador-title">
-    <div class="container">
-      <div class="fundador-box rv">
-        <p class="kicker" style="justify-content:center">Detrás del producto</p>
-        <p class="fundador-quote">"El problema no se estudió: se laburó."</p>
-        <p class="fundador-name" id="fundador-title">Cristian Orihuela</p>
-        <p class="fundador-role">Más de 20 años en administración, gestión hotelera y control de costos.</p>
-        <p class="fundador-extra">Conozco desde adentro el problema que estamos convirtiendo en producto.</p>
+  <!-- ================= QUÉ HACE MARGENTUS ================= -->
+  <section class="mg-section mg-what" id="producto" aria-labelledby="producto-title">
+    <div class="mg-container">
+      <div class="mg-sec-head mg-rv">
+        <p class="mg-kicker">Qué hace Margentus</p>
+        <h2 class="mg-title" id="producto-title">Tres preguntas.<br>El resto es <span class="mg-hi">ruido</span>.</h2>
+      </div>
+
+      <div class="mg-questions">
+        <div class="mg-card mg-rv">
+          <div class="mg-question-num" aria-hidden="true">1</div>
+          <h3>¿Cómo está tu rentabilidad?</h3>
+          <p>Food cost y margen de lo que ya podés costear.</p>
+        </div>
+
+        <div class="mg-card mg-rv">
+          <div class="mg-question-num" aria-hidden="true">2</div>
+          <h3>¿Qué está pasando?</h3>
+          <p>Un insumo subió. Un plato quedó abajo del objetivo.</p>
+        </div>
+
+        <div class="mg-card mg-rv">
+          <div class="mg-question-num" aria-hidden="true">3</div>
+          <h3>¿Qué mirás primero?</h3>
+          <p>La evidencia, no otro reporte.</p>
+        </div>
+      </div>
+
+      <div class="mg-honesty mg-rv">
+        <div class="mg-honesty-line" aria-hidden="true"></div>
+        <p>Cuando un dato falta, Margentus puede inferirlo — y lo marca como <strong>inferido</strong>, no como hecho.</p>
+        <p>Nunca ocultamos la diferencia entre un dato confirmado y una estimación.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CÓMO FUNCIONA ================= -->
+  <section class="mg-section mg-how" id="how" aria-labelledby="how-title">
+    <div class="mg-container">
+      <div class="mg-sec-head mg-rv">
+        <p class="mg-kicker">Cómo funciona</p>
+        <h2 class="mg-title" id="how-title">Empezamos con lo que <span class="mg-hi">ya tenés</span>.</h2>
+      </div>
+
+      <div class="mg-steps">
+        <div class="mg-card mg-step mg-rv">
+          <div class="mg-step-head">
+            <span class="mg-step-tag">Datos</span>
+            <span class="mg-step-stage">01</span>
+          </div>
+          <h3>Entra lo que hay</h3>
+          <p>Excel, recetas, compras, lo que exista.</p>
+        </div>
+        <div class="mg-card mg-step mg-rv">
+          <div class="mg-step-head">
+            <span class="mg-step-tag">Conocimiento</span>
+            <span class="mg-step-stage">02</span>
+          </div>
+          <h3>Se arma el modelo</h3>
+          <p>insumos → recetas → costo → margen</p>
+        </div>
+        <div class="mg-card mg-step mg-rv">
+          <div class="mg-step-head">
+            <span class="mg-step-tag">Insight</span>
+            <span class="mg-step-stage">03</span>
+          </div>
+          <h3>Se ve la situación</h3>
+          <p>Qué plato y qué insumo mueven el número.</p>
+        </div>
+        <div class="mg-card mg-step mg-rv">
+          <div class="mg-step-head">
+            <span class="mg-step-tag">Decisión</span>
+            <span class="mg-step-stage">04</span>
+          </div>
+          <h3>Se decide</h3>
+          <p>Precio, receta, proveedor. Vos decidís.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CASO DE USO ================= -->
+  <section class="mg-section mg-case" id="caso" aria-labelledby="caso-title">
+    <div class="mg-container">
+      <div class="mg-case-grid">
+        <div class="mg-case-copy mg-rv">
+          <p class="mg-kicker">Un ejemplo</p>
+          <h2 class="mg-title" id="caso-title">Un ejemplo de la conversación que queremos tener</h2>
+          <p>La mozzarella subió. Afecta la muzza y la hamburguesa. El sistema muestra el nuevo costo, el margen nuevo y la pregunta: ¿subís precio, cambiás receta o cambiás proveedor?</p>
+          <p class="mg-case-closer">Eso es el producto. No un chat.</p>
+        </div>
+
+        <div class="mg-flow mg-rv" aria-hidden="true">
+          <div class="mg-flow-item mg-situation">
+            <div class="mg-flow-tag">Insumo</div>
+            <div class="mg-flow-text">La mozzarella subió esta semana.</div>
+          </div>
+          <div class="mg-flow-item mg-impact">
+            <div class="mg-flow-tag">Impacto</div>
+            <div class="mg-flow-text">Nuevo costo y nuevo margen en las recetas que la usan.</div>
+          </div>
+          <div class="mg-flow-item mg-action">
+            <div class="mg-flow-tag">Decisión</div>
+            <div class="mg-flow-text">Precio, receta o proveedor. Vos elegís.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DEMO / PRODUCTO ================= -->
+  <section class="mg-section mg-demo" id="demo" aria-labelledby="demo-title">
+    <div class="mg-container">
+      <div class="mg-sec-head mg-rv">
+        <p class="mg-kicker">El prototipo</p>
+        <h2 class="mg-title" id="demo-title">Así se ve la rentabilidad <span class="mg-hi">hoy</span>.</h2>
+        <p class="mg-sub">La pantalla que abre el prototipo: el centro de decisiones. Es la misma que vas a encontrar en el prototipo.</p>
+      </div>
+
+      <div class="mg-rv">
+        <div class="mg-mock">
+          <div class="mg-mock-bar">
+            <span class="mg-mock-dots" aria-hidden="true">
+              <i></i><i></i><i></i>
+            </span>
+            <span class="mg-mock-caption">Prototipo · Hotel República · solo lectura</span>
+          </div>
+          <div class="mg-mock-body">
+            <aside class="mg-mock-side" aria-hidden="true">
+              <div class="mg-mock-group">Hoy</div>
+              <div class="mg-mock-nav is-active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15l3.5-3.5"/><circle cx="12" cy="12" r="9"/></svg>
+                Decisiones
+              </div>
+              <div class="mg-mock-nav">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+                Recetas
+              </div>
+              <div class="mg-mock-nav">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="M3.3 7 12 12l8.7-5"/><path d="M12 22V12"/></svg>
+                Insumos
+              </div>
+              <div class="mg-mock-group is-alt">Después</div>
+              <div class="mg-mock-nav is-soon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 8 5-8 5-8-5Z"/><path d="m4 12 8 5 8-5"/><path d="m4 17 8 5 8-5"/></svg>
+                Inventario
+              </div>
+              <div class="mg-mock-nav is-soon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
+                Menú
+              </div>
+            </aside>
+
+            <div class="mg-mock-content">
+              <div class="mg-kpi-grid">
+                <div class="mg-kpi">
+                  <div class="mg-kpi-value is-primary">31,2%</div>
+                  <div class="mg-kpi-label">Food cost · sobre recetas costeadas</div>
+                </div>
+                <div class="mg-kpi">
+                  <div class="mg-kpi-value">68,8%</div>
+                  <div class="mg-kpi-label">Margen bruto</div>
+                  <div class="mg-kpi-note--warning">Mozzarella subió</div>
+                </div>
+                <div class="mg-kpi">
+                  <div class="mg-kpi-value">5</div>
+                  <div class="mg-kpi-label">Recetas costeadas · dato relevado</div>
+                </div>
+                <div class="mg-kpi">
+                  <div class="mg-kpi-value is-primary">3</div>
+                  <div class="mg-kpi-label">Platos afectados</div>
+                  <div class="mg-kpi-note--danger">Muzza · napolitana · burger</div>
+                </div>
+              </div>
+
+              <div class="mg-mock-row">
+                <div class="mg-panel">
+                  <div class="mg-panel-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+                    Costo de receta — pizza muzza vs. objetivo
+                  </div>
+                  <div class="mg-bars" aria-hidden="true">
+                    <i class="mg-bar" style="--h:62%"></i>
+                    <i class="mg-bar" style="--h:64%"></i>
+                    <i class="mg-bar" style="--h:63%"></i>
+                    <i class="mg-bar" style="--h:71%"></i>
+                    <i class="mg-bar" style="--h:78%"></i>
+                    <i class="mg-bar" style="--h:86%"></i>
+                    <i class="mg-bar" style="--h:92%"></i>
+                    <i class="mg-bar" style="--h:96%"></i>
+                  </div>
+                  <div class="mg-bars-labels"><span>S1</span><span>S2</span><span>S3</span><span>S4</span><span>S5</span><span>S6</span><span>S7</span><span>hoy</span></div>
+                </div>
+
+                <div class="mg-panel">
+                  <div class="mg-panel-title">Qué mirar ahora</div>
+                  <div class="mg-alert mg-alert--danger"><span class="mg-alert-dot" aria-hidden="true"></span>Mozzarella +22% esta semana</div>
+                  <div class="mg-alert mg-alert--warning"><span class="mg-alert-dot" aria-hidden="true"></span>Muzza debajo del margen objetivo</div>
+                  <div class="mg-alert mg-alert--success"><span class="mg-alert-dot" aria-hidden="true"></span>Milanesa dentro de objetivo</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="mg-demo-caption mg-rv">Inventario, ventas, ingeniería de menú e inferencia avanzada entran después del piloto. Hoy validamos comprensión de rentabilidad.</p>
+
+      <div class="mg-demo-cta mg-rv">
+        <a href="https://margentus-demo.onrender.com/dashboard" class="mg-btn mg-btn-secondary" target="_blank" rel="noopener">Abrir el prototipo
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- ================= ESTADO DEL PROYECTO ================= -->
-  <section class="sp estado" id="estado" aria-labelledby="estado-title">
-    <div class="container">
-      <div class="sec-head rv">
-        <p class="kicker">Estado del proyecto</p>
-        <h2 class="title" id="estado-title">¿Dónde estamos hoy?</h2>
+  <section class="mg-section mg-status" id="estado" aria-labelledby="estado-title">
+    <div class="mg-container">
+      <div class="mg-sec-head mg-rv">
+        <p class="mg-kicker">Estado del proyecto</p>
+        <h2 class="mg-title" id="estado-title">¿Dónde estamos hoy?</h2>
       </div>
 
-      <div class="estado-grid">
-        <div class="estado-card rv">
-          <div class="lbl">Etapa</div>
+      <div class="mg-status-grid">
+        <div class="mg-status-card mg-rv">
+          <div class="mg-status-label">Etapa</div>
           <p>Prototipo visual en validación.</p>
         </div>
-        <div class="estado-card rv">
-          <div class="lbl">Qué hay</div>
-          <p>Demo navegable + documentación de producto.</p>
+        <div class="mg-status-card mg-rv">
+          <div class="mg-status-label">Qué hay</div>
+          <p>Prototipo navegable + documentación de producto.</p>
         </div>
-        <div class="estado-card rv">
-          <div class="lbl">Qué falta</div>
+        <div class="mg-status-card mg-rv">
+          <div class="mg-status-label">Qué falta</div>
           <p>Piloto con carta real + primeras métricas de uso.</p>
         </div>
-        <div class="estado-card rv">
-          <div class="lbl">Dónde</div>
+        <div class="mg-status-card mg-rv">
+          <div class="mg-status-label">Dónde</div>
           <p>Mar del Plata.</p>
         </div>
-        <div class="estado-card rv">
-          <div class="lbl">Programa</div>
+        <div class="mg-status-card mg-rv">
+          <div class="mg-status-label">Programa</div>
           <p>StartUP+IT · Universidad de Palermo / Polo IT Buenos Aires.</p>
         </div>
       </div>
 
-      <p class="estado-honesty rv">Sin métricas inventadas: no hay ARR, clientes ni facturación que mostrar todavía.</p>
+      <p class="mg-status-honesty mg-rv">Sin métricas inventadas: no hay ARR, clientes ni facturación que mostrar todavía.</p>
+    </div>
+  </section>
+
+  <!-- ================= FUNDADOR ================= -->
+  <section class="mg-section mg-founder" id="fundador" aria-labelledby="fundador-title">
+    <div class="mg-container">
+      <div class="mg-founder-box mg-rv">
+        <p class="mg-kicker">Detrás del producto</p>
+        <p class="mg-founder-quote">"El problema no se estudió: se laburó."</p>
+        <p class="mg-founder-name" id="fundador-title">Cristian Orihuela</p>
+        <p class="mg-founder-role">Más de 20 años en administración, gestión hotelera y control de costos.</p>
+        <p class="mg-founder-extra">Conozco desde adentro el problema que estamos convirtiendo en producto.</p>
+      </div>
     </div>
   </section>
 
   <!-- ================= PILOTO ================= -->
-  <section class="sp piloto" id="piloto" aria-labelledby="piloto-title">
-    <div class="container">
-      <div class="piloto-grid">
-        <div class="piloto-left rv">
-          <p class="kicker">Piloto</p>
-          <h2 class="title" id="piloto-title">8 establecimientos.<br>Precio de piloto. <span class="hi">Acompañamiento directo.</span></h2>
+  <section class="mg-section mg-pilot" id="piloto" aria-labelledby="piloto-title">
+    <div class="mg-container">
+      <div class="mg-pilot-grid">
+        <div class="mg-pilot-copy mg-rv">
+          <p class="mg-kicker">Piloto</p>
+          <h2 class="mg-title" id="piloto-title">8 establecimientos.<br>Precio de piloto. <span class="mg-hi">Acompañamiento directo.</span></h2>
           <p>Un cupo acotado en Mar del Plata. Empezamos con lo que ya tenés y validamos la carta real.</p>
-          <p class="resp">
+          <p class="mg-pilot-response">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
             Respondemos en menos de 24&nbsp;h.
           </p>
-          <a href="https://wa.me/5492235903633?text=Hola%20Cristian%2C%20quiero%20sumarme%20al%20piloto%20de%20Margentus" class="btn btn-ghost" target="_blank" rel="noopener">
+          <a href="https://wa.me/5492235903633?text=Hola%20Cristian%2C%20quiero%20sumarme%20al%20piloto%20de%20Margentus" class="mg-btn mg-btn-ghost" target="_blank" rel="noopener">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.3 8.3 0 0 1-3.9-1L3 21l2.1-5.6A8.3 8.3 0 0 1 3.5 11.5 8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4Z"/></svg>
             Escribir por WhatsApp
           </a>
         </div>
 
-        <div class="rv">
-          <form class="pform" onsubmit="return sendPiloto(event)">
-            <div class="frow">
-              <div class="fcol">
+        <div class="mg-rv">
+          <form class="mg-form" onsubmit="return sendPiloto(event)">
+            <div class="mg-form-grid">
+              <div class="mg-field">
                 <label for="fNombre">Nombre</label>
                 <input id="fNombre" name="nombre" type="text" required autocomplete="name" placeholder="Nombre y apellido">
               </div>
-              <div class="fcol">
+              <div class="mg-field">
                 <label for="fLocal">Local / establecimiento</label>
                 <input id="fLocal" name="local" type="text" required autocomplete="organization" placeholder="Nombre del local">
               </div>
-              <div class="fcol">
+              <div class="mg-field">
                 <label for="fTipo">Tipo de negocio</label>
                 <select id="fTipo" name="tipo">
                   <option value="Restaurante">Restaurante</option>
@@ -495,17 +505,17 @@
                   <option value="Otro">Otro</option>
                 </select>
               </div>
-              <div class="fcol">
+              <div class="mg-field">
                 <label for="fTel">WhatsApp</label>
                 <input id="fTel" name="tel" type="tel" required autocomplete="tel" placeholder="223..." inputmode="tel">
               </div>
-              <div class="fcol full">
-                <button type="submit" class="btn btn-primary btn-lg">Quiero participar del piloto
+              <div class="mg-field is-full">
+                <button type="submit" class="mg-btn mg-btn-primary mg-btn-lg">Quiero participar del piloto
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
                 </button>
               </div>
             </div>
-            <p class="pform-sub">¿Preferís escribirnos? <a href="mailto:hola@margentus.com">hola@margentus.com</a></p>
+            <p class="mg-form-note">¿Preferís escribirnos? <a href="mailto:hola@margentus.com">hola@margentus.com</a></p>
           </form>
         </div>
       </div>
@@ -513,44 +523,44 @@
   </section>
 
   <!-- ================= FAQ ================= -->
-  <section class="sp faq" id="faq" aria-labelledby="faq-title">
-    <div class="container">
-      <div class="sec-head rv">
-        <p class="kicker">Preguntas</p>
-        <h2 class="title" id="faq-title">Corto y honesto.</h2>
+  <section class="mg-section mg-faq" id="faq" aria-labelledby="faq-title">
+    <div class="mg-container">
+      <div class="mg-sec-head mg-rv">
+        <p class="mg-kicker">Preguntas</p>
+        <h2 class="mg-title" id="faq-title">Corto y honesto.</h2>
       </div>
 
-      <div class="faq-wrap rv">
-        <div class="faq-item">
-          <button class="faq-q" type="button" aria-expanded="false">
+      <div class="mg-faq-list mg-rv">
+        <div class="mg-faq-item">
+          <button class="mg-faq-question" type="button" aria-expanded="false">
             ¿Necesito recetas escritas?
-            <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            <svg class="mg-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
           </button>
-          <div class="faq-a">No. Se pueden cargar desde cero. Lo que falte, se marca.</div>
+          <div class="mg-faq-answer">No. Se pueden cargar desde cero. Lo que falte, se marca.</div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-q" type="button" aria-expanded="false">
+        <div class="mg-faq-item">
+          <button class="mg-faq-question" type="button" aria-expanded="false">
             ¿Reemplaza a Fudo / Maxirest?
-            <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            <svg class="mg-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
           </button>
-          <div class="faq-a">No. Ellos operan el salón. Nosotros explicamos la rentabilidad.</div>
+          <div class="mg-faq-answer">No. Ellos operan el salón. Nosotros explicamos la rentabilidad.</div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-q" type="button" aria-expanded="false">
+        <div class="mg-faq-item">
+          <button class="mg-faq-question" type="button" aria-expanded="false">
             ¿Cuándo está el producto?
-            <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            <svg class="mg-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
           </button>
-          <div class="faq-a">El prototipo se puede ver ahora. El MVP se construye con lo que el piloto enseñe.</div>
+          <div class="mg-faq-answer">El prototipo se puede ver ahora. El MVP se construye con lo que el piloto enseñe.</div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-q" type="button" aria-expanded="false">
+        <div class="mg-faq-item">
+          <button class="mg-faq-question" type="button" aria-expanded="false">
             ¿Mis datos?
-            <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            <svg class="mg-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
           </button>
-          <div class="faq-a">En el piloto: un establecimiento, acceso acotado, sin benchmarking público.</div>
+          <div class="mg-faq-answer">En el piloto: un establecimiento, acceso acotado, sin benchmarking público.</div>
         </div>
       </div>
     </div>
@@ -559,32 +569,35 @@
 </main>
 
 <!-- ================= FOOTER ================= -->
-<footer class="footer" id="contacto">
-  <div class="container">
-    <div class="footer-grid">
+<footer class="mg-footer" id="contacto">
+  <div class="mg-container">
+    <div class="mg-footer-grid">
       <div>
-        <img class="lgo lgo-light" src="img/margentus_logo_light_full.svg" alt="Margentus">
-        <img class="lgo lgo-dark" src="img/margentus_logo_dark_full.svg" alt="Margentus">
-        <p class="footer-tag">Transformamos datos en decisiones.</p>
+        <span class="mg-brand">
+          <img class="mg-logo mg-logo--dark" src="img/logos/margentus-icon-dark.svg" alt="Margentus" width="40" height="40">
+          <span class="mg-wordmark">Margentus</span>
+        </span>
+        <p class="mg-footer-tag">Transformamos datos en decisiones.</p>
       </div>
 
-      <div class="fcol">
+      <div class="mg-footer-col">
         <h4>Producto</h4>
         <a href="#producto">Qué hace</a>
         <a href="#how">Cómo funciona</a>
-        <a href="#demo">Demo</a>
+        <a href="#demo">Prototipo</a>
         <a href="#piloto">Piloto</a>
       </div>
 
-      <div class="fcol">
+      <div class="mg-footer-col">
         <h4>Proyecto</h4>
+        <a href="proyecto.html">El proyecto</a>
+        <a href="proyecto.html#hipotesis">Hipótesis</a>
+        <a href="proyecto.html#modelo">Modelo</a>
+        <a href="proyecto.html#ecosistema">Ecosistema</a>
         <a href="#estado">Estado</a>
-        <a href="blog.html">Proyecto</a>
-        <span>StartUP+IT</span>
-        <span>Mar del Plata</span>
       </div>
 
-      <div class="fcol">
+      <div class="mg-footer-col">
         <h4>Contacto</h4>
         <a href="mailto:hola@margentus.com">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
@@ -601,7 +614,7 @@
       </div>
     </div>
 
-    <div class="footer-bottom">
+    <div class="mg-footer-bottom">
       <span>© 2026 Margentus · Cristian Orihuela · Mar del Plata</span>
       <span>Prototipo en validación · StartUP+IT</span>
     </div>
@@ -612,7 +625,7 @@
   // Navbar
   const nbar = document.getElementById('nbar');
   window.addEventListener('scroll', () => {
-    nbar.classList.toggle('scr', window.scrollY > 12);
+    nbar.classList.toggle('is-scrolled', window.scrollY > 12);
   }, { passive: true });
 
   // Menú mobile
@@ -621,34 +634,34 @@
   const icoOpen = document.getElementById('icoOpen');
   const icoClose = document.getElementById('icoClose');
   function setMenu(open) {
-    mmenu.classList.toggle('open', open);
+    mmenu.classList.toggle('is-open', open);
     burger.setAttribute('aria-expanded', open ? 'true' : 'false');
     burger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
     icoOpen.style.display = open ? 'none' : '';
     icoClose.style.display = open ? '' : 'none';
   }
-  burger.addEventListener('click', () => setMenu(!mmenu.classList.contains('open')));
+  burger.addEventListener('click', () => setMenu(!mmenu.classList.contains('is-open')));
   mmenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
 
   // Reveal on scroll
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+      if (e.isIntersecting) { e.target.classList.add('mg-rv-in'); obs.unobserve(e.target); }
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+  document.querySelectorAll('.mg-rv').forEach(el => obs.observe(el));
 
   // FAQ
-  document.querySelectorAll('.faq-q').forEach(q => {
+  document.querySelectorAll('.mg-faq-question').forEach(q => {
     q.addEventListener('click', () => {
       const item = q.parentElement;
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => {
-        i.classList.remove('open');
-        i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+      const isOpen = item.classList.contains('is-open');
+      document.querySelectorAll('.mg-faq-item').forEach(i => {
+        i.classList.remove('is-open');
+        i.querySelector('.mg-faq-question').setAttribute('aria-expanded', 'false');
       });
       if (!isOpen) {
-        item.classList.add('open');
+        item.classList.add('is-open');
         q.setAttribute('aria-expanded', 'true');
       }
     });
@@ -686,7 +699,7 @@
       var dark = t === 'dark';
       btn.setAttribute('aria-label', dark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
       btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
-      if (meta) meta.setAttribute('content', dark ? '#0D1A15' : '#F7F7F2');
+      if (meta) meta.setAttribute('content', dark ? '#0F172A' : '#F8FAFC');
     }
     btn.addEventListener('click', function () {
       var dark = document.documentElement.dataset.theme === 'dark';

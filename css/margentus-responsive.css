@@ -1,0 +1,120 @@
+/* ============================================================
+   Margentus · responsive DGL 2.1
+   Base = desktop (≥1200px) · Tablet 768–1199px · Mobile ≤767px
+   ============================================================ */
+
+/* ---------- Tablet · 768–1199px ---------- */
+@media (max-width: 1199.98px) {
+  .mg-nav-links,
+  .mg-nav-cta .mg-btn { display: none; }
+  .mg-burger { display: inline-flex; }
+
+  .mg-section { padding: 88px 0; }
+
+  .mg-problem-grid,
+  .mg-questions { grid-template-columns: 1fr 1fr; }
+  .mg-problem-grid .mg-card:last-child,
+  .mg-questions .mg-card:last-child { grid-column: 1 / -1; }
+
+  .mg-steps { grid-template-columns: 1fr 1fr; }
+
+  .mg-case-grid,
+  .mg-audience-grid,
+  .mg-pilot-grid { grid-template-columns: 1fr; gap: 36px; }
+
+  .mg-mock-body { grid-template-columns: 1fr; min-height: 0; }
+  .mg-mock-side { display: none; }
+  .mg-mock-row { grid-template-columns: 1fr; }
+  .mg-kpi-grid { grid-template-columns: 1fr 1fr; }
+
+  .mg-footer-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Proyecto */
+  .mg-project-split { grid-template-columns: 1fr; gap: 32px; }
+  .mg-project-chain { grid-template-columns: 1fr 1fr; }
+  .mg-project-pillars { grid-template-columns: repeat(2, 1fr); }
+  .mg-project-pillar::after { display: none; }
+  .mg-project-stages { grid-template-columns: 1fr; }
+
+  /* Ecosistema emprendedor */
+  .mg-eco-item { grid-template-columns: 92px minmax(0, 1fr); gap: 16px; }
+
+  /* La timeline pasa a disposición vertical */
+  .mg-project-timeline { grid-template-columns: 1fr; }
+  .mg-project-timeline::before {
+    top: 0;
+    bottom: 0;
+    left: 7px;
+    right: auto;
+    width: 2px;
+    height: auto;
+  }
+  .mg-project-tl-item { padding: 2px 0 26px 34px; }
+}
+
+/* ---------- Mobile · ≤767px ---------- */
+@media (max-width: 767.98px) {
+  .mg-container { padding: 0 20px; }
+  .mg-section { padding: 64px 0; }
+
+  .mg-hero {
+    min-height: auto;
+    padding: calc(var(--mg-nav-h) + 44px) 0 36px;
+  }
+  .mg-hero-ctas { flex-direction: column; align-items: stretch; }
+  .mg-hero-ctas .mg-btn { width: 100%; }
+  .mg-hero-strip { margin-top: 40px; }
+
+  .mg-problem-grid,
+  .mg-questions,
+  .mg-steps { grid-template-columns: 1fr; }
+  .mg-problem-grid .mg-card:last-child,
+  .mg-questions .mg-card:last-child { grid-column: auto; }
+
+  .mg-card { padding: 22px; }
+  .mg-sec-head { margin-bottom: 40px; }
+
+  .mg-mock-content { padding: 14px; }
+  .mg-bars { height: 64px; }
+
+  .mg-form { padding: 20px; }
+  .mg-form-grid { grid-template-columns: 1fr; }
+
+  .mg-footer { padding: 52px 0 24px; }
+  .mg-footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .mg-footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Proyecto */
+  .mg-project-hero .mg-hero-ctas .mg-btn { width: 100%; }
+  .mg-project-hypothesis { padding: 24px 22px; }
+  .mg-project-hypothesis p { font-size: 1.04rem; }
+  .mg-project-chain,
+  .mg-project-pillars,
+  .mg-project-gap { grid-template-columns: 1fr; }
+  .mg-project-chain-step + .mg-project-chain-step::before,
+  .mg-project-gap-step + .mg-project-gap-step::before { display: none; }
+  .mg-project-tl-item { padding-bottom: 22px; }
+  .mg-project-shot-body { padding: 34px 22px; }
+
+  /* Ecosistema: la fecha pasa arriba y el riel vertical se omite */
+  .mg-eco-item { grid-template-columns: 1fr; gap: 12px; padding: 20px; }
+  .mg-eco-rail { flex-direction: row; align-items: center; gap: 10px; padding-top: 0; }
+  .mg-eco-rail::before { display: none; }
+  .mg-eco-type { white-space: normal; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .mg-rv { opacity: 1; transform: none; transition: none; }
+  .mg-badge-dot { animation: none; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
