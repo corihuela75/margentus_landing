@@ -113,6 +113,15 @@
   .mg-eco-type { white-space: normal; }
 }
 
+/* ---------- Mobile chico · ≤560px (logo) ---------- */
+@media (max-width: 560px) {
+  .mg-logo { height: 34px; }
+  .mg-brand { gap: 12px; }
+  .mg-wordmark { font-size: 27px; }
+  .mg-footer .mg-logo { height: 26px; }
+  .mg-footer .mg-wordmark { font-size: 23px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .mg-rv { opacity: 1; transform: none; transition: none; }

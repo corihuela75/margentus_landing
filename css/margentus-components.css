@@ -143,10 +143,10 @@
 }
 .mg-problem-close {
   max-width: 760px;
-  margin: 48px auto 0;
+  margin: 48px 0 0;
   padding-top: 32px;
   border-top: 1px solid var(--mg-border-soft);
-  text-align: center;
+  text-align: left;
   font-size: 1.02rem;
 }
 .mg-problem-close strong { color: var(--mg-accent-text); }
@@ -235,18 +235,18 @@
 .mg-eco-card .mg-eco-status { margin-top: 14px; }
 
 /* ---------- Cierre ---------- */
-.mg-cierre-ctas { justify-content: center; }
+.mg-cierre-ctas { justify-content: flex-start; }
 .mg-cierre-note { margin-top: 18px; text-align: center; }
 
 /* ---------- Texto de apoyo ---------- */
 .mg-problem-text {
   max-width: 760px;
-  margin: 0 auto 40px;
-  text-align: center;
+  margin: 0 0 40px;
+  text-align: left;
 }
 .mg-founder-text {
   max-width: 560px;
-  margin: 0 auto 18px;
+  margin: 0 0 18px;
 }
 .mg-founder-text + .mg-founder-text { margin-bottom: 26px; }
 
@@ -262,15 +262,14 @@
 
 .mg-demo-caption {
   max-width: 680px;
-  margin: 28px auto 0;
-  text-align: center;
+  margin: 28px 0 0;
+  text-align: left;
   font-size: 0.9rem;
   color: var(--mg-text-muted);
 }
 
 /* ---------- Fundador ---------- */
-.mg-founder-box { max-width: 800px; margin: 0 auto; text-align: center; }
-.mg-founder-box .mg-kicker { justify-content: center; }
+.mg-founder-box { max-width: 800px; margin: 0; text-align: left; }
 .mg-founder-quote {
   margin: 0 0 26px;
   font-size: clamp(1.5rem, 1.12rem + 1.7vw, 2.15rem);
@@ -282,13 +281,13 @@
 .mg-founder-name { margin: 0 0 6px; font-size: 1.15rem; font-weight: 700; }
 .mg-founder-role {
   max-width: 500px;
-  margin: 0 auto 20px;
+  margin: 0 0 20px;
   font-size: 0.92rem;
   color: var(--mg-text-secondary);
 }
 .mg-founder-extra {
   max-width: 540px;
-  margin: 0 auto;
+  margin: 0;
   font-size: 0.9rem;
   color: var(--mg-text-muted);
 }
@@ -446,7 +445,7 @@
   display: grid;
   gap: 12px;
   max-width: 820px;
-  margin: 0 auto;
+  margin: 0;
 }
 .mg-faq-item {
   background: var(--mg-background);
@@ -509,8 +508,8 @@
   margin-bottom: 46px;
 }
 .mg-footer .mg-brand { margin-bottom: 14px; }
-.mg-footer .mg-wordmark { color: var(--mg-on-ink); }
-.mg-footer .mg-logo--dark { display: block; }
+.mg-footer .mg-logo { height: 30px; }
+.mg-footer .mg-wordmark { color: var(--mg-on-ink); font-size: 26px; }
 .mg-footer-tag {
   max-width: 320px;
   margin: 0;
@@ -570,7 +569,7 @@ body.mg-project-page .mg-sec-head .mg-kicker::after { display: none; }
 }
 
 /* ---------- Hero editorial (no centrado como el de la landing) ---------- */
-.mg-project-hero .mg-hero-inner { max-width: 960px; margin-inline: 0; text-align: left; }
+.mg-project-hero .mg-hero-inner { max-width: 1140px; margin-inline: 0; text-align: left; }
 .mg-project-hero .mg-h1 { margin-inline: 0; }
 .mg-project-hero .mg-lead { margin-inline: 0; max-width: 760px; }
 .mg-project-hero .mg-hero-ctas { justify-content: flex-start; }
