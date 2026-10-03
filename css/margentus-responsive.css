@@ -104,7 +104,7 @@
   .mg-project-chain-step + .mg-project-chain-step::before,
   .mg-project-gap-step + .mg-project-gap-step::before { display: none; }
   .mg-project-tl-item { padding-bottom: 22px; }
-  .mg-project-shot-body { padding: 34px 22px; }
+  .mg-project-shot-body { padding: 22px 18px; }
 
   /* Ecosistema: la fecha pasa arriba y el riel vertical se omite */
   .mg-eco-item { grid-template-columns: 1fr; gap: 12px; padding: 20px; }

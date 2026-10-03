@@ -902,15 +902,7 @@ body.mg-project-page .mg-sec-head .mg-kicker::after { display: none; }
   text-overflow: ellipsis;
 }
 .mg-project-shot-media { display: block; width: 100%; height: auto; }
-.mg-project-shot-body { padding: 46px 32px; text-align: center; }
-.mg-project-shot-body h3 { margin: 16px 0 8px; font-size: 1.12rem; }
-.mg-project-shot-body p {
-  max-width: 540px;
-  margin: 0 auto 22px;
-  font-size: 0.92rem;
-  line-height: 1.6;
-  color: var(--mg-text-secondary);
-}
+.mg-project-shot-body { padding: 26px 24px; text-align: center; }
 .mg-project-shot figcaption {
   padding: 14px 18px;
   border-top: 1px solid var(--mg-border);
@@ -960,8 +952,6 @@ body.mg-project-page .mg-sec-head .mg-kicker::after { display: none; }
 .mg-project-hypothesis.is-spaced { margin-top: 32px; }
 .mg-project-note a { color: var(--mg-accent-text); font-weight: 600; }
 .mg-project-note a:hover { text-decoration: underline; }
-.mg-project-shot-logo { display: inline-flex; }
-.mg-project-shot-logo .mg-logo { width: 40px; height: 40px; }
 
 /* ============================================================
    ECOSISTEMA EMPRENDEDOR · línea de tiempo 2026
