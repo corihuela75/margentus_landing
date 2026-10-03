@@ -415,48 +415,6 @@ html[data-theme="dark"] .mg-theme-ico--sun { display: block; }
   margin: 0;
 }
 
-.mg-hero-strip {
-  margin-top: 60px;
-  padding-top: 26px;
-  border-top: 1px solid var(--mg-border-soft);
-}
-.mg-strip-label {
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: var(--mg-text-muted);
-  margin: 0 0 14px;
-}
-.mg-strip-chips {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px 18px;
-}
-.mg-chip {
-  position: relative;
-  padding: 6px 0;
-  font-size: 0.86rem;
-  font-weight: 600;
-  color: var(--mg-text-secondary);
-  white-space: nowrap;
-}
-.mg-chip::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 2px;
-  border-radius: 2px;
-  background: var(--mg-info);
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-.mg-chip:hover { color: var(--mg-accent-text); }
-.mg-chip:hover::after { opacity: 1; }
-
 /* ---------- Reveal ---------- */
 .mg-rv {
   opacity: 0;

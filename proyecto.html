@@ -11,13 +11,13 @@
     })();
   </script>
   <title>El proyecto | Margentus</title>
-  <meta name="description" content="Origen, hipótesis, modelo de negocio, metodología y evolución de Margentus: el registro público de cómo se está construyendo inteligencia de rentabilidad para la gastronomía.">
+  <meta name="description" content="Origen, problema, Modelo Digital del Negocio, metodología MIE y evolución de Margentus: el registro público de cómo se está construyendo inteligencia de rentabilidad para la gastronomía.">
   <meta name="theme-color" content="#F8FAFC">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Margentus">
   <meta property="og:title" content="El proyecto | Margentus">
-  <meta property="og:description" content="Origen, hipótesis, modelo de negocio, metodología y evolución de Margentus: el registro público de cómo se está construyendo inteligencia de rentabilidad para la gastronomía.">
+  <meta property="og:description" content="Origen, problema, Modelo Digital del Negocio, metodología MIE y evolución de Margentus: el registro público de cómo se está construyendo inteligencia de rentabilidad para la gastronomía.">
   <meta property="og:locale" content="es_AR">
 
   <link rel="icon" href="img/logos/margentus-icon-light.svg" type="image/svg+xml">
@@ -43,12 +43,9 @@
     </a>
 
     <nav class="mg-nav-links" aria-label="Secciones">
-      <a href="index.html#producto">Producto</a>
-      <a href="index.html#how">Cómo funciona</a>
-      <a href="index.html#demo">Prototipo</a>
+      <a href="index.html#como-funciona">Cómo funciona</a>
+      <a href="index.html#prototipo">Prototipo</a>
       <a href="proyecto.html" aria-current="page">Proyecto</a>
-      <a href="index.html#para-quien">Para quién</a>
-      <a href="index.html#piloto">Piloto</a>
     </nav>
 
     <div class="mg-nav-actions">
@@ -60,7 +57,7 @@
         <a href="https://margentus-demo.onrender.com/dashboard" class="mg-btn mg-btn-ghost mg-btn-sm" target="_blank" rel="noopener">Ver prototipo
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg>
         </a>
-        <a href="index.html#piloto" class="mg-btn mg-btn-primary mg-btn-sm">Quiero el piloto</a>
+        <a href="index.html#convocatorias" class="mg-btn mg-btn-primary mg-btn-sm">Ver convocatorias</a>
       </div>
       <button class="mg-burger" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mmenu">
         <svg id="icoOpen" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
@@ -71,14 +68,11 @@
 </nav>
 
 <div class="mg-mmenu" id="mmenu">
-  <a href="index.html#producto">Producto</a>
-  <a href="index.html#how">Cómo funciona</a>
-  <a href="index.html#demo">Prototipo</a>
+  <a href="index.html#como-funciona">Cómo funciona</a>
+  <a href="index.html#prototipo">Prototipo</a>
   <a href="proyecto.html">Proyecto</a>
-  <a href="index.html#para-quien">Para quién</a>
-  <a href="index.html#piloto">Piloto</a>
   <div class="mg-mmenu-cta">
-    <a href="index.html#piloto" class="mg-btn mg-btn-primary mg-btn-lg">Quiero ser parte del piloto</a>
+    <a href="index.html#convocatorias" class="mg-btn mg-btn-primary mg-btn-lg">Ver convocatorias</a>
   </div>
   <p class="mg-mmenu-note"><a href="https://margentus-demo.onrender.com/dashboard" target="_blank" rel="noopener">Ver el prototipo</a></p>
 </div>
@@ -172,53 +166,20 @@
           <span>Sin comprensión no hay decisión posible: se opera sobre intuición o sobre inercia.</span>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ================= 03 · HIPÓTESIS ================= -->
-  <section class="mg-section mg-project-band" id="hipotesis" aria-labelledby="hipotesis-title">
-    <div class="mg-container">
-      <div class="mg-sec-head mg-rv">
-        <p class="mg-kicker"><span class="mg-project-index">03</span>Nuestra hipótesis</p>
-        <h2 class="mg-title" id="hipotesis-title">Una hipótesis de producto</h2>
-      </div>
-
-      <div class="mg-project-hypothesis mg-rv">
+      <div class="mg-project-hypothesis is-spaced mg-rv">
         <p>Si podemos construir una representación suficientemente útil del negocio gastronómico, podemos transformar información operativa en conocimiento que ayude a tomar decisiones.</p>
       </div>
-
-      <div class="mg-project-chain mg-rv">
-        <div class="mg-project-chain-step">
-          <span class="mg-project-chain-term">Datos</span>
-          <h3>Lo que el negocio ya produce</h3>
-          <p>Compras, recetas, precios, ventas, mermas, inventario.</p>
-        </div>
-        <div class="mg-project-chain-step">
-          <span class="mg-project-chain-term">Conocimiento</span>
-          <h3>Un modelo del negocio</h3>
-          <p>Cómo se relacionan esos datos entre sí dentro de la operación.</p>
-        </div>
-        <div class="mg-project-chain-step">
-          <span class="mg-project-chain-term">Insight</span>
-          <h3>La situación a la vista</h3>
-          <p>Qué cambió, dónde está el problema y cuánto pesa.</p>
-        </div>
-        <div class="mg-project-chain-step is-end">
-          <span class="mg-project-chain-term">Decisión</span>
-          <h3>La elección de quien opera</h3>
-          <p>Precio, receta o proveedor. El criterio siempre es del negocio.</p>
-        </div>
-      </div>
     </div>
   </section>
 
-  <!-- ================= 04 · MODELO DIGITAL DEL NEGOCIO ================= -->
+  <!-- ================= 03 · MODELO DIGITAL DEL NEGOCIO ================= -->
   <section class="mg-section" id="modelo" aria-labelledby="modelo-title">
     <div class="mg-container">
       <div class="mg-sec-head mg-rv">
-        <p class="mg-kicker"><span class="mg-project-index">04</span>Modelo Digital del Negocio</p>
+        <p class="mg-kicker"><span class="mg-project-index">03</span>Modelo Digital del Negocio</p>
         <h2 class="mg-title" id="modelo-title">Un modelo para comprender el negocio</h2>
-        <p class="mg-sub">Antes de mostrar una cifra, модamos cómo funciona el negocio. Estos son los cinco planos que sostienen el modelo.</p>
+        <p class="mg-sub">Antes de mostrar una cifra, miramos cómo funciona el negocio. Estos son los cinco planos que sostienen el modelo.</p>
       </div>
 
       <div class="mg-project-pillars mg-rv">
@@ -253,13 +214,17 @@
     </div>
   </section>
 
-  <!-- ================= 05 · CÓMO CONSTRUIMOS CONOCIMIENTO ================= -->
+  <!-- ================= 04 · METODOLOGÍA / MIE ================= -->
   <section class="mg-section mg-project-band" id="metodo" aria-labelledby="metodo-title">
     <div class="mg-container">
       <div class="mg-sec-head mg-rv">
-        <p class="mg-kicker"><span class="mg-project-index">05</span>Cómo construimos conocimiento</p>
+        <p class="mg-kicker"><span class="mg-project-index">04</span>Metodología / MIE</p>
         <h2 class="mg-title" id="metodo-title">No todos los datos tienen el mismo nivel de certeza</h2>
         <p class="mg-sub">La parte difícil de la rentabilidad no es calcular: es saber cuánto confianza merece cada número.</p>
+      </div>
+
+      <div class="mg-project-hypothesis is-spaced mg-rv">
+        <p>La metodología MIE —Relevamiento, Inferencia, Validación e Inteligencia— recorre el proceso Integración → Importación → Relevamiento → Inferencia → Validación para aprovechar al máximo la información disponible y pedir intervención humana solo cuando sea necesario.</p>
       </div>
 
       <div class="mg-project-chain mg-rv">
@@ -330,11 +295,11 @@
     </div>
   </section>
 
-  <!-- ================= 06 · EVOLUCIÓN ================= -->
+  <!-- ================= 05 · EVOLUCIÓN ================= -->
   <section class="mg-section" id="evolucion" aria-labelledby="evolucion-title">
     <div class="mg-container">
       <div class="mg-sec-head mg-rv">
-        <p class="mg-kicker"><span class="mg-project-index">06</span>Evolución del proyecto</p>
+        <p class="mg-kicker"><span class="mg-project-index">05</span>Evolución del proyecto</p>
         <h2 class="mg-title" id="evolucion-title">De una experiencia operativa a un producto</h2>
         <p class="mg-sub">El orden en el que se construyó el proyecto, sin fechas inventadas: cada etapa se apoyó en la anterior.</p>
       </div>
@@ -342,66 +307,126 @@
       <div class="mg-project-timeline mg-rv">
         <div class="mg-project-tl-item">
           <span class="mg-project-tl-dot" aria-hidden="true"></span>
-          <span class="mg-project-tl-term">Experiencia</span>
-          <h3>El problema, observado</h3>
-          <p>Años de operación gastronómica y control de costos.</p>
-        </div>
-        <div class="mg-project-tl-item">
-          <span class="mg-project-tl-dot" aria-hidden="true"></span>
-          <span class="mg-project-tl-term">Idea</span>
-          <h3>Conocimiento accesible</h3>
-          <p>Convertir lo que se sabía en una herramienta.</p>
-        </div>
-        <div class="mg-project-tl-item">
-          <span class="mg-project-tl-dot" aria-hidden="true"></span>
           <span class="mg-project-tl-term">Modelo</span>
           <h3>Modelo Digital del Negocio</h3>
-          <p>Los cinco planos del negocio, formalizados.</p>
+          <p>Definición de la estructura de información y de las relaciones relevantes del negocio.</p>
         </div>
         <div class="mg-project-tl-item">
           <span class="mg-project-tl-dot" aria-hidden="true"></span>
-          <span class="mg-project-tl-term">Diseño</span>
-          <h3>Definición de producto</h3>
-          <p>Metodología, flujo y experiencia de uso.</p>
+          <span class="mg-project-tl-term">Experiencia</span>
+          <h3>Prototipo visual</h3>
+          <p>Prototipo visual que representa cómo interactuaría el usuario con Margentus.</p>
         </div>
         <div class="mg-project-tl-item is-current">
           <span class="mg-project-tl-dot" aria-hidden="true"></span>
-          <span class="mg-project-tl-term">Prototipo</span>
-          <h3>Primera implementación</h3>
-          <p>El prototipo funcional que se puede abrir hoy.</p>
+          <span class="mg-project-tl-term">MVP</span>
+          <h3>Desarrollo del MVP</h3>
+          <p>Desarrollo de las primeras funcionalidades capaces de incorporar, relacionar y analizar información.</p>
           <span class="mg-project-flag">Etapa actual</span>
         </div>
-        <div class="mg-project-tl-item is-current">
+        <div class="mg-project-tl-item">
           <span class="mg-project-tl-dot" aria-hidden="true"></span>
           <span class="mg-project-tl-term">Validación</span>
-          <h3>Prueba de hipótesis</h3>
-          <p>Contrastar el modelo con situaciones reales.</p>
-          <span class="mg-project-flag">Etapa actual</span>
+          <h3>Prueba con negocios</h3>
+          <p>Prueba con negocios gastronómicos y aprendizaje a partir del uso real.</p>
         </div>
         <div class="mg-project-tl-item">
           <span class="mg-project-tl-dot" aria-hidden="true"></span>
-          <span class="mg-project-tl-term">Pilotos</span>
-          <h3>Operaciones reales</h3>
-          <p>La etapa siguiente: trabajar con locales reales.</p>
+          <span class="mg-project-tl-term">Evolución</span>
+          <h3>Evolución del producto</h3>
+          <p>Incorporación progresiva de capacidades según evidencia y necesidades reales.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ================= 07 · ECOSISTEMA EMPRENDEDOR =================
+
+  <!-- ================= 06 · EL PROTOTIPO ================= -->
+  <section class="mg-section" id="prototipo" aria-labelledby="prototipo-title">
+    <div class="mg-container">
+      <div class="mg-sec-head mg-rv">
+        <p class="mg-kicker"><span class="mg-project-index">06</span>El prototipo</p>
+        <h2 class="mg-title" id="prototipo-title">De la idea al prototipo</h2>
+        <p class="mg-sub">El prototipo es una representación visual de la experiencia que estamos construyendo. Muestra cómo Margentus representa la información del negocio y cómo podría transformarla en conocimiento útil para la gestión.</p>
+      </div>
+
+      <figure class="mg-project-shot mg-rv">
+        <div class="mg-project-shot-bar">
+          <span class="mg-mock-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="mg-project-shot-url">margentus-demo.onrender.com/dashboard</span>
+        </div>
+        <!-- Cuando exista una captura real del prototipo, reemplazar este bloque por una
+             etiqueta <img class="mg-project-shot-media"> con la imagen en /img/prototipo/
+             y un texto alternativo que describa la pantalla mostrada. -->
+        <div class="mg-project-shot-body">
+          <span class="mg-project-shot-logo">
+            <img class="mg-logo mg-logo--light" src="img/logos/margentus-icon-light.svg" alt="" width="40" height="40">
+            <img class="mg-logo mg-logo--dark" src="img/logos/margentus-icon-dark.svg" alt="" width="40" height="40">
+          </span>
+          <h3>Prototipo navegable</h3>
+          <p>El prototipo se abre directamente en el navegador. Es la mejor forma de ver cómo Margentus representa la información del negocio y qué decisiones deja ver.</p>
+          <a href="https://margentus-demo.onrender.com/dashboard" class="mg-btn mg-btn-secondary" target="_blank" rel="noopener">Abrir el prototipo
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg>
+          </a>
+        </div>
+        <figcaption>El prototipo es una representación visual de la experiencia que estamos construyendo, no el producto terminado. Se abre en modo lectura y no requiere instalación.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ================= 07 · CONSTRUCCIÓN DEL MVP ================= -->
+  <section class="mg-section mg-project-band" id="estado" aria-labelledby="estado-title">
+    <div class="mg-container">
+      <div class="mg-sec-head mg-rv">
+        <p class="mg-kicker"><span class="mg-project-index">07</span>Construcción del MVP</p>
+        <h2 class="mg-title" id="estado-title">Hoy estamos construyendo el MVP</h2>
+        <p class="mg-sub">El MVP se construye a partir del Modelo Digital del Negocio y del prototipo visual. La validación con negocios gastronómicos es el paso siguiente.</p>
+      </div>
+
+      <div class="mg-project-stages mg-rv">
+        <div class="mg-project-stage">
+          <span class="mg-project-stage-term">Modelo</span>
+          <p>Definición de la estructura de información y de las relaciones relevantes del negocio.</p>
+        </div>
+        <div class="mg-project-stage">
+          <span class="mg-project-stage-term">Experiencia</span>
+          <p>Prototipo visual que representa cómo interactuaría el usuario con Margentus.</p>
+        </div>
+        <div class="mg-project-stage is-current">
+          <span class="mg-project-stage-term">MVP</span>
+          <p>Desarrollo de las primeras funcionalidades capaces de incorporar, relacionar y analizar información.</p>
+        </div>
+        <div class="mg-project-stage">
+          <span class="mg-project-stage-term">Validación</span>
+          <p>Prueba con negocios gastronómicos y aprendizaje a partir del uso real.</p>
+        </div>
+        <div class="mg-project-stage">
+          <span class="mg-project-stage-term">Evolución</span>
+          <p>Incorporación progresiva de capacidades según evidencia y necesidades reales.</p>
+        </div>
+      </div>
+
+      <div class="mg-project-note mg-rv">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p>Si tenés un negocio y querés contrastar el modelo con tu operación, el canal de contacto está en la <a href="index.html#contacto">página principal</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 08 · ECOSISTEMA EMPRENDEDOR =================
        Línea de tiempo 2026 ordenada por fecha de cierre de convocatoria.
        Para actualizar un hito: cambiar SOLO el texto del .mg-eco-status y su
        modificador de estado (is-selected, is-preselected, is-evaluating,
        is-applied). No hace falta tocar el diseño ni el resto de la tarjeta.
        Estados permitidos: seleccionado · preseleccionado · postulación
-       realizada · en evaluación. No usar "finalista", "nominado" ni "ganador"
-       mientras no estén confirmados oficialmente. -->
+       realizada · en evaluación. No usar estados no confirmados
+       oficialmente. -->
   <section class="mg-section mg-project-band" id="ecosistema" aria-labelledby="ecosistema-title">
     <div class="mg-container">
       <div class="mg-sec-head mg-rv">
-        <p class="mg-kicker"><span class="mg-project-index">07</span>Margentus en el ecosistema emprendedor</p>
+        <p class="mg-kicker"><span class="mg-project-index">08</span>Margentus en el ecosistema emprendedor</p>
         <h2 class="mg-title" id="ecosistema-title">Margentus en el ecosistema emprendedor</h2>
-        <p class="mg-sub">Durante 2026, Margentus fue presentado en distintos programas, convocatorias y espacios de innovación mientras avanza desde el prototipo hacia la validación.</p>
+        <p class="mg-sub">Durante 2026, Margentus fue presentado en distintos programas, convocatorias y espacios de innovación mientras avanza desde el prototipo visual hacia el MVP.</p>
       </div>
 
       <ol class="mg-eco-timeline mg-rv">
@@ -435,7 +460,7 @@
               <h3>Emprelatam ECL – Exploración 2026</h3>
               <span class="mg-eco-type">Aceleradora regional</span>
             </div>
-            <p class="mg-eco-status is-preselected">Preseleccionado · entrevista final</p>
+            <p class="mg-eco-status is-preselected">Preseleccionado</p>
             <p class="mg-eco-desc">Programa regional de aceleración para emprendimientos latinoamericanos. Margentus avanzó a la instancia de entrevistas finales.</p>
           </div>
         </li>
@@ -466,7 +491,7 @@
               <h3>Premio Visa | LA NACION a la Innovación 2026</h3>
               <span class="mg-eco-type">Premio de innovación</span>
             </div>
-            <p class="mg-eco-status is-evaluating">Postulación realizada · en evaluación</p>
+            <p class="mg-eco-status is-evaluating">Postulación realizada · En evaluación</p>
             <p class="mg-eco-desc">Premio nacional que reconoce proyectos vinculados con innovación, transformación digital y nuevos modelos de emprendimiento. Margentus fue postulado en la categoría de emprendimientos innovadores.</p>
           </div>
         </li>
@@ -497,7 +522,58 @@
               <span class="mg-eco-type">Incubación startup</span>
             </div>
             <p class="mg-eco-status is-preselected">Preseleccionado · entrevista realizada · pendiente de devolución</p>
-            <p class="mg-eco-desc">Programa de incubación para emprendimientos tecnológicos en etapa de prototipo, MVP o primeras señales de tracción, con formación, mentorías y acompañamiento. La convocatoria 2026 contempla equipos con prototipo funcional, MVP o tracción inicial y un programa intensivo de 12 semanas.</p>
+            <p class="mg-eco-desc">Programa de incubación para emprendimientos tecnológicos en etapa de prototipo, MVP o primeras señales de tracción, con formación, mentorías y acompañamiento. La convocatoria 2026 contempla equipos con prototipo, MVP o primeras señales de tracción y un programa intensivo de 12 semanas.</p>
+          </div>
+        </li>
+
+        <li class="mg-eco-item is-evaluating">
+          <div class="mg-eco-rail" aria-hidden="true">
+            <span class="mg-eco-dot"></span>
+            <!-- TODO: confirmar fecha de cierre -->
+            <span class="mg-eco-date">2026</span>
+          </div>
+          <div class="mg-eco-body">
+            <div class="mg-eco-head">
+              <h3>PremiosTech.la</h3>
+              <span class="mg-eco-type">Innovación tecnológica</span>
+            </div>
+            <p class="mg-eco-status is-evaluating">En evaluación</p>
+            <p class="mg-eco-desc">Premio orientado a proyectos de innovación tecnológica. Margentus fue presentado y su postulación se encuentra en evaluación.</p>
+            <!-- TODO: confirmar fecha de cierre -->
+          </div>
+        </li>
+
+        <li class="mg-eco-item is-applied">
+          <div class="mg-eco-rail" aria-hidden="true">
+            <span class="mg-eco-dot"></span>
+            <!-- TODO: confirmar fecha de cierre -->
+            <span class="mg-eco-date">2026</span>
+          </div>
+          <div class="mg-eco-body">
+            <div class="mg-eco-head">
+              <h3>Premio Usina 2026</h3>
+              <span class="mg-eco-type">Innovación y emprendimiento</span>
+            </div>
+            <p class="mg-eco-status is-applied">Postulación realizada</p>
+            <p class="mg-eco-desc">Premio de innovación y emprendimiento. Margentus realizó su postulación.</p>
+            <!-- TODO: confirmar fecha de cierre -->
+          </div>
+        </li>
+
+        <li class="mg-eco-item is-applied">
+          <div class="mg-eco-rail" aria-hidden="true">
+            <span class="mg-eco-dot"></span>
+            <!-- TODO: confirmar fecha de cierre -->
+            <span class="mg-eco-date">2026</span>
+          </div>
+          <div class="mg-eco-body">
+            <div class="mg-eco-head">
+              <h3>Israel Innovation Awards</h3>
+              <span class="mg-eco-type">Innovación tecnológica</span>
+            </div>
+            <p class="mg-eco-status is-applied">Postulación realizada</p>
+            <p class="mg-eco-desc">Distinción vinculada a la innovación tecnológica. Margentus realizó su postulación.</p>
+            <!-- TODO: confirmar fecha de cierre -->
           </div>
         </li>
 
@@ -510,93 +586,23 @@
     </div>
   </section>
 
-  <!-- ================= 08 · EL PROTOTIPO ================= -->
-  <section class="mg-section" id="prototipo" aria-labelledby="prototipo-title">
-    <div class="mg-container">
-      <div class="mg-sec-head mg-rv">
-        <p class="mg-kicker"><span class="mg-project-index">08</span>El prototipo</p>
-        <h2 class="mg-title" id="prototipo-title">De la idea al prototipo</h2>
-        <p class="mg-sub">El prototipo actual permite validar cómo Margentus representa información del negocio y comienza a transformarla en conocimiento útil para la gestión.</p>
-      </div>
-
-      <figure class="mg-project-shot mg-rv">
-        <div class="mg-project-shot-bar">
-          <span class="mg-mock-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-          <span class="mg-project-shot-url">margentus-demo.onrender.com/dashboard</span>
-        </div>
-        <!-- Cuando exista una captura real del prototipo, reemplazar este bloque por una
-             etiqueta <img class="mg-project-shot-media"> con la imagen en /img/prototipo/
-             y un texto alternativo que describa la pantalla mostrada. -->
-        <div class="mg-project-shot-body">
-          <span class="mg-project-shot-logo">
-            <img class="mg-logo mg-logo--light" src="img/logos/margentus-icon-light.svg" alt="" width="40" height="40">
-            <img class="mg-logo mg-logo--dark" src="img/logos/margentus-icon-dark.svg" alt="" width="40" height="40">
-          </span>
-          <h3>Prototipo navegable</h3>
-          <p>El prototipo se abre directamente en el navegador. Es la mejor forma de ver cómo Margentus representa la información del negocio y qué decisiones deja ver.</p>
-          <a href="https://margentus-demo.onrender.com/dashboard" class="mg-btn mg-btn-secondary" target="_blank" rel="noopener">Abrir el prototipo
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg>
-          </a>
-        </div>
-        <figcaption>El prototipo es la implementación actual del modelo. Se abre en modo lectura y no requiere instalación.</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- ================= 09 · ESTADO ACTUAL ================= -->
-  <section class="mg-section mg-project-band" id="estado" aria-labelledby="estado-title">
-    <div class="mg-container">
-      <div class="mg-sec-head mg-rv">
-        <p class="mg-kicker"><span class="mg-project-index">09</span>Estado actual</p>
-        <h2 class="mg-title" id="estado-title">Dónde estamos hoy</h2>
-      </div>
-
-      <div class="mg-project-stages mg-rv">
-        <div class="mg-project-stage">
-          <span class="mg-project-stage-term">Prototipo</span>
-          <p>La primera implementación funcional del modelo ya existe y se puede abrir.</p>
-        </div>
-        <div class="mg-project-stage is-current">
-          <span class="mg-project-stage-term">Validación</span>
-          <p>Estamos contrastando el producto y el modelo contra el funcionamiento real de un negocio.</p>
-          <span class="mg-project-flag">Etapa actual</span>
-        </div>
-        <div class="mg-project-stage">
-          <span class="mg-project-stage-term">Pilotos</span>
-          <p>La etapa siguiente: trabajar con operaciones gastronómicas reales.</p>
-        </div>
-      </div>
-
-      <div class="mg-project-hypothesis is-spaced mg-rv">
-        <p>Margentus se encuentra en una etapa de validación del producto y del modelo. El próximo objetivo es trabajar con operaciones gastronómicas que permitan contrastar las hipótesis con situaciones reales.</p>
-      </div>
-
-      <div class="mg-project-note mg-rv">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-        <p>Si tenés un negocio y querés contrastar el modelo con tu operación, el canal de pilotos está en la <a href="index.html#piloto">página del producto</a>.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= 10 · PRÓXIMO CAPÍTULO ================= -->
+  <!-- ================= 09 · PRÓXIMO CAPÍTULO ================= -->
   <section class="mg-section" id="siguiente" aria-labelledby="siguiente-title">
     <div class="mg-container">
       <div class="mg-sec-head mg-rv">
-        <p class="mg-kicker"><span class="mg-project-index">10</span>Próximo capítulo</p>
+        <p class="mg-kicker"><span class="mg-project-index">09</span>Próximo capítulo</p>
         <h2 class="mg-title" id="siguiente-title">Lo que sigue</h2>
         <p class="mg-sub">No es un listado de funcionalidades comprometidas. Es el orden en el que queremos aprender.</p>
       </div>
 
       <div class="mg-project-verbs mg-rv">
-        <span class="mg-project-verb">Validar</span>
+        <span class="mg-project-verb">Construir el MVP</span>
+        <span class="mg-project-verb-sep" aria-hidden="true">→</span>
+        <span class="mg-project-verb">Validar con negocios gastronómicos</span>
         <span class="mg-project-verb-sep" aria-hidden="true">→</span>
         <span class="mg-project-verb">Aprender</span>
         <span class="mg-project-verb-sep" aria-hidden="true">→</span>
-        <span class="mg-project-verb">Mejorar</span>
-        <span class="mg-project-verb-sep" aria-hidden="true">→</span>
-        <span class="mg-project-verb">Pilotear</span>
-        <span class="mg-project-verb-sep" aria-hidden="true">→</span>
-        <span class="mg-project-verb">Construir producto</span>
+        <span class="mg-project-verb">Evolucionar</span>
       </div>
     </div>
   </section>
@@ -617,16 +623,15 @@
 
       <div class="mg-footer-col">
         <h4>Producto</h4>
-        <a href="index.html#producto">Qué hace</a>
-        <a href="index.html#how">Cómo funciona</a>
-        <a href="index.html#demo">Prototipo</a>
-        <a href="index.html#piloto">Piloto</a>
+        <a href="index.html#como-funciona">Cómo funciona</a>
+        <a href="index.html#prototipo">Prototipo</a>
+        <a href="index.html#que-analiza">Qué analiza</a>
       </div>
 
       <div class="mg-footer-col">
         <h4>Proyecto</h4>
         <a href="#origen">Origen</a>
-        <a href="#hipotesis">Hipótesis</a>
+        <a href="#metodo">Metodología</a>
         <a href="#modelo">Modelo</a>
         <a href="#evolucion">Evolución</a>
         <a href="#ecosistema">Ecosistema</a>
@@ -651,7 +656,7 @@
 
     <div class="mg-footer-bottom">
       <span>© 2026 Margentus · Cristian Orihuela · Mar del Plata</span>
-      <span>Prototipo en validación · StartUP+IT</span>
+      <span>Prototipo visual · MVP en desarrollo</span>
     </div>
   </div>
 </footer>
