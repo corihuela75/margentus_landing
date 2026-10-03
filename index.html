@@ -381,6 +381,50 @@
     </div>
   </section>
 
+  <!-- ================= FAQ ================= -->
+  <section class="mg-section mg-faq" id="faq" aria-labelledby="faq-title">
+    <div class="mg-container">
+      <div class="mg-sec-head mg-rv">
+        <p class="mg-kicker">Preguntas</p>
+        <h2 class="mg-title" id="faq-title">Corto y honesto.</h2>
+      </div>
+
+      <div class="mg-faq-list mg-rv">
+        <div class="mg-faq-item">
+          <button class="mg-faq-question" type="button" aria-expanded="false">
+            ¿Necesito recetas escritas?
+            <svg class="mg-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="mg-faq-answer">No. Se pueden cargar desde cero. Lo que falte, se marca.</div>
+        </div>
+
+        <div class="mg-faq-item">
+          <button class="mg-faq-question" type="button" aria-expanded="false">
+            ¿Reemplaza a Fudo / Maxirest?
+            <svg class="mg-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="mg-faq-answer">No. Ellos operan el salón. Nosotros explicamos la rentabilidad.</div>
+        </div>
+
+        <div class="mg-faq-item">
+          <button class="mg-faq-question" type="button" aria-expanded="false">
+            ¿Cuándo está el producto?
+            <svg class="mg-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="mg-faq-answer">El prototipo se puede ver ahora. El MVP se construye con lo que enseñe la validación con un negocio.</div>
+        </div>
+
+        <div class="mg-faq-item">
+          <button class="mg-faq-question" type="button" aria-expanded="false">
+            ¿Mis datos?
+            <svg class="mg-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="mg-faq-answer">En la validación: un establecimiento, acceso acotado, sin benchmarking público.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <!-- ================= FOOTER ================= -->
@@ -433,6 +477,7 @@
   const nbar=document.getElementById('nbar');window.addEventListener('scroll',()=>{nbar.classList.toggle('is-scrolled',window.scrollY>12)},{passive:true});
   const burger=document.getElementById('burger'),mmenu=document.getElementById('mmenu'),icoOpen=document.getElementById('icoOpen'),icoClose=document.getElementById('icoClose');function setMenu(o){mmenu.classList.toggle('is-open',o);burger.setAttribute('aria-expanded',o?'true':'false');burger.setAttribute('aria-label',o?'Cerrar menú':'Abrir menú');icoOpen.style.display=o?'none':'';icoClose.style.display=o?'':'none';}burger.addEventListener('click',()=>setMenu(!mmenu.classList.contains('is-open')));mmenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
   const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('mg-rv-in');obs.unobserve(x.target);}})},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.mg-rv').forEach(el=>obs.observe(el));
+  document.querySelectorAll('.mg-faq-item').forEach(item=>{const q=item.querySelector('.mg-faq-question');if(!q)return;q.addEventListener('click',()=>{const o=item.classList.toggle('is-open');q.setAttribute('aria-expanded',o?'true':'false');});});
 </script>
 <script>(function(){var btn=document.getElementById('themeBtn'),meta=document.querySelector('meta[name="theme-color"]');if(!btn)return;function apply(t){document.documentElement.dataset.theme=t;try{localStorage.setItem('margentus-theme',t);}catch(e){}var d=t==='dark';btn.setAttribute('aria-label',d?'Cambiar a modo claro':'Cambiar a modo oscuro');btn.setAttribute('aria-pressed',d?'true':'false');if(meta)meta.setAttribute('content',d?'#0F172A':'#F8FAFC');}btn.addEventListener('click',function(){var d=document.documentElement.dataset.theme==='dark';apply(d?'light':'dark');});})();</script>
 </body>

@@ -20,6 +20,9 @@
   .mg-areas { grid-template-columns: 1fr 1fr; }
   .mg-areas .mg-area:last-child { grid-column: 1 / -1; }
 
+  /* Ejemplo */
+  .mg-case-grid { grid-template-columns: 1fr; gap: 32px; }
+
   .mg-footer-grid { grid-template-columns: 1fr 1fr; }
 
   /* Proyecto */
@@ -64,6 +67,14 @@
   .mg-questions .mg-card:last-child,
   .mg-steps .mg-step:last-child,
   .mg-areas .mg-area:last-child { grid-column: auto; }
+
+  /* Ejemplo */
+  .mg-flow-item { padding: 18px 20px; }
+
+  /* Preguntas frecuentes */
+  .mg-faq-question { padding: 18px 20px; font-size: 0.96rem; }
+  .mg-faq-answer { padding-inline: 20px; }
+  .mg-faq-item.is-open .mg-faq-answer { padding-bottom: 18px; }
 
   .mg-card { padding: 22px; }
   .mg-sec-head { margin-bottom: 40px; }
