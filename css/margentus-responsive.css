@@ -11,6 +11,12 @@
 
   .mg-section { padding: 88px 0; }
 
+  /* Hero con captura: pasa a una sola columna */
+  .mg-hero--split .mg-hero-inner { grid-template-columns: 1fr; gap: 36px; }
+  .mg-hero--split .mg-hero-inner .mg-h1 { max-width: 720px; }
+  .mg-hero--split .mg-hero-inner .mg-lead { max-width: 680px; }
+  .mg-hero-mock { max-width: 720px; }
+
   .mg-questions { grid-template-columns: 1fr 1fr; }
   .mg-questions .mg-card:last-child { grid-column: 1 / -1; }
 
@@ -69,7 +75,9 @@
   .mg-areas .mg-area:last-child { grid-column: auto; }
 
   /* Ejemplo */
-  .mg-flow-item { padding: 18px 20px; }
+  .mg-story-products { grid-template-columns: 1fr; }
+  .mg-story-decisions-grid { grid-template-columns: 1fr; }
+  .mg-decision { flex-direction: row; justify-content: flex-start; text-align: left; }
 
   /* Preguntas frecuentes */
   .mg-faq-question { padding: 18px 20px; font-size: 0.96rem; }

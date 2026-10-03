@@ -1,6 +1,6 @@
 /* ============================================================
    Margentus · componentes DGL 2.1
-   Botones, cards, KPI, mock del prototipo, flow, formulario,
+   Botones, cards, KPI, mock del prototipo, ejemplo, formulario,
    FAQ y footer. Superficies: #F8FAFC / #FFFFFF / #F1F5F9.
    ============================================================ */
 
@@ -114,14 +114,22 @@
 .mg-card h3 { margin: 0 0 8px; font-size: 1.08rem; }
 .mg-card p { margin: 0; font-size: 0.9rem; color: var(--mg-text-secondary); }
 
+.mg-sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
 .mg-card-icon {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   width: 44px;
   height: 44px;
-  margin-bottom: 18px;
-  border-radius: var(--mg-radius);
+  margin-bottom: 16px;
+  border-radius: 12px;
   background: var(--mg-primary-soft);
   color: var(--mg-accent-text);
 }
@@ -305,29 +313,17 @@
   font-weight: 600;
   color: var(--mg-text);
 }
-.mg-flow {
-  position: relative;
-  display: grid;
-  gap: 16px;
-}
-.mg-flow-item {
-  position: relative;
-  padding: 20px 22px;
+
+.mg-case-story { display: grid; gap: 10px; }
+.mg-story-trigger {
+  padding: 16px 20px;
   background: var(--mg-surface);
   border: 1px solid var(--mg-border);
   border-left: 3px solid var(--mg-info);
   border-radius: var(--mg-radius-lg);
 }
-.mg-flow-item + .mg-flow-item::before {
-  content: "";
-  position: absolute;
-  top: -16px;
-  left: 26px;
-  width: 2px;
-  height: 16px;
-  background: var(--mg-border-strong);
-}
-.mg-flow-tag {
+.mg-story-tag {
+  display: block;
   margin-bottom: 6px;
   font-size: 0.68rem;
   font-weight: 700;
@@ -335,21 +331,111 @@
   letter-spacing: 0.14em;
   color: var(--mg-info-text);
 }
-.mg-flow-text {
-  font-size: 0.96rem;
-  font-weight: 500;
-  line-height: 1.5;
+.mg-story-trigger-text {
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.45;
   color: var(--mg-text);
 }
-.mg-flow-item.mg-situation { border-left-color: var(--mg-info); }
-.mg-flow-item.mg-situation .mg-flow-tag { color: var(--mg-info-text); }
-.mg-flow-item.mg-impact { border-left-color: var(--mg-warning); }
-.mg-flow-item.mg-impact .mg-flow-tag { color: var(--mg-warning-text); }
-.mg-flow-item.mg-action {
-  border-left-color: var(--mg-primary);
-  background: var(--mg-primary-soft);
+.mg-story-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mg-border-strong);
 }
-.mg-flow-item.mg-action .mg-flow-tag { color: var(--mg-accent-text); }
+.mg-story-arrow svg { width: 20px; height: 20px; }
+
+.mg-story-products {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.mg-product-card {
+  padding: 16px 18px;
+  background: var(--mg-surface);
+  border: 1px solid var(--mg-border);
+  border-radius: var(--mg-radius-lg);
+}
+.mg-product-name {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--mg-text);
+}
+.mg-product-metrics { display: flex; flex-wrap: wrap; gap: 7px; }
+.mg-metric {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 11px;
+  border: 1px solid var(--mg-border);
+  border-radius: 100px;
+  background: var(--mg-surface-soft);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--mg-text-secondary);
+}
+.mg-metric svg { width: 15px; height: 15px; flex-shrink: 0; }
+.mg-metric.is-up {
+  border-color: transparent;
+  background: var(--mg-warning-soft);
+  color: var(--mg-warning-text);
+}
+.mg-metric.is-down {
+  border-color: transparent;
+  background: var(--mg-danger-soft);
+  color: var(--mg-danger-text);
+}
+.mg-metric.is-neutral {
+  border-color: transparent;
+  background: var(--mg-info-soft);
+  color: var(--mg-info-text);
+}
+
+.mg-story-decisions {
+  padding: 16px 18px;
+  background: var(--mg-primary-soft);
+  border: 1px solid var(--mg-border-strong);
+  border-radius: var(--mg-radius-lg);
+}
+.mg-story-decisions-label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--mg-accent-text);
+}
+.mg-story-decisions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+.mg-decision {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 10px;
+  background: var(--mg-surface);
+  border: 1px solid var(--mg-border);
+  border-radius: var(--mg-radius);
+  font-size: 0.84rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+  color: var(--mg-text);
+}
+.mg-decision .mg-card-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0;
+  border-radius: 11px;
+}
+.mg-decision .mg-card-icon svg { width: 20px; height: 20px; }
 
 /* ---------- Preguntas frecuentes ---------- */
 .mg-faq {
