@@ -250,16 +250,6 @@
 }
 .mg-founder-text + .mg-founder-text { margin-bottom: 26px; }
 
-/* ---------- Prototipo: marco de navegador ---------- */
-.mg-mock-dots { display: flex; gap: 6px; margin-right: 6px; }
-.mg-mock-dots i {
-  display: block;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--mg-border-strong);
-}
-
 .mg-demo-caption {
   max-width: 680px;
   margin: 28px 0 0;
@@ -877,38 +867,10 @@ body.mg-project-page .mg-sec-head .mg-kicker::after { display: none; }
   background: var(--mg-primary);
 }
 
-/* ---------- Prototipo: marco de referencia ---------- */
-.mg-project-shot {
-  margin: 0;
-  border: 1px solid var(--mg-border);
-  border-radius: var(--mg-radius-lg);
-  background: var(--mg-surface);
-  overflow: hidden;
-}
-.mg-project-shot-bar {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 18px;
-  background: var(--mg-surface-soft);
-  border-bottom: 1px solid var(--mg-border);
-}
-.mg-project-shot-url {
-  font-size: 0.78rem;
-  color: var(--mg-text-muted);
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
+/* ---------- Prototipo: captura sin marco ---------- */
+.mg-project-shot { margin: 0; }
 .mg-project-shot-media { display: block; width: 100%; height: auto; }
 .mg-project-shot-body { padding: 26px 24px; text-align: center; }
-.mg-project-shot figcaption {
-  padding: 14px 18px;
-  border-top: 1px solid var(--mg-border);
-  font-size: 0.8rem;
-  line-height: 1.55;
-  color: var(--mg-text-muted);
-}
 
 /* ---------- Etapas del proyecto ---------- */
 .mg-project-stages {
