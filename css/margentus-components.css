@@ -1,7 +1,7 @@
 /* ============================================================
-   Margentus · componentes DGL 2.1
+   Margentus · componentes DGL v3.0
    Botones, cards, KPI, mock del prototipo, ejemplo, formulario,
-   FAQ y footer. Superficies: #F8FAFC / #FFFFFF / #F1F5F9.
+   FAQ y footer. Superficies: #f7f8f7 / #FFFFFF / #eef0ee.
    ============================================================ */
 
 /* ---------- Botones ---------- */
@@ -41,11 +41,11 @@
 .mg-btn-ghost {
   background: transparent;
   color: var(--mg-accent-text);
-  border-color: var(--mg-border);
+  border-color: color-mix(in srgb, var(--mg-accent-text) 55%, transparent);
 }
 .mg-btn-ghost:hover {
   background: var(--mg-primary-soft);
-  border-color: var(--mg-border-strong);
+  border-color: var(--mg-accent-text);
   transform: translateY(-1px);
 }
 
@@ -252,8 +252,8 @@
 
 .mg-demo-caption {
   max-width: 680px;
-  margin: 28px 0 0;
-  text-align: left;
+  margin: 28px auto 0;
+  text-align: center;
   font-size: 0.9rem;
   color: var(--mg-text-muted);
 }
@@ -871,6 +871,45 @@ body.mg-project-page .mg-sec-head .mg-kicker::after { display: none; }
 .mg-project-shot { margin: 0; }
 .mg-project-shot-media { display: block; width: 100%; height: auto; }
 .mg-project-shot-body { padding: 26px 24px; text-align: center; }
+
+/* ---------- Sección prototipo (landing): capturas del demo ---------- */
+.mg-demo-shots {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 18px;
+  align-items: stretch;
+}
+.mg-shot-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 240px;
+  padding: 28px;
+  border: 1px dashed var(--mg-border-strong);
+  border-radius: var(--mg-radius-lg);
+  background: var(--mg-primary-soft);
+  text-align: center;
+}
+.mg-shot-placeholder p {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--mg-text);
+}
+.mg-shot-placeholder .mg-shot-note {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--mg-text-muted);
+}
+.mg-demo-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 28px;
+}
+.mg-demo-hint { margin: 0; font-size: 0.82rem; color: var(--mg-text-muted); }
 
 /* ---------- Etapas del proyecto ---------- */
 .mg-project-stages {

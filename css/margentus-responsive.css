@@ -1,5 +1,5 @@
 /* ============================================================
-   Margentus · responsive DGL 2.1
+   Margentus · responsive DGL v3.0
    Base = desktop (≥1200px) · Tablet 768–1199px · Mobile ≤767px
    ============================================================ */
 
@@ -28,6 +28,9 @@
 
   /* Ejemplo */
   .mg-case-grid { grid-template-columns: 1fr; gap: 32px; }
+
+  /* Sección prototipo: capturas apiladas */
+  .mg-demo-shots { grid-template-columns: 1fr; }
 
   .mg-footer-grid { grid-template-columns: 1fr 1fr; }
 

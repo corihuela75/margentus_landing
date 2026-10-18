@@ -1,32 +1,34 @@
 /* ============================================================
-   Margentus · sistema visual DGL 2.1
+   Margentus · sistema visual DGL v3.0
    Tokens, base, tipografía, layout, navegación y hero.
-   Bootstrap estructura → Margentus define la experiencia.
+   Primary Deep Teal · Accent Warm Copper · neutros Warm Graphite.
    ============================================================ */
 
 :root {
   color-scheme: light;
 
-  --mg-primary: #6B46C1;
-  --mg-primary-dark: #4C2A91;
-  --mg-secondary: #2563EB;
-  --mg-accent: #EC4899;
-  --mg-info: #06B6D4;
+  --mg-primary: #187f65;
+  --mg-primary-dark: #146553;
+  --mg-primary-deep: #135144;
+  --mg-secondary: #135144;
+  --mg-accent: #e8830f;
+  --mg-accent-gold: #c4901d;
+  --mg-info: #e8830f;
 
   --mg-success: #16A34A;
   --mg-warning: #F59E0B;
   --mg-danger: #DC2626;
 
-  --mg-background: #F8FAFC;
+  --mg-background: #f7f8f7;
   --mg-surface: #FFFFFF;
-  --mg-surface-soft: #F1F5F9;
-  --mg-border: #E2E8F0;
+  --mg-surface-soft: #eef0ee;
+  --mg-border: #e1e5e2;
 
-  --mg-ink: #0F172A;
-  --mg-on-ink: #F8FAFC;
+  --mg-ink: #1e211f;
+  --mg-on-ink: #f7f8f7;
   --mg-text: var(--mg-ink);
-  --mg-text-secondary: #475569;
-  --mg-text-muted: #64748B;
+  --mg-text-secondary: #454b47;
+  --mg-text-muted: #666d68;
 
   --mg-radius-sm: 6px;
   --mg-radius: 10px;
@@ -36,7 +38,7 @@
   --mg-focus: var(--mg-primary);
   --mg-quote: var(--mg-primary-dark);
 
-  --mg-info-text: var(--mg-info);
+  --mg-info-text: color-mix(in srgb, var(--mg-accent) 68%, var(--mg-ink));
   --mg-success-text: var(--mg-success);
   --mg-warning-text: color-mix(in srgb, var(--mg-warning) 52%, var(--mg-text));
   --mg-danger-text: color-mix(in srgb, var(--mg-danger) 90%, var(--mg-text));
@@ -61,9 +63,9 @@
   --mg-on-ink-soft: color-mix(in srgb, var(--mg-on-ink) 8%, transparent);
   --mg-on-ink-border: color-mix(in srgb, var(--mg-on-ink) 14%, transparent);
 
-  --mg-shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
-  --mg-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
-  --mg-shadow-lg: 0 24px 60px rgba(15, 23, 42, 0.10);
+  --mg-shadow-sm: 0 1px 2px rgba(30, 33, 31, 0.04);
+  --mg-shadow: 0 8px 24px rgba(30, 33, 31, 0.06);
+  --mg-shadow-lg: 0 24px 60px rgba(30, 33, 31, 0.10);
 
   --mg-nav-h: 72px;
   --mg-nav-bg: color-mix(in srgb, var(--mg-background) 86%, transparent);
@@ -78,19 +80,22 @@ html[data-theme="dark"] {
   --mg-border: color-mix(in srgb, var(--mg-on-ink) 13%, transparent);
   --mg-border-soft: color-mix(in srgb, var(--mg-on-ink) 8%, transparent);
 
-  --mg-text: #F8FAFC;
-  --mg-text-secondary: #E2E8F0;
-  --mg-text-muted: color-mix(in srgb, #F8FAFC 58%, var(--mg-background));
+  --mg-text: #f4f5f4;
+  --mg-text-secondary: #d5dad6;
+  --mg-text-muted: color-mix(in srgb, #f4f5f4 58%, var(--mg-background));
 
-  --mg-accent-text: var(--mg-info);
-  --mg-focus: var(--mg-info);
+  --mg-accent-text: #7ed0b4;
+  --mg-focus: #7ed0b4;
   --mg-quote: color-mix(in srgb, var(--mg-primary) 62%, var(--mg-on-ink));
-  --mg-border-strong: color-mix(in srgb, var(--mg-info) 42%, var(--mg-border));
-  --mg-ring: color-mix(in srgb, var(--mg-info) 20%, transparent);
+  --mg-border-strong: color-mix(in srgb, #7ed0b4 42%, var(--mg-border));
+  --mg-ring: color-mix(in srgb, #7ed0b4 20%, transparent);
+
+  --mg-info: #7ed0b4;
+  --mg-info-text: #7ed0b4;
 
   --mg-grid-line: color-mix(in srgb, var(--mg-on-ink) 6%, transparent);
   --mg-hero-tint: color-mix(in srgb, var(--mg-primary) 22%, transparent);
-  --mg-hero-tint-alt: color-mix(in srgb, var(--mg-info) 12%, transparent);
+  --mg-hero-tint-alt: color-mix(in srgb, #48b594 12%, transparent);
 
   --mg-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.40);
   --mg-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);

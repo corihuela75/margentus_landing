@@ -12,7 +12,7 @@
   </script>
   <title>Margentus | Inteligencia de rentabilidad para gastronomía</title>
   <meta name="description" content="Tu analista de rentabilidad para gastronomía. Margentus transforma compras, recetas, precios y ventas en decisiones para cuidar el margen.">
-  <meta name="theme-color" content="#F8FAFC">
+  <meta name="theme-color" content="#f7f8f7">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Margentus">
   <meta property="og:title" content="Margentus | Inteligencia de rentabilidad para gastronomía">
@@ -310,17 +310,27 @@
       <div class="mg-sec-head mg-rv">
         <p class="mg-kicker">El producto</p>
         <h2 class="mg-title" id="demo-title">Así imaginamos la experiencia de Margentus.</h2>
-        <p class="mg-sub">Estamos construyendo un entorno donde la información del negocio se convierte en una visión clara de su rentabilidad, con indicadores, análisis y explicaciones que ayudan a entender qué está pasando y dónde prestar atención.</p>
+        <p class="mg-sub">El MVP en desarrollo ya funciona como entorno de demostración: reúne información operativa y análisis de rentabilidad en una experiencia que ayuda a entender qué está pasando y dónde prestar atención. El producto comercial todavía se está construyendo.</p>
       </div>
-      <figure class="mg-project-shot mg-rv">
-        <img class="mg-project-shot-media" src="img/prototipo/dashboard.png" width="3160" height="2000" alt="Captura del panel de Margentus con indicadores, análisis y productos del negocio." loading="lazy" decoding="async">
-        <div class="mg-project-shot-body">
-          <a href="https://margentus-demo.onrender.com/dashboard" class="mg-btn mg-btn-secondary" target="_blank" rel="noopener">Abrir el prototipo
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg>
-          </a>
-        </div>
-      </figure>
-      <p class="mg-demo-caption mg-rv">Prototipo visual · MVP en desarrollo</p>
+      <div class="mg-demo-shots mg-rv">
+        <figure class="mg-project-shot">
+          <img class="mg-project-shot-media" src="img/prototipo/dashboard.png" width="3160" height="2000" alt="Captura del panel de Margentus con indicadores, análisis y productos del negocio." loading="lazy" decoding="async">
+        </figure>
+        <!-- TODO Sprint A+: agregar captura real del demo Dreams (ficha de receta o rentabilidad) en img/prototipo/rentabilidad.png -->
+        <figure class="mg-project-shot mg-shot-placeholder">
+          <div>
+            <p>Ficha de rentabilidad</p>
+            <p class="mg-shot-note">Captura del demo Dreams · archivo esperado: img/prototipo/rentabilidad.png</p>
+          </div>
+        </figure>
+      </div>
+      <div class="mg-demo-actions mg-rv">
+        <a href="https://margentus-demo.onrender.com/dashboard" class="mg-btn mg-btn-primary" target="_blank" rel="noopener">Abrir el prototipo
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg>
+        </a>
+        <p class="mg-demo-hint">Puede tardar unos segundos en despertar.</p>
+      </div>
+      <p class="mg-demo-caption mg-rv">Prototipo visual · MVP en desarrollo · no es el producto comercial terminado</p>
     </div>
   </section>
 
@@ -329,8 +339,8 @@
     <div class="mg-container">
       <div class="mg-sec-head mg-rv">
         <p class="mg-kicker">Desarrollo</p>
-        <h2 class="mg-title" id="estado-title">Margentus está pasando del concepto al producto.</h2>
-        <p class="mg-sub">Hoy estamos construyendo el MVP a partir del modelo de negocio y de la experiencia representada en el prototipo visual. El objetivo es convertir esta propuesta en una herramienta funcional capaz de integrar información, relacionarla y generar análisis de rentabilidad útiles para la toma de decisiones.</p>
+        <h2 class="mg-title" id="estado-title">Margentus ya se puede ver funcionando, y sigue en construcción.</h2>
+        <p class="mg-sub">El MVP en desarrollo ya integra información operativa y análisis de rentabilidad en un entorno de demostración. No es un producto comercial cerrado: seguimos construyendo y validando con negocios gastronómicos.</p>
       </div>
       <div class="mg-project-stages mg-rv">
         <div class="mg-project-stage">
@@ -339,7 +349,7 @@
         </div>
         <div class="mg-project-stage is-current">
           <span class="mg-project-stage-term">MVP en desarrollo</span>
-          <p>Construcción de las primeras funcionalidades y del motor de análisis.</p>
+          <p>Ya integra información operativa y análisis de rentabilidad en el entorno de demostración; seguimos construyendo funcionalidades.</p>
           <span class="mg-project-flag">Etapa actual</span>
         </div>
         <div class="mg-project-stage">
@@ -469,7 +479,7 @@
             ¿Cuándo está el producto?
             <svg class="mg-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
           </button>
-          <div class="mg-faq-answer">El prototipo se puede ver ahora. El MVP se construye con lo que enseñe la validación con un negocio.</div>
+          <div class="mg-faq-answer">El prototipo y el MVP en desarrollo se pueden ver ahora en el demo. No es un producto comercial cerrado: seguimos construyendo y validando con negocios gastronómicos.</div>
         </div>
 
         <div class="mg-faq-item">
@@ -537,6 +547,6 @@
   const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('mg-rv-in');obs.unobserve(x.target);}})},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.mg-rv').forEach(el=>obs.observe(el));
   document.querySelectorAll('.mg-faq-item').forEach(item=>{const q=item.querySelector('.mg-faq-question');if(!q)return;q.addEventListener('click',()=>{const o=item.classList.toggle('is-open');q.setAttribute('aria-expanded',o?'true':'false');});});
 </script>
-<script>(function(){var btn=document.getElementById('themeBtn'),meta=document.querySelector('meta[name="theme-color"]');if(!btn)return;function apply(t){document.documentElement.dataset.theme=t;try{localStorage.setItem('margentus-theme',t);}catch(e){}var d=t==='dark';btn.setAttribute('aria-label',d?'Cambiar a modo claro':'Cambiar a modo oscuro');btn.setAttribute('aria-pressed',d?'true':'false');if(meta)meta.setAttribute('content',d?'#0F172A':'#F8FAFC');}btn.addEventListener('click',function(){var d=document.documentElement.dataset.theme==='dark';apply(d?'light':'dark');});})();</script>
+<script>(function(){var btn=document.getElementById('themeBtn'),meta=document.querySelector('meta[name="theme-color"]');if(!btn)return;function apply(t){document.documentElement.dataset.theme=t;try{localStorage.setItem('margentus-theme',t);}catch(e){}var d=t==='dark';btn.setAttribute('aria-label',d?'Cambiar a modo claro':'Cambiar a modo oscuro');btn.setAttribute('aria-pressed',d?'true':'false');if(meta)meta.setAttribute('content',d?'#1e211f':'#f7f8f7');}btn.addEventListener('click',function(){var d=document.documentElement.dataset.theme==='dark';apply(d?'light':'dark');});})();</script>
 </body>
 </html>
