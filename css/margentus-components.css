@@ -233,6 +233,9 @@
   box-shadow: var(--mg-shadow);
 }
 .mg-eco-card .mg-eco-status { margin-top: 14px; }
+.mg-eco-card { min-width: 0; }
+.mg-eco-card .mg-eco-head { min-width: 0; }
+.mg-eco-card .mg-eco-type { white-space: normal; overflow-wrap: anywhere; }
 
 /* ---------- Cierre ---------- */
 .mg-cierre-ctas { justify-content: flex-start; }

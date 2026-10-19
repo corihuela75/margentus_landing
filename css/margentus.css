@@ -298,6 +298,7 @@ h1, h2, h3, h4 { font-weight: 700; letter-spacing: -0.012em; }
 }
 .mg-theme-btn svg,
 .mg-burger svg { pointer-events: none; }
+.mg-burger { display: none; }
 .mg-theme-ico { width: 18px; height: 18px; }
 .mg-theme-ico--sun { display: none; }
 html[data-theme="dark"] .mg-theme-ico--moon { display: none; }
