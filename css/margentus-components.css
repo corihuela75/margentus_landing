@@ -58,16 +58,17 @@
 /* ---------- Superficies alternadas de la landing (DGL 2.1) ---------- */
 .mg-propuesta,
 .mg-surface-alt,
-.mg-status,
-.mg-founder {
+.mg-demo,
+.mg-conv,
+.mg-cierre {
   background: var(--mg-surface);
   border-block: 1px solid var(--mg-border-soft);
 }
 .mg-problem,
 .mg-how,
-.mg-demo,
-.mg-conv,
-.mg-cierre { background: var(--mg-background); }
+.mg-case,
+.mg-status,
+.mg-founder { background: var(--mg-background); }
 
 /* ---------- Badge ---------- */
 .mg-badge {
@@ -103,7 +104,8 @@
   background: var(--mg-surface);
   border: 1px solid var(--mg-border);
   border-radius: var(--mg-radius-lg);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease,
+  box-shadow: var(--mg-shadow-sm);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease,
     background-color 0.3s ease;
 }
 .mg-card:hover {
@@ -130,10 +132,56 @@
   height: 44px;
   margin-bottom: 16px;
   border-radius: 12px;
-  background: var(--mg-primary-soft);
+  background: var(--mg-icon-bg);
+  border: 1px solid var(--mg-icon-border);
   color: var(--mg-accent-text);
 }
 .mg-card-icon svg { width: 22px; height: 22px; }
+
+/* ---------- Marco tipo ventana para capturas del producto ---------- */
+.mg-window {
+  border: 1px solid var(--mg-border);
+  border-radius: var(--mg-radius-lg);
+  background: var(--mg-surface);
+  box-shadow: var(--mg-shadow);
+  overflow: hidden;
+}
+.mg-window-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  background: var(--mg-surface-soft);
+  border-bottom: 1px solid var(--mg-border);
+}
+.mg-window-dots { display: inline-flex; gap: 6px; }
+.mg-window-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--mg-border-strong);
+}
+.mg-window-dots span:nth-child(1) { background: color-mix(in srgb, var(--mg-danger) 48%, var(--mg-surface-soft)); }
+.mg-window-dots span:nth-child(2) { background: color-mix(in srgb, var(--mg-warning) 52%, var(--mg-surface-soft)); }
+.mg-window-dots span:nth-child(3) { background: color-mix(in srgb, var(--mg-success) 48%, var(--mg-surface-soft)); }
+.mg-window-url {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: min(58%, 300px);
+  padding: 3px 12px;
+  border: 1px solid var(--mg-border);
+  border-radius: 100px;
+  background: var(--mg-surface);
+  font-size: 0.72rem;
+  color: var(--mg-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+html[data-theme="dark"] .mg-window-dots span { background: var(--mg-on-ink-border); }
 
 /* ---------- Problema · Propuesta ---------- */
 .mg-questions {
@@ -431,8 +479,7 @@
 
 /* ---------- Preguntas frecuentes ---------- */
 .mg-faq {
-  background: var(--mg-surface);
-  border-block: 1px solid var(--mg-border-soft);
+  background: var(--mg-background);
 }
 .mg-faq-list {
   display: grid;

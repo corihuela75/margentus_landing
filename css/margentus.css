@@ -55,6 +55,9 @@
   --mg-border-strong: color-mix(in srgb, var(--mg-primary) 32%, var(--mg-border));
   --mg-ring: color-mix(in srgb, var(--mg-primary) 16%, transparent);
 
+  --mg-icon-bg: color-mix(in srgb, var(--mg-primary) 10%, var(--mg-surface));
+  --mg-icon-border: color-mix(in srgb, var(--mg-primary) 17%, transparent);
+
   --mg-grid-line: color-mix(in srgb, var(--mg-text) 5%, transparent);
   --mg-hero-tint: color-mix(in srgb, var(--mg-primary) 9%, transparent);
   --mg-hero-tint-alt: color-mix(in srgb, var(--mg-info) 6%, transparent);
@@ -89,6 +92,9 @@ html[data-theme="dark"] {
   --mg-quote: color-mix(in srgb, var(--mg-primary) 62%, var(--mg-on-ink));
   --mg-border-strong: color-mix(in srgb, #7ed0b4 42%, var(--mg-border));
   --mg-ring: color-mix(in srgb, #7ed0b4 20%, transparent);
+
+  --mg-icon-bg: color-mix(in srgb, var(--mg-primary) 34%, var(--mg-surface));
+  --mg-icon-border: color-mix(in srgb, #7ed0b4 26%, transparent);
 
   --mg-info: #7ed0b4;
   --mg-info-text: #7ed0b4;
@@ -438,7 +444,9 @@ html[data-theme="dark"] .mg-theme-ico--sun { display: block; }
   border: 1px solid var(--mg-border);
   border-radius: var(--mg-radius-lg);
   background: var(--mg-surface);
-  box-shadow: var(--mg-shadow-lg);
+  box-shadow:
+    var(--mg-shadow-lg),
+    0 40px 90px -40px color-mix(in srgb, var(--mg-primary) 55%, transparent);
   overflow: hidden;
 }
 .mg-hero-mock img { display: block; width: 100%; height: auto; }
