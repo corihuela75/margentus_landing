@@ -783,12 +783,12 @@ body.mg-project-page .mg-sec-head .mg-kicker::after { display: none; }
   text-transform: uppercase;
 }
 .mg-project-state p { margin: 10px 0 0; font-size: 0.84rem; line-height: 1.55; color: var(--mg-text-secondary); }
-.mg-project-state--relevado .mg-project-state-dot { background: var(--mg-info); }
-.mg-project-state--relevado .mg-project-state-term { color: var(--mg-info-text); }
-.mg-project-state--inferido .mg-project-state-dot { background: var(--mg-warning); }
-.mg-project-state--inferido .mg-project-state-term { color: var(--mg-warning-text); }
-.mg-project-state--validado .mg-project-state-dot { background: var(--mg-success); }
-.mg-project-state--validado .mg-project-state-term { color: var(--mg-success-text); }
+.mg-project-state--real .mg-project-state-dot { background: var(--mg-success); }
+.mg-project-state--real .mg-project-state-term { color: var(--mg-success-text); }
+.mg-project-state--estimado .mg-project-state-dot { background: var(--mg-warning); }
+.mg-project-state--estimado .mg-project-state-term { color: var(--mg-warning-text); }
+.mg-project-state--inferido .mg-project-state-dot { background: var(--mg-info); }
+.mg-project-state--inferido .mg-project-state-term { color: var(--mg-info-text); }
 .mg-project-state--critico .mg-project-state-dot { background: var(--mg-danger); }
 .mg-project-state--critico .mg-project-state-term { color: var(--mg-danger-text); }
 
