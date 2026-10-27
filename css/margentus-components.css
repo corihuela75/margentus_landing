@@ -1024,3 +1024,35 @@ body.mg-project-page .mg-sec-head .mg-kicker::after { display: none; }
 }
 .mg-eco-link:hover { text-decoration: underline; }
 .mg-eco-link svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+/* ---------- Prototipo: demo en video (YouTube con carga al hacer clic) ---------- */
+.mg-video { position: relative; aspect-ratio: 16 / 9; background: #0c221c; }
+.mg-video-play {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  padding: 0; border: 0; background: none; cursor: pointer; display: block;
+}
+.mg-video-poster { display: block; width: 100%; height: 100%; object-fit: cover; }
+.mg-video-play::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(12, 34, 28, 0) 45%, rgba(12, 34, 28, 0.35));
+  transition: background 0.2s ease;
+}
+.mg-video-btn {
+  position: absolute; left: 50%; top: 50%; z-index: 1;
+  display: grid; place-items: center; width: 84px; height: 84px; border-radius: 50%;
+  color: #fff; background: var(--mg-primary);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.35);
+  transform: translate(-50%, -50%); transition: transform 0.2s ease;
+}
+.mg-video-btn svg { margin-left: 4px; }
+.mg-video-dur {
+  position: absolute; right: 14px; bottom: 14px; z-index: 1;
+  padding: 4px 10px; border-radius: 999px;
+  font-size: 0.78rem; font-weight: 600; color: #fff; background: rgba(12, 34, 28, 0.82);
+}
+.mg-video-play:hover .mg-video-btn,
+.mg-video-play:focus-visible .mg-video-btn { transform: translate(-50%, -50%) scale(1.08); }
+.mg-video-play:focus-visible { outline: 3px solid var(--mg-primary); outline-offset: -3px; }
+.mg-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+@media (max-width: 600px) { .mg-video-btn { width: 64px; height: 64px; } }
+@media (prefers-reduced-motion: reduce) { .mg-video-btn, .mg-video-play::after { transition: none; } }

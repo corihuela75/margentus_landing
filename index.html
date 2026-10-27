@@ -239,30 +239,32 @@
     <div class="mg-container">
       <div class="mg-sec-head mg-rv">
         <p class="mg-kicker">El producto</p>
-        <h2 class="mg-title" id="demo-title">Así imaginamos la experiencia de Margentus.</h2>
-        <p class="mg-sub">Estamos construyendo un entorno donde la información del negocio se convierte en una visión clara de su rentabilidad, con indicadores, análisis y explicaciones que ayudan a entender qué está pasando y dónde prestar atención.</p>
+        <h2 class="mg-title" id="demo-title">Así funciona Margentus hoy.</h2>
+        <p class="mg-sub">Un recorrido de dos minutos por el MVP: cargar una compra, detectar una suba de precio, recalcular el costo de cada receta y ver qué conviene hacer.</p>
       </div>
       <figure class="mg-project-shot mg-rv">
         <div class="mg-project-shot-bar">
           <span class="mg-mock-dots" aria-hidden="true"><i></i><i></i><i></i></span>
           <span class="mg-project-shot-url">margentus-demo.onrender.com/dashboard</span>
         </div>
-        <!-- Placeholder institucional: se reemplaza por una captura real del
-             prototipo cuando exista. No se generan imágenes falsas del producto. -->
-        <div class="mg-project-shot-body">
-          <span class="mg-project-shot-logo">
-            <img class="mg-logo mg-logo--light" src="img/logos/margentus-icon-light.svg" alt="" width="40" height="40">
-            <img class="mg-logo mg-logo--dark" src="img/logos/margentus-icon-dark.svg" alt="" width="40" height="40">
-          </span>
-          <h3>Prototipo navegable</h3>
-          <p>El prototipo se abre directamente en el navegador. Es la mejor forma de ver cómo Margentus representa la información del negocio y qué deja ver.</p>
-          <a href="https://margentus-demo.onrender.com/dashboard" class="mg-btn mg-btn-secondary" target="_blank" rel="noopener">Abrir el prototipo
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg>
-          </a>
+        <!-- Demo en video (YouTube, no listado). Se carga recién al hacer clic:
+             la portada es local y no se conecta a YouTube hasta que el visitante decide verlo. -->
+        <div class="mg-video" data-yt="wAaGYBlAOyU">
+          <button type="button" class="mg-video-play" aria-label="Reproducir la demo de Margentus (2 minutos)">
+            <img class="mg-video-poster" src="img/demo/margentus-demo-poster.jpg" alt="Panel principal de Margentus con indicadores de ventas, food cost, costo real y margen del mes" width="1280" height="720" loading="lazy" decoding="async">
+            <span class="mg-video-btn" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></svg>
+            </span>
+            <span class="mg-video-dur" aria-hidden="true">Demo · 2:12</span>
+          </button>
         </div>
-        <figcaption>El prototipo es una representación visual de la experiencia que estamos construyendo, no el producto terminado. Se abre en modo lectura y no requiere instalación.</figcaption>
+        <figcaption>Demo grabada sobre el MVP v0.9 con los datos de un restaurante de ejemplo. También podés recorrer el prototipo vos mismo: se abre en el navegador, en modo lectura y sin instalar nada.</figcaption>
       </figure>
-      <p class="mg-demo-caption mg-rv">Prototipo visual · MVP en desarrollo</p>
+      <p class="mg-demo-caption mg-rv">
+        <a href="https://margentus-demo.onrender.com/dashboard" class="mg-btn mg-btn-secondary" target="_blank" rel="noopener">Abrir el prototipo
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg>
+        </a>
+      </p>
     </div>
   </section>
 
@@ -480,5 +482,6 @@
   document.querySelectorAll('.mg-faq-item').forEach(item=>{const q=item.querySelector('.mg-faq-question');if(!q)return;q.addEventListener('click',()=>{const o=item.classList.toggle('is-open');q.setAttribute('aria-expanded',o?'true':'false');});});
 </script>
 <script>(function(){var btn=document.getElementById('themeBtn'),meta=document.querySelector('meta[name="theme-color"]');if(!btn)return;function apply(t){document.documentElement.dataset.theme=t;try{localStorage.setItem('margentus-theme',t);}catch(e){}var d=t==='dark';btn.setAttribute('aria-label',d?'Cambiar a modo claro':'Cambiar a modo oscuro');btn.setAttribute('aria-pressed',d?'true':'false');if(meta)meta.setAttribute('content',d?'#0F172A':'#F8FAFC');}btn.addEventListener('click',function(){var d=document.documentElement.dataset.theme==='dark';apply(d?'light':'dark');});})();</script>
+<script>(function(){document.querySelectorAll('.mg-video[data-yt]').forEach(function(box){var b=box.querySelector('.mg-video-play');if(!b)return;b.addEventListener('click',function(){var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+box.dataset.yt+'?autoplay=1&rel=0&modestbranding=1';f.title='Demo de Margentus';f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';f.allowFullscreen=true;f.referrerPolicy='strict-origin-when-cross-origin';box.replaceChildren(f);f.focus();});});})();</script>
 </body>
 </html>
