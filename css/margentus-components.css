@@ -920,6 +920,8 @@ body.mg-project-page .mg-sec-head .mg-kicker::after { display: none; }
 /* ---------- Prototipo: captura sin marco ---------- */
 .mg-project-shot { margin: 0; }
 .mg-project-shot-media { display: block; width: 100%; height: auto; }
+video.mg-project-shot-media { aspect-ratio: 16 / 9; background: #000; }
+.mg-demo-shots.mg-demo-shots--single { grid-template-columns: 1fr; max-width: 960px; margin-inline: auto; }
 .mg-project-shot-body { padding: 26px 24px; text-align: center; }
 
 /* ---------- Sección prototipo (landing): capturas del demo ---------- */
