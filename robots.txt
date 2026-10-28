@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://margentus.com/sitemap.xml
