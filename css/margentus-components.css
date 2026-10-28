@@ -1162,3 +1162,8 @@ video.mg-project-shot-media { aspect-ratio: 16 / 9; background: #000; }
 .mg-pitch-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 .mg-pitch-item figcaption { margin-top: 8px; font-size: .875rem; color: var(--mg-text-muted, inherit); }
 @media (max-width: 767px) { .mg-pitch-grid { grid-template-columns: 1fr; } }
+
+/* Operación real: 6 tarjetas en 3x2 */
+.mg-areas.mg-areas--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 1199px) { .mg-areas.mg-areas--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 767px) { .mg-areas.mg-areas--3 { grid-template-columns: 1fr; } }
