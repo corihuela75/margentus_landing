@@ -1,5 +1,5 @@
 /* ============================================================
-   Margentus · responsive DGL 2.1
+   Margentus · responsive DGL v3.0
    Base = desktop (≥1200px) · Tablet 768–1199px · Mobile ≤767px
    ============================================================ */
 
@@ -10,6 +10,12 @@
   .mg-burger { display: inline-flex; }
 
   .mg-section { padding: 88px 0; }
+
+  /* Hero con captura: pasa a una sola columna */
+  .mg-hero--split .mg-hero-inner { grid-template-columns: 1fr; gap: 36px; }
+  .mg-hero--split .mg-hero-inner .mg-h1 { max-width: 720px; }
+  .mg-hero--split .mg-hero-inner .mg-lead { max-width: 680px; }
+  .mg-hero-mock { max-width: 720px; }
 
   .mg-questions { grid-template-columns: 1fr 1fr; }
   .mg-questions .mg-card:last-child { grid-column: 1 / -1; }
@@ -22,6 +28,9 @@
 
   /* Ejemplo */
   .mg-case-grid { grid-template-columns: 1fr; gap: 32px; }
+
+  /* Sección prototipo: capturas apiladas */
+  .mg-demo-shots { grid-template-columns: 1fr; }
 
   .mg-footer-grid { grid-template-columns: 1fr 1fr; }
 
@@ -69,7 +78,9 @@
   .mg-areas .mg-area:last-child { grid-column: auto; }
 
   /* Ejemplo */
-  .mg-flow-item { padding: 18px 20px; }
+  .mg-story-products { grid-template-columns: 1fr; }
+  .mg-story-decisions-grid { grid-template-columns: 1fr; }
+  .mg-decision { flex-direction: row; justify-content: flex-start; text-align: left; }
 
   /* Preguntas frecuentes */
   .mg-faq-question { padding: 18px 20px; font-size: 0.96rem; }
@@ -96,13 +107,22 @@
   .mg-project-chain-step + .mg-project-chain-step::before,
   .mg-project-gap-step + .mg-project-gap-step::before { display: none; }
   .mg-project-tl-item { padding-bottom: 22px; }
-  .mg-project-shot-body { padding: 34px 22px; }
+  .mg-project-shot-body { padding: 22px 18px; }
 
   /* Ecosistema: la fecha pasa arriba y el riel vertical se omite */
   .mg-eco-item { grid-template-columns: 1fr; gap: 12px; padding: 20px; }
   .mg-eco-rail { flex-direction: row; align-items: center; gap: 10px; padding-top: 0; }
   .mg-eco-rail::before { display: none; }
   .mg-eco-type { white-space: normal; }
+}
+
+/* ---------- Mobile chico · ≤560px (logo) ---------- */
+@media (max-width: 560px) {
+  .mg-logo { height: 34px; }
+  .mg-brand { gap: 12px; }
+  .mg-wordmark { font-size: 27px; }
+  .mg-footer .mg-logo { height: 26px; }
+  .mg-footer .mg-wordmark { font-size: 23px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

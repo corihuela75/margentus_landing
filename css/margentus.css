@@ -1,32 +1,34 @@
 /* ============================================================
-   Margentus · sistema visual DGL 2.1
+   Margentus · sistema visual DGL v3.0
    Tokens, base, tipografía, layout, navegación y hero.
-   Bootstrap estructura → Margentus define la experiencia.
+   Primary Deep Teal · Accent Warm Copper · neutros Warm Graphite.
    ============================================================ */
 
 :root {
   color-scheme: light;
 
-  --mg-primary: #6B46C1;
-  --mg-primary-dark: #4C2A91;
-  --mg-secondary: #2563EB;
-  --mg-accent: #EC4899;
-  --mg-info: #06B6D4;
+  --mg-primary: #187f65;
+  --mg-primary-dark: #146553;
+  --mg-primary-deep: #135144;
+  --mg-secondary: #135144;
+  --mg-accent: #e8830f;
+  --mg-accent-gold: #c4901d;
+  --mg-info: #e8830f;
 
   --mg-success: #16A34A;
   --mg-warning: #F59E0B;
   --mg-danger: #DC2626;
 
-  --mg-background: #F8FAFC;
+  --mg-background: #f7f8f7;
   --mg-surface: #FFFFFF;
-  --mg-surface-soft: #F1F5F9;
-  --mg-border: #E2E8F0;
+  --mg-surface-soft: #eef0ee;
+  --mg-border: #e1e5e2;
 
-  --mg-ink: #0F172A;
-  --mg-on-ink: #F8FAFC;
+  --mg-ink: #1e211f;
+  --mg-on-ink: #f7f8f7;
   --mg-text: var(--mg-ink);
-  --mg-text-secondary: #475569;
-  --mg-text-muted: #64748B;
+  --mg-text-secondary: #454b47;
+  --mg-text-muted: #666d68;
 
   --mg-radius-sm: 6px;
   --mg-radius: 10px;
@@ -36,7 +38,7 @@
   --mg-focus: var(--mg-primary);
   --mg-quote: var(--mg-primary-dark);
 
-  --mg-info-text: var(--mg-info);
+  --mg-info-text: color-mix(in srgb, var(--mg-accent) 68%, var(--mg-ink));
   --mg-success-text: var(--mg-success);
   --mg-warning-text: color-mix(in srgb, var(--mg-warning) 52%, var(--mg-text));
   --mg-danger-text: color-mix(in srgb, var(--mg-danger) 90%, var(--mg-text));
@@ -53,6 +55,9 @@
   --mg-border-strong: color-mix(in srgb, var(--mg-primary) 32%, var(--mg-border));
   --mg-ring: color-mix(in srgb, var(--mg-primary) 16%, transparent);
 
+  --mg-icon-bg: color-mix(in srgb, var(--mg-primary) 10%, var(--mg-surface));
+  --mg-icon-border: color-mix(in srgb, var(--mg-primary) 17%, transparent);
+
   --mg-grid-line: color-mix(in srgb, var(--mg-text) 5%, transparent);
   --mg-hero-tint: color-mix(in srgb, var(--mg-primary) 9%, transparent);
   --mg-hero-tint-alt: color-mix(in srgb, var(--mg-info) 6%, transparent);
@@ -61,9 +66,9 @@
   --mg-on-ink-soft: color-mix(in srgb, var(--mg-on-ink) 8%, transparent);
   --mg-on-ink-border: color-mix(in srgb, var(--mg-on-ink) 14%, transparent);
 
-  --mg-shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
-  --mg-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
-  --mg-shadow-lg: 0 24px 60px rgba(15, 23, 42, 0.10);
+  --mg-shadow-sm: 0 1px 2px rgba(30, 33, 31, 0.04);
+  --mg-shadow: 0 8px 24px rgba(30, 33, 31, 0.06);
+  --mg-shadow-lg: 0 24px 60px rgba(30, 33, 31, 0.10);
 
   --mg-nav-h: 72px;
   --mg-nav-bg: color-mix(in srgb, var(--mg-background) 86%, transparent);
@@ -78,19 +83,25 @@ html[data-theme="dark"] {
   --mg-border: color-mix(in srgb, var(--mg-on-ink) 13%, transparent);
   --mg-border-soft: color-mix(in srgb, var(--mg-on-ink) 8%, transparent);
 
-  --mg-text: #F8FAFC;
-  --mg-text-secondary: #E2E8F0;
-  --mg-text-muted: color-mix(in srgb, #F8FAFC 58%, var(--mg-background));
+  --mg-text: #f4f5f4;
+  --mg-text-secondary: #d5dad6;
+  --mg-text-muted: color-mix(in srgb, #f4f5f4 58%, var(--mg-background));
 
-  --mg-accent-text: var(--mg-info);
-  --mg-focus: var(--mg-info);
+  --mg-accent-text: #7ed0b4;
+  --mg-focus: #7ed0b4;
   --mg-quote: color-mix(in srgb, var(--mg-primary) 62%, var(--mg-on-ink));
-  --mg-border-strong: color-mix(in srgb, var(--mg-info) 42%, var(--mg-border));
-  --mg-ring: color-mix(in srgb, var(--mg-info) 20%, transparent);
+  --mg-border-strong: color-mix(in srgb, #7ed0b4 42%, var(--mg-border));
+  --mg-ring: color-mix(in srgb, #7ed0b4 20%, transparent);
+
+  --mg-icon-bg: color-mix(in srgb, var(--mg-primary) 34%, var(--mg-surface));
+  --mg-icon-border: color-mix(in srgb, #7ed0b4 26%, transparent);
+
+  --mg-info: #7ed0b4;
+  --mg-info-text: #7ed0b4;
 
   --mg-grid-line: color-mix(in srgb, var(--mg-on-ink) 6%, transparent);
   --mg-hero-tint: color-mix(in srgb, var(--mg-primary) 22%, transparent);
-  --mg-hero-tint-alt: color-mix(in srgb, var(--mg-info) 12%, transparent);
+  --mg-hero-tint-alt: color-mix(in srgb, #48b594 12%, transparent);
 
   --mg-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.40);
   --mg-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
@@ -141,12 +152,12 @@ button { font-family: inherit; cursor: pointer; }
 .mg-section { position: relative; padding: 104px 0; }
 
 .mg-sec-head {
-  max-width: 780px;
-  margin: 0 auto 56px;
-  text-align: center;
+  max-width: 880px;
+  margin: 0 0 56px;
+  text-align: left;
 }
 .mg-sec-head .mg-lead,
-.mg-sec-head .mg-sub { margin-inline: auto; }
+.mg-sec-head .mg-sub { margin-inline: 0; }
 
 /* ---------- Tipografía ---------- */
 h1, h2, h3, h4 { font-weight: 700; letter-spacing: -0.012em; }
@@ -239,23 +250,21 @@ h1, h2, h3, h4 { font-weight: 700; letter-spacing: -0.012em; }
   gap: 24px;
 }
 
-.mg-brand { display: inline-flex; align-items: center; gap: 10px; }
+.mg-brand { display: inline-flex; align-items: center; gap: 13px; }
 .mg-logo {
   display: block;
-  height: 32px;
+  flex: none;
+  height: 44px;
   width: auto;
-  border-radius: var(--mg-radius-sm);
 }
 .mg-wordmark {
-  font-size: 1.12rem;
+  font-size: 34px;
   font-weight: 700;
-  letter-spacing: -0.022em;
+  letter-spacing: -0.02em;
+  line-height: 1;
   color: var(--mg-text);
   transition: color 0.3s ease;
 }
-.mg-logo--dark { display: none; }
-html[data-theme="dark"] .mg-logo--light { display: none; }
-html[data-theme="dark"] .mg-logo--dark { display: block; }
 
 .mg-nav-links { display: flex; align-items: center; gap: 2px; }
 .mg-nav-links a {
@@ -295,6 +304,7 @@ html[data-theme="dark"] .mg-logo--dark { display: block; }
 }
 .mg-theme-btn svg,
 .mg-burger svg { pointer-events: none; }
+.mg-burger { display: none; }
 .mg-theme-ico { width: 18px; height: 18px; }
 .mg-theme-ico--sun { display: none; }
 html[data-theme="dark"] .mg-theme-ico--moon { display: none; }
@@ -414,6 +424,32 @@ html[data-theme="dark"] .mg-theme-ico--sun { display: block; }
   color: var(--mg-text-muted);
   margin: 0;
 }
+
+/* ---------- Hero con captura del producto ---------- */
+.mg-hero--split .mg-hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  align-items: center;
+  gap: 48px;
+  max-width: 1140px;
+  margin-inline: 0;
+  text-align: left;
+}
+.mg-hero--split .mg-hero-inner .mg-h1 { max-width: 560px; margin-inline: 0; }
+.mg-hero--split .mg-hero-inner .mg-lead { max-width: 540px; margin: 0 0 24px; }
+.mg-hero--split .mg-hero-ctas { justify-content: flex-start; }
+.mg-hero--split .mg-hero-note { text-align: left; }
+
+.mg-hero-mock {
+  border: 1px solid var(--mg-border);
+  border-radius: var(--mg-radius-lg);
+  background: var(--mg-surface);
+  box-shadow:
+    var(--mg-shadow-lg),
+    0 40px 90px -40px color-mix(in srgb, var(--mg-primary) 55%, transparent);
+  overflow: hidden;
+}
+.mg-hero-mock img { display: block; width: 100%; height: auto; }
 
 /* ---------- Reveal ---------- */
 .mg-rv {
