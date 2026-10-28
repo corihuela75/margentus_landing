@@ -12,7 +12,7 @@
   </script>
   <title>Margentus | Inteligencia de rentabilidad para gastronomía</title>
   <meta name="description" content="Tu analista de rentabilidad para gastronomía. Margentus transforma compras, recetas, precios y ventas en decisiones para cuidar el margen.">
-  <meta name="theme-color" content="#f7f8f7">
+  <meta name="theme-color" content="#faf7f2">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Margentus">
   <meta property="og:title" content="Margentus | Inteligencia de rentabilidad para gastronomía">
@@ -134,7 +134,7 @@
   </section>
 
   <!-- ================= PROBLEMA ================= -->
-  <section class="mg-section mg-problem" id="problema" aria-labelledby="problema-title">
+  <section class="mg-section mg-problem mg-band-dark" id="problema" aria-labelledby="problema-title">
     <div class="mg-container">
       <div class="mg-sec-head mg-rv">
         <p class="mg-kicker">El problema</p>
@@ -261,7 +261,7 @@
   </section>
 
     <!-- ================= CASO DE USO ================= -->
-  <section class="mg-section mg-case" id="caso" aria-labelledby="caso-title">
+  <section class="mg-section mg-case mg-band-dark" id="caso" aria-labelledby="caso-title">
     <div class="mg-container">
       <div class="mg-case-grid">
         <div class="mg-case-copy mg-rv">
@@ -492,7 +492,7 @@
   </section>
 
   <!-- ================= CIERRE / CTA ================= -->
-  <section class="mg-section mg-cierre" id="cierre" aria-labelledby="cierre-title">
+  <section class="mg-section mg-cierre mg-band-dark" id="cierre" aria-labelledby="cierre-title">
     <div class="mg-container">
       <div class="mg-sec-head mg-rv">
         <h2 class="mg-title" id="cierre-title">Comprender. Explicar. Decidir.</h2>
@@ -625,6 +625,6 @@
   const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('mg-rv-in');obs.unobserve(x.target);}})},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.mg-rv').forEach(el=>obs.observe(el));
   document.querySelectorAll('.mg-faq-item').forEach(item=>{const q=item.querySelector('.mg-faq-question');if(!q)return;q.addEventListener('click',()=>{const o=item.classList.toggle('is-open');q.setAttribute('aria-expanded',o?'true':'false');});});
 </script>
-<script>(function(){var btn=document.getElementById('themeBtn'),meta=document.querySelector('meta[name="theme-color"]');if(!btn)return;function apply(t){document.documentElement.dataset.theme=t;try{localStorage.setItem('margentus-theme',t);}catch(e){}var d=t==='dark';btn.setAttribute('aria-label',d?'Cambiar a modo claro':'Cambiar a modo oscuro');btn.setAttribute('aria-pressed',d?'true':'false');if(meta)meta.setAttribute('content',d?'#1e211f':'#f7f8f7');}btn.addEventListener('click',function(){var d=document.documentElement.dataset.theme==='dark';apply(d?'light':'dark');});})();</script>
+<script>(function(){var btn=document.getElementById('themeBtn'),meta=document.querySelector('meta[name="theme-color"]');if(!btn)return;function apply(t){document.documentElement.dataset.theme=t;try{localStorage.setItem('margentus-theme',t);}catch(e){}var d=t==='dark';btn.setAttribute('aria-label',d?'Cambiar a modo claro':'Cambiar a modo oscuro');btn.setAttribute('aria-pressed',d?'true':'false');if(meta)meta.setAttribute('content',d?'#1e211f':'#faf7f2');}btn.addEventListener('click',function(){var d=document.documentElement.dataset.theme==='dark';apply(d?'light':'dark');});})();</script>
 </body>
 </html>
