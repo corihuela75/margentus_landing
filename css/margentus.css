@@ -1,7 +1,9 @@
-/* Space Grotesk autohospedada (@fontsource, OFL) */
-@font-face { font-family: "Space Grotesk"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/space-grotesk-latin-400-normal.woff2") format("woff2"); }
-@font-face { font-family: "Space Grotesk"; font-style: normal; font-weight: 500; font-display: swap; src: url("../fonts/space-grotesk-latin-500-normal.woff2") format("woff2"); }
-@font-face { font-family: "Space Grotesk"; font-style: normal; font-weight: 600; font-display: swap; src: url("../fonts/space-grotesk-latin-600-normal.woff2") format("woff2"); }
+/* Fuentes autohospedadas (@fontsource, OFL) · DGL 23/10/2026:
+   Plus Jakarta Sans = interfaz y textos · Space Grotesk 700 = solo wordmark del logo */
+@font-face { font-family: "Plus Jakarta Sans"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/plus-jakarta-sans-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Plus Jakarta Sans"; font-style: normal; font-weight: 500; font-display: swap; src: url("../fonts/plus-jakarta-sans-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Plus Jakarta Sans"; font-style: normal; font-weight: 600; font-display: swap; src: url("../fonts/plus-jakarta-sans-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Plus Jakarta Sans"; font-style: normal; font-weight: 700; font-display: swap; src: url("../fonts/plus-jakarta-sans-latin-700-normal.woff2") format("woff2"); }
 @font-face { font-family: "Space Grotesk"; font-style: normal; font-weight: 700; font-display: swap; src: url("../fonts/space-grotesk-latin-700-normal.woff2") format("woff2"); }
 
 /* ============================================================
@@ -124,7 +126,7 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  font-family: "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   font-size: 1rem;
   line-height: 1.65;
   background: var(--mg-background);
@@ -264,6 +266,8 @@ h1, h2, h3, h4 { font-weight: 700; letter-spacing: -0.012em; }
   width: auto;
 }
 .mg-wordmark {
+  font-family: "Space Grotesk", "Plus Jakarta Sans", system-ui, sans-serif;
+  font-weight: 700;
   font-size: 34px;
   font-weight: 700;
   letter-spacing: -0.02em;
