@@ -1162,3 +1162,30 @@ video.mg-project-shot-media { aspect-ratio: 16 / 9; background: #000; }
 .mg-pitch-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 .mg-pitch-item figcaption { margin-top: 8px; font-size: .875rem; color: var(--mg-text-muted, inherit); }
 @media (max-width: 767px) { .mg-pitch-grid { grid-template-columns: 1fr; } }
+
+/* Operación real: 6 tarjetas en 3x2 */
+.mg-areas.mg-areas--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 1199px) { .mg-areas.mg-areas--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 767px) { .mg-areas.mg-areas--3 { grid-template-columns: 1fr; } }
+
+/* ---------- Variante A · color cálido (27/10/2026) ---------- */
+/* Bandas oscuras graphite: ritmo entre secciones */
+.mg-band-dark { --mg-band: #1e211f; background: var(--mg-band) !important; color: rgba(255, 255, 255, .78); }
+html[data-theme="dark"] .mg-band-dark { --mg-band: #121513; }
+.mg-band-dark .mg-title,
+.mg-band-dark .mg-case-closer { color: #fff !important; }
+.mg-band-dark .mg-sec-head p:not(.mg-kicker),
+.mg-band-dark .mg-case-copy p:not(.mg-kicker):not(.mg-case-closer),
+.mg-band-dark .mg-problem-text,
+.mg-band-dark .mg-problem-close,
+.mg-band-dark .mg-cierre-note,
+.mg-band-dark > .mg-container > p { color: rgba(255, 255, 255, .78) !important; }
+.mg-band-dark .mg-kicker { color: #f0a24a !important; }
+.mg-band-dark .mg-btn-ghost { color: #fff !important; border-color: rgba(255, 255, 255, .5) !important; }
+.mg-band-dark .mg-btn-ghost:hover { background: rgba(255, 255, 255, .08) !important; }
+
+/* Cobre como segundo color */
+.mg-area-num { color: #d0700a; }
+.mg-area:nth-child(3n+2) .mg-card-icon { background: #fdf1e4; border-color: #f6d9b5; color: #d0700a; }
+html[data-theme="dark"] .mg-area-num { color: #f0a24a; }
+html[data-theme="dark"] .mg-area:nth-child(3n+2) .mg-card-icon { background: rgba(232, 131, 15, .14); border-color: rgba(232, 131, 15, .35); color: #f0a24a; }
