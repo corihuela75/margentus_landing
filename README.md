@@ -3,9 +3,9 @@
 Sitio estático de presentación de **Margentus** (inteligencia de rentabilidad para gastronomía).
 
 Esta landing es la cara pública de **Capa 0**: describe el proyecto y su etapa real
-—prototipo visual y MVP en desarrollo— sin promesas comerciales, sin precios, sin
-contratación y sin métricas de tracción inventadas. La demo es un entorno de
-demostración, no el producto comercial terminado.
+—MVP 1.0 completo y piloto acompañado en preparación— sin promesas comerciales,
+sin precios, sin contratación y sin métricas de tracción inventadas. La demo pública
+es un entorno de demostración; el despliegue para clientes aún está pendiente.
 
 - Producción: https://margentus.com/ · https://margentus.com/proyecto.html
 - Demo (repo aparte): https://margentus-demo.onrender.com/dashboard
@@ -23,7 +23,7 @@ js/
   convocatorias.js             Fuente única de convocatorias + renderer (index resumen / proyecto detalle)
 img/
   logos/                       Marca (SVG)
-  prototipo/                   Capturas del prototipo
+  prototipo/                   Capturas del entorno de demostración
   og/                          Imagen para compartir (Open Graph 1200×630)
 ```
 
@@ -51,8 +51,8 @@ registrarlo también acá.
 ## Reglas del repositorio
 
 - **La demo puede cambiar a diario. La landing solo cambia con una decisión explícita de Capa 0.**
-- Sin CTA comercial: no hay "contratar", "comprar", "gratis" ni "piloto".
-- La etapa se expresa siempre como **prototipo visual · MVP en desarrollo**.
+- Sin CTA comercial: no hay "contratar", "comprar" ni "gratis". El piloto se menciona como etapa futura, no como oferta abierta.
+- La etapa se expresa como **MVP 1.0 completo · piloto acompañado en preparación**; no describirlo como MVP en desarrollo.
 - No publicar métricas, resultados de convocatorias ni claims que no estén confirmados.
 - Las convocatorias se editan **solo** en `js/convocatorias.js` (fuente única para ambas páginas).
 - La demo vive en otro repositorio (`margentus-demo`); este repo no la modifica.
