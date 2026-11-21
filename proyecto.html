@@ -41,6 +41,13 @@
   <noscript><style>.mg-rv{opacity:1 !important;transform:none !important}</style></noscript>
 </head>
 <body class="mg-project-page" id="top">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-clipboard-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></symbol>
+  <symbol id="i-git-branch" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></symbol>
+  <symbol id="i-plug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"/></symbol>
+  <symbol id="i-shield-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 8 12 3 17 8"/><path d="M12 3v12"/></symbol>
+</svg>
 
 <a class="mg-skip" href="#main">Saltar al contenido</a>
 
@@ -53,7 +60,7 @@
     </a>
 
     <nav class="mg-nav-links" aria-label="Secciones">
-      <a href="index.html#como-funciona">Cómo funciona</a>
+      <a href="index.html#que-analiza">Cómo funciona</a>
       <a href="index.html#prototipo">Demo</a>
       <a href="proyecto.html" aria-current="page">Proyecto</a>
     </nav>
@@ -67,7 +74,7 @@
         <a href="https://margentus-demo.onrender.com/dashboard" class="mg-btn mg-btn-ghost mg-btn-sm" target="_blank" rel="noopener">Explorar demo
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg>
         </a>
-        <a href="index.html#convocatorias" class="mg-btn mg-btn-primary mg-btn-sm">Ver convocatorias</a>
+        <a href="novedades.html" class="mg-btn mg-btn-primary mg-btn-sm">Novedades</a>
       </div>
       <button class="mg-burger" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mmenu">
         <svg id="icoOpen" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
@@ -78,11 +85,11 @@
 </nav>
 
 <div class="mg-mmenu" id="mmenu">
-  <a href="index.html#como-funciona">Cómo funciona</a>
+  <a href="index.html#que-analiza">Cómo funciona</a>
   <a href="index.html#prototipo">Demo</a>
   <a href="proyecto.html">Proyecto</a>
   <div class="mg-mmenu-cta">
-    <a href="index.html#convocatorias" class="mg-btn mg-btn-primary mg-btn-lg">Ver convocatorias</a>
+    <a href="novedades.html" class="mg-btn mg-btn-primary mg-btn-lg">Novedades</a>
   </div>
   <p class="mg-mmenu-note"><a href="https://margentus-demo.onrender.com/dashboard" target="_blank" rel="noopener">Explorar demo</a></p>
 </div>
@@ -102,7 +109,7 @@
         <p class="mg-lead mg-rv">Margentus nace de un problema concreto de la operación gastronómica: convertir información dispersa y conocimiento especializado en decisiones que puedan ser comprendidas y utilizadas por cualquier negocio.</p>
 
         <div class="mg-hero-ctas mg-rv">
-          <a href="#origen" class="mg-btn mg-btn-secondary mg-btn-lg">Conocer el proyecto
+          <a href="#origen" class="mg-btn mg-btn-secondary mg-btn-lg">Empezar por el origen
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
           </a>
           <a href="#presentaciones" class="mg-btn mg-btn-ghost mg-btn-lg">Ver presentaciones</a>
@@ -113,30 +120,49 @@
     </div>
   </section>
 
-  <!-- ================= 01 · ORIGEN ================= -->
+  <!-- ================= 01 · ORIGEN Y FUNDADOR ================= -->
   <section class="mg-section mg-project-band" id="origen" aria-labelledby="origen-title">
     <div class="mg-container">
       <div class="mg-sec-head mg-rv">
         <p class="mg-kicker"><span class="mg-project-index">01</span>Origen</p>
-        <h2 class="mg-title" id="origen-title">Una idea nacida desde la operación</h2>
+        <h2 class="mg-title" id="origen-title">Una idea que nació mirando los números de negocios reales</h2>
       </div>
 
-      <div class="mg-project-split">
-        <div class="mg-rv">
-          <p>Margentus no arranca con una idea de mercado ni con una tecnología elegida. Arranca con una observación repetida durante años de trabajo en administración, gestión hotelera y control de costos de operaciones gastronómicas.</p>
-          <p>En ese trabajo aparece siempre la misma característica: la información económica del negocio existe, se produce todos los días y, aun así, no se puede leer. Vive en planillas, en listas de compras, en la cabeza de quien cocina y en criterios transmitidos de una persona a otra.</p>
-          <p>El proyecto empieza por entender esa distancia, no por construir una herramienta.</p>
+      <div class="mg-origin">
+        <div class="mg-origin-story mg-rv">
+          <p>Margentus no empezó con una idea de mercado ni con una tecnología de moda. Empezó en la administración: después de más de 25 años controlando costos, revisando compras y reconstruyendo el margen de operaciones hoteleras y gastronómicas.</p>
+          <p>En ese trabajo la conclusión se repetía. La información económica del negocio existe y se produce todos los días, pero no se puede leer: vive en planillas, en listas de compras, en la cabeza de quien cocina y en criterios que pasan de una persona a otra.</p>
+          <blockquote class="mg-origin-quote">
+            <p>¿Por qué tanta información del negocio termina sin convertirse en decisiones?</p>
+            <footer>Margentus nace para responder esa pregunta.</footer>
+          </blockquote>
         </div>
 
-        <div class="mg-rv">
-          <ul class="mg-project-list">
-            <li><strong>Análisis de costos.</strong> Reconstruir el costo real de lo que se vende, insumo por insumo.</li>
-            <li><strong>Control de gestión.</strong> Variables que se revisan para entender qué pasó con el margen.</li>
-            <li><strong>Información operativa dispersa.</strong> Compras, recetas, precios y movimientos en sistemas que no se hablan.</li>
-            <li><strong>Dependencia de trabajo manual.</strong> Tareas de consolidación que consumen tiempo y se hacen de memoria.</li>
-            <li><strong>Conocimiento especializado.</strong> Criterios acumulados de quienes conocen el negocio y no quedan escritos en ningún lado.</li>
+        <aside class="mg-founder-card mg-rv" aria-labelledby="founder-name">
+          <span class="mg-founder-avatar" aria-hidden="true">CO</span>
+          <p class="mg-founder-card-kicker">Fundador</p>
+          <h3 id="founder-name">Cristian Orihuela</h3>
+          <p class="mg-founder-card-role">Administración, costos y desarrollo de software</p>
+          <ul class="mg-founder-facts">
+            <li><strong>+25 años</strong> en administración contable y control de costos en hotelería y gastronomía.</li>
+            <li><strong>Técnico Superior</strong> en Desarrollo de Software.</li>
+            <li><strong>En curso:</strong> Lic. en Gestión Tecnológica de las Organizaciones (UNCuyo).</li>
+            <li><strong>Mar del Plata</strong>, Argentina.</li>
           </ul>
-        </div>
+          <a class="mg-founder-link" href="https://www.linkedin.com/in/cristian-orihuela/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>Ver perfil en LinkedIn</a>
+          <p class="mg-founder-card-note">Diseña el producto desde adentro de la operación: conoce el problema porque lo trabajó todos los días.</p>
+        </aside>
+      </div>
+
+      <div class="mg-origin-pains mg-rv">
+        <p class="mg-origin-pains-title">Lo que se repetía en cada cierre de mes</p>
+        <ul>
+          <li><strong>Costos</strong><span>Reconstruir el costo real de lo que se vende, insumo por insumo.</span></li>
+          <li><strong>Margen</strong><span>Revisar variables para entender qué pasó con el resultado.</span></li>
+          <li><strong>Datos dispersos</strong><span>Compras, recetas y precios en sistemas que no se hablan.</span></li>
+          <li><strong>Trabajo manual</strong><span>Consolidaciones que consumen tiempo y se hacen de memoria.</span></li>
+          <li><strong>Conocimiento</strong><span>Criterios de quienes conocen el negocio que no quedan escritos.</span></li>
+        </ul>
       </div>
     </div>
   </section>
@@ -179,6 +205,16 @@
 
       <div class="mg-project-hypothesis is-spaced mg-rv">
         <p>Si podemos construir una representación suficientemente útil del negocio gastronómico, podemos transformar información operativa en conocimiento que ayude a tomar decisiones.</p>
+      </div>
+      <div class="mg-market mg-rv" aria-labelledby="market-title">
+        <h3 class="mg-market-title" id="market-title">Para quién y cuántos</h3>
+        <p class="mg-market-icp">Restaurantes, bares y cafeterías independientes, de un solo local, con un dueño involucrado en compras y precios.</p>
+        <ul class="mg-market-stats">
+          <li><b>≈ 67.000</b><span>establecimientos gastronómicos en Argentina</span></li>
+          <li><b>≈ 42.000</b><span>con el perfil de Margentus (independientes)</span></li>
+          <li><b>≈ 500</b><span>en Mar del Plata, el mercado inicial</span></li>
+        </ul>
+        <p class="mg-market-src">Fuentes: <a href="https://fehgra.org.ar/archivos/36507" target="_blank" rel="noopener">FEHGRA, Índices de Seguimiento del Sector 2025</a> (referencia gremial) y directorio gastronómico oficial de Mar del Plata. El dato direccionable aplica la proporción observada en Mar del Plata.</p>
       </div>
     </div>
   </section>
@@ -234,74 +270,56 @@
       </div>
 
       <div class="mg-project-hypothesis is-spaced mg-rv">
-        <p>La metodología MIE —Relevamiento, Inferencia, Validación e Inteligencia— recorre el proceso Integración → Importación → Relevamiento → Inferencia → Validación para aprovechar al máximo la información disponible y pedir intervención humana solo cuando sea necesario.</p>
+        <p>El Margentus Intelligence Engine (MIE) es el núcleo del producto: aprovecha al máximo la información disponible, completa lo que falta marcándolo como tal y pide intervención humana solo cuando hace falta.</p>
       </div>
 
-      <div class="mg-project-chain mg-rv">
-        <div class="mg-project-chain-step">
-          <span class="mg-project-chain-term">Real</span>
-          <h3>Lo que viene de una fuente</h3>
-          <p>El dato entra con un origen identificable y se registra como real.</p>
+      <div class="mg-flow mg-rv">
+        <ol class="mg-flow-steps">
+          <li class="mg-flow-step mg-flow-step--have">
+            <span class="mg-flow-num">01</span>
+            <span class="mg-flow-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-plug"/></svg></span>
+            <h3>Integración</h3>
+            <p>Conecta las fuentes de información disponibles.</p>
+          </li>
+          <li class="mg-flow-step mg-flow-step--have">
+            <span class="mg-flow-num">02</span>
+            <span class="mg-flow-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-upload"/></svg></span>
+            <h3>Importación</h3>
+            <p>Incorpora tus datos sin reconstruir el negocio desde cero.</p>
+          </li>
+          <li class="mg-flow-step mg-flow-step--fill">
+            <span class="mg-flow-num">03</span>
+            <span class="mg-flow-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-clipboard-list"/></svg></span>
+            <h3>Relevamiento</h3>
+            <p>Completa lo que falta con un relevamiento guiado.</p>
+          </li>
+          <li class="mg-flow-step mg-flow-step--fill">
+            <span class="mg-flow-num">04</span>
+            <span class="mg-flow-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-git-branch"/></svg></span>
+            <h3>Inferencia</h3>
+            <p>Deduce lo que se puede derivar de los datos y lo marca.</p>
+          </li>
+          <li class="mg-flow-step mg-flow-step--confirm">
+            <span class="mg-flow-num">05</span>
+            <span class="mg-flow-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-shield-check"/></svg></span>
+            <h3>Validación</h3>
+            <p>Contrasta resultados: confirmás o corregís.</p>
+          </li>
+        </ol>
+        <div class="mg-flow-result">
+          <p class="mg-flow-result-label">El resultado</p>
+          <h3>Una base de información conectada</h3>
+          <p>Cada dato con su origen: real, estimado o inferido.</p>
+          <ul class="mg-flow-pills"><li>Comprender</li><li>Explicar</li><li>Decidir</li></ul>
         </div>
-        <div class="mg-project-chain-step">
-          <span class="mg-project-chain-term">Inferido</span>
-          <h3>Lo que deducimos</h3>
-          <p>La información que el modelo completa a partir de otros datos y se marca como tal.</p>
-        </div>
-        <div class="mg-project-chain-step">
-          <span class="mg-project-chain-term">Validación</span>
-          <h3>La acción de contrastar</h3>
-          <p>El dato se prueba contra la operación real antes de usarse.</p>
-        </div>
-        <div class="mg-project-chain-step is-end">
-          <span class="mg-project-chain-term">Inteligencia</span>
-          <h3>Lo que se puede concluir</h3>
-          <p>Solo cuando la base tiene suficiente sustento.</p>
-        </div>
+        <ul class="mg-flow-groups" aria-label="Quién aporta cada paso">
+          <li class="mg-flow-group mg-flow-group--have"><strong>Lo que ya tenés</strong><span>Margentus lo toma tal como está</span></li>
+          <li class="mg-flow-group mg-flow-group--fill"><strong>Lo que falta</strong><span>Se completa y se marca como tal</span></li>
+          <li class="mg-flow-group mg-flow-group--confirm"><strong>Lo que confirmás</strong><span>Vos tenés la última palabra</span></li>
+        </ul>
       </div>
 
-      <div class="mg-project-states mg-rv">
-        <div class="mg-project-state mg-project-state--real">
-          <div class="mg-project-state-head">
-            <span class="mg-project-state-dot" aria-hidden="true"></span>
-            <span class="mg-project-state-term">Real</span>
-          </div>
-          <p>Confirmado o proveniente de una fuente identificable y trazable.</p>
-        </div>
-        <div class="mg-project-state mg-project-state--estimado">
-          <div class="mg-project-state-head">
-            <span class="mg-project-state-dot" aria-hidden="true"></span>
-            <span class="mg-project-state-term">Estimado</span>
-          </div>
-          <p>Valor aproximado calculado a partir de los datos disponibles; se presenta siempre como estimación.</p>
-        </div>
-        <div class="mg-project-state mg-project-state--inferido">
-          <div class="mg-project-state-head">
-            <span class="mg-project-state-dot" aria-hidden="true"></span>
-            <span class="mg-project-state-term">Inferido</span>
-          </div>
-          <p>Deducido por el modelo a partir de relaciones entre datos; se marca como inferencia, con su nivel de confianza cuando aplica.</p>
-        </div>
-        <div class="mg-project-state">
-          <div class="mg-project-state-head">
-            <span class="mg-project-state-dot" aria-hidden="true"></span>
-            <span class="mg-project-state-term">Pendiente</span>
-          </div>
-          <p>Estado de trabajo: registro o dato que falta cargar o verificar. No dice de dónde viene el dato.</p>
-        </div>
-        <div class="mg-project-state mg-project-state--critico">
-          <div class="mg-project-state-head">
-            <span class="mg-project-state-dot" aria-hidden="true"></span>
-            <span class="mg-project-state-term">Crítico</span>
-          </div>
-          <p>Marca la importancia de lo que falta: sin ese dato el modelo no puede sostenerse. No es un tipo de procedencia.</p>
-        </div>
-      </div>
 
-      <div class="mg-project-note mg-rv">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-        <p>La procedencia de la información es parte del modelo, no un añadido. Un número sin origen conocido no debería presentarse como si fuera un hecho, y por eso cada dato viaja marcado como real, estimado o inferido. Validar es la acción de contrastarlo contra la operación, no un tipo de dato.</p>
-      </div>
     </div>
   </section>
 
@@ -311,7 +329,7 @@
       <div class="mg-sec-head mg-rv">
         <p class="mg-kicker"><span class="mg-project-index">05</span>Evolución del proyecto</p>
         <h2 class="mg-title" id="evolucion-title">De una experiencia operativa a un producto</h2>
-        <p class="mg-sub">El orden en el que se construyó el proyecto, sin fechas inventadas: cada etapa se apoyó en la anterior.</p>
+        <p class="mg-sub">El orden en el que se construyó el proyecto, con las fechas reales de cada versión. El detalle está en <a href="novedades.html">Novedades</a>.</p>
       </div>
 
       <div class="mg-project-timeline mg-rv">
@@ -327,18 +345,24 @@
           <h3>Prototipo visual</h3>
           <p>Prototipo visual de la experiencia de Margentus, demostrable en el demo.</p>
         </div>
+        <div class="mg-project-tl-item">
+          <span class="mg-project-tl-dot" aria-hidden="true"></span>
+          <span class="mg-project-tl-term">MVP · v0.1 → v1.0</span>
+          <h3>MVP completo</h3>
+          <p>Del 12/10 al 02/11: compras, recetas, ventas, inventario, análisis de rentabilidad, reportes y cierre mensual.</p>
+        </div>
         <div class="mg-project-tl-item is-current">
           <span class="mg-project-tl-dot" aria-hidden="true"></span>
-          <span class="mg-project-tl-term">MVP</span>
-          <h3>MVP 1.0 completo</h3>
-          <p>Versión 1.0 completa: compras, recetas, ventas, inventario, análisis de rentabilidad, reportes y cierre mensual.</p>
+          <span class="mg-project-tl-term">Fase 2 · v2.0</span>
+          <h3>Facturas con foto</h3>
+          <p>Desde el 07/11: lectura de facturas con foto, sub-recetas, Prime Cost y margen por canal.</p>
           <span class="mg-project-flag">Etapa actual</span>
         </div>
         <div class="mg-project-tl-item">
           <span class="mg-project-tl-dot" aria-hidden="true"></span>
           <span class="mg-project-tl-term">Validación</span>
           <h3>Prueba con negocios</h3>
-          <p>Piloto acompañado con negocios gastronómicos, luego de completar la preparación operativa.</p>
+          <p>Piloto acompañado con negocios gastronómicos, en preparación.</p>
         </div>
         <div class="mg-project-tl-item">
           <span class="mg-project-tl-dot" aria-hidden="true"></span>
@@ -347,72 +371,10 @@
           <p>Incorporación progresiva de capacidades según evidencia y necesidades reales.</p>
         </div>
       </div>
+      <p class="mg-project-next mg-rv"><strong>Lo que sigue:</strong> terminar la preparación del piloto acompañado, abrirlo con negocios gastronómicos y evolucionar el producto según lo que aprendamos. Si tenés un negocio y querés contrastar el modelo con tu operación, <a href="mailto:hola@margentus.com">escribinos</a>.</p>
     </div>
   </section>
 
-
-  <!-- ================= 06 · EL MVP EN DEMO ================= -->
-  <section class="mg-section" id="prototipo" aria-labelledby="prototipo-title">
-    <div class="mg-container">
-      <div class="mg-sec-head mg-rv">
-        <p class="mg-kicker"><span class="mg-project-index">06</span>Demo pública</p>
-        <h2 class="mg-title" id="prototipo-title">Un recorrido por Margentus</h2>
-        <p class="mg-sub">El entorno público muestra el dashboard, el análisis de rentabilidad y las alertas con datos de ejemplo. La versión 1.0 completa y su estado de preparación están detallados a continuación.</p>
-      </div>
-
-      <figure class="mg-project-shot mg-window mg-rv">
-        <div class="mg-window-bar" aria-hidden="true">
-          <span class="mg-window-dots"><span></span><span></span><span></span></span>
-          <span class="mg-window-url">margentus-demo.onrender.com/dashboard</span>
-        </div>
-        <video class="mg-project-shot-media" src="video/demo-web.mp4" poster="img/prototipo/dashboard-resumen.png" controls playsinline preload="metadata" width="1280" height="720" aria-label="Recorrido en video por la demo de Margentus."></video>
-        <div class="mg-project-shot-body">
-          <a href="https://margentus-demo.onrender.com/dashboard" class="mg-btn mg-btn-secondary" target="_blank" rel="noopener">Explorar demo
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg>
-          </a>
-        </div>
-      </figure>
-    </div>
-  </section>
-
-  <!-- ================= 07 · ESTADO DEL MVP ================= -->
-  <section class="mg-section mg-project-band" id="estado" aria-labelledby="estado-title">
-    <div class="mg-container">
-      <div class="mg-sec-head mg-rv">
-        <p class="mg-kicker"><span class="mg-project-index">07</span>Estado del MVP</p>
-        <h2 class="mg-title" id="estado-title">El MVP 1.0 está completo</h2>
-        <p class="mg-sub">La versión 1.0 cubre el circuito mensual de un restaurante, desde la carga de datos hasta el cierre. Estamos completando la puesta en producción y las validaciones finales antes de abrir el piloto acompañado.</p>
-      </div>
-
-      <div class="mg-project-stages mg-rv">
-        <div class="mg-project-stage">
-          <span class="mg-project-stage-term">Modelo</span>
-          <p>Definición de la estructura de información y de las relaciones relevantes del negocio.</p>
-        </div>
-        <div class="mg-project-stage">
-          <span class="mg-project-stage-term">Experiencia</span>
-          <p>Prototipo visual de la experiencia de Margentus, demostrable en el demo.</p>
-        </div>
-        <div class="mg-project-stage is-current">
-          <span class="mg-project-stage-term">MVP</span>
-          <p>Versión 1.0 completa: compras, recetas, ventas, inventario, análisis de rentabilidad, reportes y cierre mensual.</p>
-        </div>
-        <div class="mg-project-stage">
-          <span class="mg-project-stage-term">Validación</span>
-          <p>Piloto acompañado con negocios gastronómicos, luego de completar la preparación operativa.</p>
-        </div>
-        <div class="mg-project-stage">
-          <span class="mg-project-stage-term">Evolución</span>
-          <p>Incorporación progresiva de capacidades según evidencia y necesidades reales.</p>
-        </div>
-      </div>
-
-      <div class="mg-project-note mg-rv">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-        <p>Si tenés un negocio y querés contrastar el modelo con tu operación, el canal de contacto está en la <a href="index.html#contacto">página principal</a>.</p>
-      </div>
-    </div>
-  </section>
 
   <!-- ================= 08 · ECOSISTEMA EMPRENDEDOR =================
        Lista canónica compartida con index.html: la fuente de verdad es
@@ -425,17 +387,17 @@
        Estados permitidos: seleccionado · preseleccionado · postulación
        realizada · en evaluación. No usar estados no confirmados
        oficialmente. -->
-  <section class="mg-section" id="ecosistema" aria-labelledby="ecosistema-title">
+  <section class="mg-section mg-band-dark mg-eco-band" id="ecosistema" aria-labelledby="ecosistema-title">
     <div class="mg-container">
       <div class="mg-sec-head mg-rv">
-        <p class="mg-kicker"><span class="mg-project-index">08</span>Margentus en el ecosistema emprendedor</p>
-        <h2 class="mg-title" id="ecosistema-title">Margentus en el ecosistema emprendedor</h2>
-        <p class="mg-sub">Durante 2026, Margentus fue presentado en distintos programas, convocatorias y espacios de innovación mientras prepara la puesta en producción de su MVP 1.0.</p>
+        <p class="mg-kicker"><span class="mg-project-index">06</span>Ecosistema</p>
+        <h2 class="mg-title" id="ecosistema-title">Reconocimientos y programas</h2>
+        <p class="mg-sub">Lo que logró hasta ahora y lo que está en evaluación. Solo publicamos resultados confirmados.</p>
       </div>
 
-      <ol class="mg-eco-timeline mg-rv" data-mg-convocatorias="completo">
-        <noscript><p class="mg-eco-desc">El listado de convocatorias se actualiza desde una fuente única y requiere JavaScript.</p></noscript>
-      </ol>
+      <div class="mg-eco-wins mg-rv" data-mg-convocatorias>
+        <noscript><p>El detalle de convocatorias requiere JavaScript.</p></noscript>
+      </div>
 
       <div class="mg-pitch" id="presentaciones">
         <h3 class="mg-pitch-title mg-rv">Presentaciones</h3>
@@ -453,28 +415,7 @@
 
       <div class="mg-project-note mg-rv">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 13h6"/><path d="M9 17h4"/></svg>
-        <p>Esta sección registra participaciones y procesos públicos, no resultados de convocatoria. Cada estado refleja la situación confirmada hasta la fecha y se actualiza cuando la organización informa un cambio.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= 09 · PRÓXIMO CAPÍTULO ================= -->
-  <section class="mg-section mg-project-band" id="siguiente" aria-labelledby="siguiente-title">
-    <div class="mg-container">
-      <div class="mg-sec-head mg-rv">
-        <p class="mg-kicker"><span class="mg-project-index">09</span>Próximo capítulo</p>
-        <h2 class="mg-title" id="siguiente-title">Lo que sigue</h2>
-        <p class="mg-sub">No es un listado de funcionalidades comprometidas. Es el orden en el que queremos aprender.</p>
-      </div>
-
-      <div class="mg-project-verbs mg-rv">
-        <span class="mg-project-verb">Preparar el piloto acompañado</span>
-        <span class="mg-project-verb-sep" aria-hidden="true">→</span>
-        <span class="mg-project-verb">Validar con negocios gastronómicos</span>
-        <span class="mg-project-verb-sep" aria-hidden="true">→</span>
-        <span class="mg-project-verb">Aprender</span>
-        <span class="mg-project-verb-sep" aria-hidden="true">→</span>
-        <span class="mg-project-verb">Evolucionar</span>
+        <p>Solo publicamos resultados confirmados por cada organización. Los estados se actualizan cuando informan un cambio.</p>
       </div>
     </div>
   </section>
@@ -495,9 +436,9 @@
 
       <div class="mg-footer-col">
         <h4>Producto</h4>
-        <a href="index.html#como-funciona">Cómo funciona</a>
+        <a href="index.html#que-analiza">Cómo funciona</a>
         <a href="index.html#prototipo">Demo</a>
-        <a href="index.html#que-analiza">Qué analiza</a>
+        <a href="novedades.html">Novedades</a>
       </div>
 
       <div class="mg-footer-col">
