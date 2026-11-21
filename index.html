@@ -503,9 +503,9 @@
   if(!ctx)return;
   var pts=[],w=0,h=0,raf=0,last=0,dpr=1;
   function resize(){
-    var r=hero.getBoundingClientRect();w=Math.max(1,r.width);h=Math.max(1,r.height);dpr=Math.min(devicePixelRatio||1,1.5);
+    var r=hero.getBoundingClientRect();w=Math.max(1,r.width);h=Math.max(1,r.height);dpr=Math.min(devicePixelRatio||1,(innerWidth<768?1:1.5));
     canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);canvas.style.width=w+'px';canvas.style.height=h+'px';ctx.setTransform(dpr,0,0,dpr,0,0);
-    var n=Math.max(18,Math.min(42,Math.round(w/27)));
+    var n=w<768?14:Math.max(18,Math.min(42,Math.round(w/27)));
     pts=Array.from({length:n},function(_,i){return{x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.12,vy:(Math.random()-.5)*.12,r:i%6===0?2:1.2,copper:i%5===0};});draw(0);
   }
   function draw(dt){
@@ -518,9 +518,11 @@
     });
   }
   function frame(t){if(document.hidden){raf=0;return;}var dt=last?Math.min(40,t-last):16;last=t;draw(dt);raf=requestAnimationFrame(frame);}
-  function start(){if(!reduced&&!raf&&!document.hidden){last=0;raf=requestAnimationFrame(frame);}}
+  function start(){if(!reduced&&!raf&&!document.hidden&&(typeof visible==='undefined'||visible)){last=0;raf=requestAnimationFrame(frame);}}
   function stop(){if(raf)cancelAnimationFrame(raf);raf=0;}
+  var visible=true;
   resize();start();
+  if('IntersectionObserver'in window)new IntersectionObserver(function(e){visible=e[0].isIntersecting;visible?start():stop();}).observe(hero);
   if('ResizeObserver'in window)new ResizeObserver(resize).observe(hero);else addEventListener('resize',resize,{passive:true});
   document.addEventListener('visibilitychange',function(){document.hidden?stop():start();});
   new MutationObserver(function(){if(reduced)draw(0);}).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
